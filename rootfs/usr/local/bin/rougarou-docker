@@ -1,0 +1,164 @@
+#!/usr/bin/python3
+"""Opt-in, offline rootless Docker setup; never run as root."""
+import argparse
+import json
+import os
+from pathlib import Path
+import pwd
+import shutil
+import stat
+import subprocess
+import sys
+
+UNIT = "rougarou-docker.service"
+CONTEXT = "rougarou-rootless"
+LAUNCHER = Path("/usr/share/docker.io/contrib/dockerd-rootless.sh")
+RESERVED = {"hosts", "data-root", "exec-root", "pidfile"}
+
+
+class SetupError(Exception):
+    pass
+
+
+def run(args, check=True):
+    env = dict(os.environ)
+    # A configured remote endpoint must never receive setup or status requests.
+    env.pop("DOCKER_HOST", None)
+    env.pop("DOCKER_CONTEXT", None)
+    result = subprocess.run(args, capture_output=True, text=True, env=env, timeout=120)
+    if check and result.returncode:
+        raise SetupError(f"{args[0]} failed: {result.stderr.strip() or result.stdout.strip()}")
+    return result
+
+
+def user_paths():
+    uid = os.getuid()
+    if uid == 0 or os.geteuid() != uid:
+        raise SetupError("Run this command as your ordinary operator account, without sudo.")
+    account = pwd.getpwuid(uid)
+    home = Path(account.pw_dir)
+    if Path(os.environ.get("HOME", "")).resolve() != home.resolve():
+        raise SetupError("HOME must identify your own login account's home directory.")
+    runtime = Path(f"/run/user/{uid}")
+    if os.environ.get("XDG_RUNTIME_DIR") != str(runtime):
+        raise SetupError("Log in through SSH or the console to establish your user session.")
+    info = runtime.stat()
+    if info.st_uid != uid or not stat.S_ISDIR(info.st_mode) or info.st_mode & 0o077:
+        raise SetupError("The user runtime directory must be private and owned by your account.")
+    return account, home, runtime
+
+
+def subordinate_range(path, name, uid):
+    for line in path.read_text().splitlines():
+        fields = line.split(":")
+        if len(fields) != 3 or fields[0] not in {name, str(uid)}:
+            continue
+        try:
+            start, count = int(fields[1]), int(fields[2])
+        except ValueError:
+            continue
+        if start > 0 and count >= 65536:
+            return True
+    return False
+
+
+def prerequisites(account):
+    missing = [name for name in ("docker", "rootlesskit", "newuidmap", "newgidmap",
+                                "slirp4netns", "systemctl") if not shutil.which(name)]
+    # Debian installs the daemon in /usr/sbin, absent from ordinary login PATHs.
+    if not os.access("/usr/sbin/dockerd", os.X_OK):
+        missing.append("/usr/sbin/dockerd")
+    if missing or not LAUNCHER.is_file():
+        raise SetupError("Missing packaged Docker prerequisites: " + ", ".join(missing or [str(LAUNCHER)]))
+    for name in ("subuid", "subgid"):
+        if not subordinate_range(Path("/etc") / name, account.pw_name, account.pw_uid):
+            raise SetupError(f"An administrator must allocate at least 65536 subordinate IDs in /etc/{name}; no ranges were changed.")
+    for name in ("/proc/sys/kernel/unprivileged_userns_clone", "/proc/sys/user/max_user_namespaces"):
+        path = Path(name)
+        if path.exists() and int(path.read_text().strip()) <= 0:
+            raise SetupError("User namespaces are disabled by host policy; no sysctl was changed.")
+    run(["systemctl", "--user", "show-environment"])
+
+
+def context_plan(home, endpoint, select):
+    names = run(["docker", "context", "ls", "--format", "{{.Name}}"] ).stdout.splitlines()
+    if CONTEXT in names:
+        entries = json.loads(run(["docker", "context", "inspect", CONTEXT]).stdout)
+        if len(entries) != 1 or entries[0].get("Endpoints", {}).get("docker", {}).get("Host") != endpoint:
+            raise SetupError(f"Existing {CONTEXT} context points elsewhere; it was not changed.")
+    config = Path(os.environ.get("DOCKER_CONFIG", str(home / ".docker"))) / "config.json"
+    fresh = not config.exists() and set(names) <= {"default", CONTEXT}
+    fresh = fresh and not os.environ.get("DOCKER_HOST") and not os.environ.get("DOCKER_CONTEXT")
+    return CONTEXT not in names, select or fresh
+
+
+def daemon_config(home):
+    directory = home / ".config/rougarou/docker"
+    directory.mkdir(mode=0o700, parents=True, exist_ok=True)
+    path = directory / "daemon.json"
+    try:
+        with path.open("x", encoding="utf-8") as stream:
+            stream.write("{}\n")
+        path.chmod(0o600)
+    except FileExistsError:
+        if path.is_symlink() or not path.is_file():
+            raise SetupError("Existing daemon.json must be an ordinary file; it was not changed.")
+    config = json.loads(path.read_text())
+    if not isinstance(config, dict) or RESERVED.intersection(config):
+        raise SetupError("daemon.json must be an object without hosts/data-root/exec-root/pidfile; those paths belong to the user unit. Existing content was preserved.")
+
+
+def daemon_info(endpoint):
+    info = json.loads(run(["docker", "--host", endpoint, "info", "--format", "{{json .}}"] ).stdout)
+    if not any("name=rootless" == item.split(",")[0] for item in info.get("SecurityOptions", [])):
+        raise SetupError("The expected Docker endpoint did not report rootless mode.")
+    return info
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    commands = parser.add_subparsers(dest="action", required=True)
+    setup = commands.add_parser("setup", help="Enable your optional rootless Docker service")
+    setup.add_argument("--use-context", action="store_true", help="Explicitly select Rougarou's Docker context even with existing configuration")
+    status = commands.add_parser("status", help="Check the local rootless daemon without contacting a remote context")
+    status.add_argument("--json", action="store_true")
+    commands.add_parser("stop", help="Disable and stop the user service; retain all data and contexts")
+    args = parser.parse_args(argv)
+    try:
+        account, home, runtime = user_paths()
+        endpoint = f"unix://{runtime}/rougarou-docker/docker.sock"
+        if args.action == "stop":
+            run(["systemctl", "--user", "disable", "--now", UNIT])
+            print("Rootless Docker stopped; containers, images, configuration and contexts retained.")
+            return 0
+        if args.action == "setup":
+            prerequisites(account)
+            create, select = context_plan(home, endpoint, args.use_context)
+            daemon_config(home)
+            run(["systemctl", "--user", "daemon-reload"])
+            run(["systemctl", "--user", "enable", "--now", UNIT])
+            daemon_info(endpoint)
+            if create:
+                run(["docker", "context", "create", CONTEXT, "--description", "Rougarou rootless Docker", "--docker", f"host={endpoint}"])
+            if select:
+                run(["docker", "context", "use", CONTEXT])
+            print("Rootless Docker is ready. " + ("Default context selected." if select else "Existing default context preserved."))
+            print(f"Use: docker --context {CONTEXT} info")
+            if os.environ.get("DOCKER_HOST") or os.environ.get("DOCKER_CONTEXT"):
+                print("Your DOCKER_HOST/DOCKER_CONTEXT environment may override the default; use the explicit context above.")
+            print("Boot/logout persistence is unchanged; lingering was not enabled.")
+        else:
+            info = daemon_info(endpoint)
+            result = {"rootless": True, "context": CONTEXT, "endpoint": endpoint,
+                      "server_version": info.get("ServerVersion"), "storage_driver": info.get("Driver"),
+                      "cgroup_driver": info.get("CgroupDriver"), "data_root": info.get("DockerRootDir")}
+            print(json.dumps(result, indent=2) if args.json else f"Rootless Docker ready: {endpoint}")
+        return 0
+    except (SetupError, OSError, ValueError, subprocess.TimeoutExpired) as error:
+        print(f"rougarou-docker: {error}", file=sys.stderr)
+        print(f"For service errors: journalctl --user -u {UNIT} -n 40 --no-pager", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

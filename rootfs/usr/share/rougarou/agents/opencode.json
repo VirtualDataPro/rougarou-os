@@ -1,0 +1,12 @@
+{
+  "name": "OpenCode",
+  "version": "1.18.31",
+  "url": "https://github.com/anomalyco/opencode/releases/download/v1.18.31/opencode-linux-x64-baseline.tar.gz",
+  "sha256": "b283e8dbe9e6fc224bb4b79992ce3bd2174b8b7b0c3e7d1b4e6024a1d11edc84",
+  "size": 60590585,
+  "format": "tar.gz",
+  "binary": "opencode",
+  "binary_size": 185030784,
+  "binary_sha256": "f9dab32248695e9ebd56b16a1921798fd85112cf5a69c7dfd0cabc1e17be4a11",
+  "provenance": "Official anomalyco/opencode v1.18.31 release asset digest; baseline Linux amd64 CLI"
+}

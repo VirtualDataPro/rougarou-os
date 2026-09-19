@@ -1,0 +1,12 @@
+[Unit]
+Description=Check optional Rougarou operator notifications
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/rougarou notify check
+TimeoutStartSec=2min
+MemoryMax=128M
+TasksMax=16
+NoNewPrivileges=yes
+UMask=0077
+LimitCORE=0

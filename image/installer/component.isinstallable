@@ -1,0 +1,3 @@
+#!/bin/sh
+# Rescue keeps the native Debian recovery path and never asks to install.
+test "$(debconf-get rescue/enable 2>/dev/null)" != true

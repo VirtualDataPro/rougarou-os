@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+. /usr/share/debconf/confmodule
+db_settitle debian-installer/rougarou-welcome/title
+db_input high rougarou/welcome || true
+db_go

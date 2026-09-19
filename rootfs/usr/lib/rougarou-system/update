@@ -1,0 +1,16 @@
+#!/usr/bin/python3 -I
+"""Fixed administrator entry point; no environment-controlled module paths."""
+import os
+from pathlib import Path
+import sys
+sys.path.insert(0, '/usr/lib/rougarou')
+import updates
+if os.geteuid() != 0:
+    raise SystemExit('Administrator authentication is required.')
+if len(sys.argv) == 3 and sys.argv[1] == 'assert-before':
+    try:
+        updates.Updates().assert_before(sys.argv[2])
+    except Exception:
+        raise SystemExit('Reviewed machine/package state changed before unpacking; update stopped.')
+else:
+    raise SystemExit(updates.main(sys.argv[1:]))

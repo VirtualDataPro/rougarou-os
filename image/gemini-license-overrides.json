@@ -1,0 +1,156 @@
+{
+  "@bufbuild/protobuf@2.11.0": {
+    "archive_notices": [
+      "package/dist/esm/wire/varint.js"
+    ],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/bufbuild/protobuf-es/db9f9b8dcb6bbcd2b6661f776d098146aa5fe9f4/LICENSE",
+        "sha256": "c04b4216f1cd4c5a4f7fb2f2a1b0ae70d847e9e0cac7c9dee9bf8cc03177c449"
+      }
+    ]
+  },
+  "@pnpm/config.env-replace@1.1.0": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/pnpm/components/a9b32aa67fd657cdea94fedf0b68f7953b8d1f85/LICENSE",
+        "sha256": "127161487fae720d42adf2bbb7e5e047174fc443050e799c3fb2cad407d721ab"
+      }
+    ]
+  },
+  "@pnpm/network.ca-file@1.0.2": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/pnpm/components/a9b32aa67fd657cdea94fedf0b68f7953b8d1f85/LICENSE",
+        "sha256": "127161487fae720d42adf2bbb7e5e047174fc443050e799c3fb2cad407d721ab"
+      }
+    ]
+  },
+  "@xterm/headless@5.5.0": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/xtermjs/xterm.js/9ba6c00a195c95fcf8292a2b9084d91450e5daae/LICENSE",
+        "sha256": "b569f629d00f2626a8100df2a1798210535621e42164dfd426a6fe5aac7b0ccd"
+      }
+    ]
+  },
+  "agent-base@6.0.2": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "data-uri-to-buffer@4.0.1": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "google-gax@4.6.1": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/googleapis/gax-nodejs/1f2eb07343a479a00fcd50d22c8ab2d3058c505a/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ]
+  },
+  "http-proxy-agent@5.0.0": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "https-proxy-agent@5.0.1": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "jsonify@0.0.1": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "react-devtools-core@6.1.2": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/facebook/react/4d6cf759214a862c066f370cb9e764c61e75ded7/LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ]
+  },
+  "simple-git@3.28.0": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/steveukx/git-js/789c13ebabcf18ebe0b3a0c88ebb4037dede42e3/LICENSE",
+        "sha256": "680b9936fc87ec3295007446eec43ce4820f1e2c707a7001a3c6c1e60c7ef32f"
+      }
+    ]
+  },
+  "spdx-exceptions@2.5.0": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "spdx-license-ids@3.0.21": {
+    "archive_notices": [
+      "package/README.md"
+    ],
+    "supplemental": []
+  },
+  "stream-events@1.0.5": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/stephenplusplus/stream-events/3cfd35ab1a68c9fd41c992428e839ad54dcf8017/LICENSE",
+        "sha256": "2055fb6b0da08d07d70811043d7b8682ebbdba1e206f1ee511646ccb3f8f450d"
+      }
+    ]
+  },
+  "stubs@3.0.0": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/stephenplusplus/stubs/580b4d8b3a34c1193d5ec10e0db0d6ea4b4c0ec5/LICENSE",
+        "sha256": "cd01ce0baa2b903bb80911719424904a4a0eb589acb982d45b119dffe28b7f58"
+      }
+    ]
+  },
+  "tr46@0.0.3": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE.md",
+        "url": "https://raw.githubusercontent.com/jsdom/tr46/7f1eb920768c794be40962a4f0cbad670a398d04/LICENSE.md",
+        "sha256": "499d6d466d064e0460427967a344e2a32fcb86ea8c6cd1a285ec4f1fa03fba67"
+      }
+    ]
+  },
+  "yoga-layout@3.2.1": {
+    "archive_notices": [],
+    "supplemental": [
+      {
+        "name": "LICENSE",
+        "url": "https://raw.githubusercontent.com/facebook/yoga/v3.2.1/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      }
+    ]
+  }
+}

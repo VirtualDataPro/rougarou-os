@@ -1,0 +1,13 @@
+{
+  "version": "0.60.0",
+  "asset": "gemini-cli-bundle.zip",
+  "sha256": "4d3b42ceaaddf13f8a6b048326dfa727808810913ff7148b85d1cd6b3f796fc7",
+  "size": 21097612,
+  "download": "https://github.com/google-gemini/gemini-cli/releases/download/v0.60.0/gemini-cli-bundle.zip",
+  "source": "https://github.com/google-gemini/gemini-cli/tree/v0.60.0",
+  "source_archive": "https://codeload.github.com/google-gemini/gemini-cli/tar.gz/refs/tags/v0.60.0",
+  "source_sha256": "3305bc599cae6e83f4f6bc24b6ca15e363b2d3c6ab30ea450d585c77a12ef486",
+  "license": "Apache-2.0",
+  "upstream_optional_native_modules": "node-pty and keytar are external to the official release bundle; no npm installation is performed",
+  "runtime": "Debian nodejs >= 20; offline smoke tested on 20.19.2"
+}

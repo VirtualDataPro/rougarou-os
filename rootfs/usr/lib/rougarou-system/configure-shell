@@ -1,0 +1,154 @@
+#!/usr/bin/python3 -I
+"""Explicit, backup-first shell setup for the invoking account or /etc/skel.
+
+Run as the owner (runuser -u NAME -- ... from the installer). Package upgrades
+never execute this helper against existing homes. No shell commands are parsed.
+"""
+import argparse
+import os
+from pathlib import Path
+import pwd
+import re
+import stat
+import tempfile
+
+
+TEMPLATE = Path('/usr/share/rougarou/starship.toml')
+HERDR_TEMPLATE = Path('/usr/share/rougarou/herdr.toml')
+START = b'# >>> Rougarou shell defaults >>>\n'
+END = b'# <<< Rougarou shell defaults <<<\n'
+BLOCK = START + b'''# Keep local overrides below this block.
+case $- in
+  *i*)
+    export CODEX_TUI_DISABLE_KEYBOARD_ENHANCEMENT=1
+    if [ -r /usr/share/rougarou/bashrc ]; then
+      . /usr/share/rougarou/bashrc
+    fi
+    ;;
+esac
+''' + END
+LEGACY = re.compile(rb'^[ \t]*"\\e\[100;(?:5|69|133|197):3u"[ \t]*:[ \t]*""[ \t]*(?:\r?\n)?$')
+
+
+class ShellError(Exception):
+    pass
+
+
+def directory(path, uid, create=False):
+    if create and not path.exists() and not path.is_symlink():
+        path.mkdir(mode=0o700)
+    info = path.lstat()
+    if not stat.S_ISDIR(info.st_mode) or info.st_uid != uid or info.st_mode & 0o022:
+        raise ShellError(f'Refusing unsafe directory: {path}')
+
+
+def existing(path, uid):
+    try:
+        info = path.lstat()
+    except FileNotFoundError:
+        return None, 0o644
+    if not stat.S_ISREG(info.st_mode) or info.st_uid != uid or info.st_nlink != 1:
+        raise ShellError(f'Refusing non-regular, linked or differently owned file: {path}')
+    return path.read_bytes(), stat.S_IMODE(info.st_mode)
+
+
+def write_with_backup(path, data, uid):
+    previous, mode = existing(path, uid)
+    if previous == data:
+        return False
+    if previous is not None:
+        fd, backup = tempfile.mkstemp(prefix=path.name + '.rougarou-backup-', dir=path.parent)
+        with os.fdopen(fd, 'wb') as stream:
+            stream.write(previous)
+            stream.flush()
+            os.fsync(stream.fileno())
+        print(f'Backup: {backup}')
+    fd, temporary = tempfile.mkstemp(prefix='.' + path.name + '.rougarou-', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'wb') as stream:
+            stream.write(data)
+            stream.flush()
+            os.fchmod(stream.fileno(), mode)
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+    return True
+
+
+def managed_bashrc(previous):
+    if START.rstrip(b'\n') in previous or END.rstrip(b'\n') in previous:
+        if previous.count(START) != 1 or previous.count(END) != 1:
+            raise ShellError('Ambiguous Rougarou .bashrc markers; file left unchanged')
+        start, end = previous.index(START), previous.index(END)
+        if end < start or (start and previous[start - 1:start] != b'\n'):
+            raise ShellError('Malformed Rougarou .bashrc block; file left unchanged')
+        return previous[:start] + BLOCK + previous[end + len(END):]
+    return previous + (b'\n' if previous and not previous.endswith(b'\n') else b'') + BLOCK
+
+
+def remove_legacy(home, uid):
+    path = home / '.inputrc'
+    previous, _ = existing(path, uid)
+    if previous is None:
+        return False
+    updated = b''.join(line for line in previous.splitlines(keepends=True) if not LEGACY.fullmatch(line))
+    return write_with_backup(path, updated, uid)
+
+
+def configure(home, template=TEMPLATE, *, uid=None, config_home=None, legacy=False, herdr_template=HERDR_TEMPLATE):
+    uid = os.geteuid() if uid is None else uid
+    directory(home, uid)
+    bashrc = home / '.bashrc'
+    previous, _ = existing(bashrc, uid)
+    updated = managed_bashrc(previous or b'')
+    config = home / '.config' if config_home is None else config_home
+    # Never follow a symlink while installing defaults, even for root's skel.
+    directory(config.parent, uid)
+    directory(config, uid, create=True)
+    target = config / 'starship.toml'
+    current, _ = existing(target, uid)
+    theme = template.read_bytes() if current is None else None
+    herdr = config / 'herdr'
+    directory(herdr, uid, create=True)
+    herdr_target = herdr / 'config.toml'
+    herdr_current, _ = existing(herdr_target, uid)
+    herdr_defaults = herdr_template.read_bytes() if herdr_current is None else None
+    if legacy:
+        existing(home / '.inputrc', uid)  # Validate before any shell-file writes.
+    write_with_backup(bashrc, updated, uid)
+    if theme is not None:
+        write_with_backup(target, theme, uid)
+    if herdr_defaults is not None:
+        write_with_backup(herdr_target, herdr_defaults, uid)
+    if legacy:
+        remove_legacy(home, uid)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--skel', action='store_true', help='Prepare future-user defaults in /etc/skel (root only)')
+    parser.add_argument('--remove-legacy-inputrc', action='store_true', help='Also back up and remove only the four old Rougarou no-op release bindings')
+    args = parser.parse_args()
+    uid = os.geteuid()
+    try:
+        if args.skel:
+            if uid != 0 or args.remove_legacy_inputrc:
+                raise ShellError('--skel requires root and cannot migrate a user inputrc')
+            configure(Path('/etc/skel'), uid=uid)
+        else:
+            account = pwd.getpwuid(uid)
+            home = Path(account.pw_dir)
+            xdg = os.environ.get('XDG_CONFIG_HOME')
+            config = Path(xdg) if xdg else home / '.config'
+            if not config.is_absolute():
+                raise ShellError('XDG_CONFIG_HOME must be absolute')
+            configure(home, uid=uid, config_home=config, legacy=args.remove_legacy_inputrc)
+        print('Rougarou shell defaults configured; open a new Bash session.')
+    except (OSError, ShellError) as error:
+        parser.exit(1, f'configure-shell: {error}\n')
+
+
+if __name__ == '__main__':
+    main()

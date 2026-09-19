@@ -1,0 +1,9 @@
+{
+  "snapshot": "20260918T120000Z",
+  "result": "pass",
+  "tests": [
+    "Replace with actual offline installation evidence and artifact ID",
+    "Replace with actual upgrade, reboot, SSH and agent validation evidence"
+  ],
+  "approved_by": "Replace with the approving operator identity"
+}

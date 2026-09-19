@@ -1,0 +1,20 @@
+     ⢸⣷⣤⡀                            ⢀⣤⣾⡇
+      ⣿⣎⠛⢦⣄                        ⣀⡴⠛⣱⣿
+      ⢻⡘⣆ ⠙⠳⣄⡀                  ⢀⣠⠞⠋ ⣰⢃⡟
+      ⢸⡇⠸⡄  ⠈⠻⢦⣀      ⢀⡀      ⣀⡴⠟⠁  ⢠⠇⢸⡇
+       ⣷ ⠹⡄    ⠙⠷⣤⣤⠶⠖⠛⠋⠙⠛⠳⠶⢤⣤⠾⠋    ⢠⠏ ⣾     ROUGAROU OS
+       ⢻⡀ ⠹⡀                      ⢀⠏ ⢀⡟     @VERSION@
+       ⢸⡇  ⢳⡀                    ⢀⡞  ⢸⡇
+        ⣷   ⢳⡀                  ⢀⡞   ⣾      @HOSTNAME@
+        ⢻⡀  ⣠⠷⡀                ⢀⠾⣄  ⢀⡟      HEADLESS / OPERATOR-OWNED
+        ⢸⡇⣠⠞⠁ ⣹⣦⡀            ⢀⣴⣏ ⠈⠳⣄⢸⡇
+         ⢿⡅   ⠉⠙⠻⣷⣶⡄      ⢠⣶⣾⠟⠛⠉   ⢨⡿       Worker ready  |  0 queued  0 running  1 unsuccessful runs
+          ⠹⣦⡀    ⠈⢦        ⡴⠁    ⢀⣴⠏
+           ⠈⢳⣄    ⠘⡆      ⢰⠃    ⣠⡞⠁         a                 Start your agent
+             ⠙⣦⡀   ⢷      ⡾   ⢀⣴⠋           rougarou jobs     Managed work
+              ⠈⢷⡀  ⠸⡄    ⢠⠇  ⢀⡾⠁            rougarou doctor   Check this host
+               ⠈⢷⡀  ⢧    ⡼  ⢀⡾⠁             rougarou setup    Connect accounts
+                ⠈⢷⡀  ⠲⣶⣶⠖  ⢀⡾⠁
+                 ⠈⢷⡀  ⢨⡅  ⢀⡾⠁
+                  ⠈⠛⢦⣀⠘⠃⣀⡴⠛⠁
+                     ⠙⢷⡾⠋

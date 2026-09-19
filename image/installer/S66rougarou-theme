@@ -1,0 +1,8 @@
+# Sourced by rootskel before the frontend starts. Only Linux virtual consoles
+# understand this palette protocol; serial terminals retain their own palette.
+if [ "${TERM:-}" = linux ] && [ "${TERM_TYPE:-}" != serial ]; then
+    printf '\033]P0080F0B\033]P1E0878D\033]P279C58E\033]P3D9B474'
+    printf '\033]P4243029\033]P5A58ACB\033]P68FCBD5\033]P7DFE7DF'
+    printf '\033]P8A6B5AA\033]P9F0A3A8\033]PA79C58E\033]PBE9CC98'
+    printf '\033]PC243B2E\033]PDD1BDEB\033]PEADE0E7\033]PFF1F3F7'
+fi

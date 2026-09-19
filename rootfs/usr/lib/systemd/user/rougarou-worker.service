@@ -1,0 +1,28 @@
+[Unit]
+Description=Rougarou persistent agent job worker
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/rougarou worker
+WorkingDirectory=%h
+Environment=PATH=%h/.local/bin:%h/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONDONTWRITEBYTECODE=1
+UMask=0077
+Restart=on-failure
+RestartSec=3
+KillMode=control-group
+TimeoutStopSec=10
+NoNewPrivileges=yes
+MemoryHigh=1536M
+MemoryMax=2G
+MemorySwapMax=512M
+CPUQuota=200%
+TasksMax=256
+OOMPolicy=stop
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

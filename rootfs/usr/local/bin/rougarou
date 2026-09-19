@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+"""Rougarou operator entry point; also runnable directly from the source tree."""
+import sys
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "lib" / "rougarou"))
+from cli import main
+
+raise SystemExit(main())

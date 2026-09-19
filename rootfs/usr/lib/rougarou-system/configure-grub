@@ -1,0 +1,82 @@
+#!/usr/bin/python3 -I
+"""Explicitly seed RougarouOS GRUB defaults, preserving existing local files.
+
+The installer invokes this after target branding. Package installation and
+upgrades do not invoke it. This regenerates grub.cfg; it does not install a
+bootloader, change firmware entries, reboot, or change kernel arguments.
+"""
+import argparse
+import os
+from pathlib import Path
+import stat
+import subprocess
+import tempfile
+
+TEMPLATE = Path('/usr/share/rougarou/grub-defaults.cfg')
+DIRECTORY = Path('/etc/default/grub.d')
+CONFIGURATION = '50-rougarou.cfg'
+
+
+class GrubError(Exception):
+    pass
+
+
+def safe_directory(path, uid, *, create=False):
+    if create and not path.exists() and not path.is_symlink():
+        path.mkdir(mode=0o755)
+    info = path.lstat()
+    if not stat.S_ISDIR(info.st_mode) or info.st_uid != uid or info.st_mode & 0o022:
+        raise GrubError(f'Refusing unsafe GRUB configuration directory: {path}')
+
+
+def seed_defaults(directory=DIRECTORY, template=TEMPLATE, *, uid=0):
+    """Atomically create a missing defaults file; never replace an existing one."""
+    safe_directory(directory.parent, uid)
+    safe_directory(directory, uid, create=True)
+    target = directory / CONFIGURATION
+    try:
+        info = target.lstat()
+    except FileNotFoundError:
+        info = None
+    if info is not None:
+        if not stat.S_ISREG(info.st_mode) or info.st_uid != uid or info.st_nlink != 1 or info.st_mode & 0o022:
+            raise GrubError(f'Refusing unsafe GRUB configuration file: {target}')
+        return False
+    data = template.read_bytes()
+    if not data:
+        raise GrubError('Rougarou GRUB defaults template is empty')
+    descriptor, temporary = tempfile.mkstemp(prefix='.rougarou-grub-', dir=directory)
+    try:
+        with os.fdopen(descriptor, 'wb') as stream:
+            stream.write(data)
+            stream.flush()
+            os.fchmod(stream.fileno(), 0o644)
+            os.fsync(stream.fileno())
+        # link() installs the completed file without replacing a concurrent edit.
+        os.link(temporary, target, follow_symlinks=False)
+    finally:
+        os.unlink(temporary)
+    return True
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    action = parser.add_mutually_exclusive_group(required=True)
+    action.add_argument('--install-defaults', action='store_true', help='Seed missing Rougarou defaults and regenerate the installed boot menu')
+    action.add_argument('--refresh', action='store_true', help='Regenerate the boot menu using existing configuration only')
+    args = parser.parse_args()
+    try:
+        if os.geteuid() != 0:
+            raise GrubError('Run configure-grub as root')
+        if args.install_defaults:
+            changed = seed_defaults()
+            print('Rougarou GRUB defaults installed.' if changed else 'Existing Rougarou GRUB defaults preserved.')
+        subprocess.run(['/usr/sbin/update-grub'], check=True,
+                       env={'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LC_ALL': 'C'})
+        print('Installed boot menu regenerated. No reboot was requested.')
+    except (OSError, GrubError, subprocess.CalledProcessError) as error:
+        parser.exit(1, f'configure-grub: {error}\n')
+
+
+if __name__ == '__main__':
+    main()

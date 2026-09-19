@@ -1,0 +1,59 @@
+{
+  "clones": [
+    {
+      "base_version": "0.1.0~alpha8-1",
+      "clean_shutdown": true,
+      "explicit_sudo_authority": "headless",
+      "firmware": "bios",
+      "offline_container_payload_passed": true,
+      "operator_uid": 1000,
+      "podman_present": false,
+      "root_capacity_bytes": 12468432896,
+      "rootless_docker": {
+        "cgroup_driver": "systemd",
+        "rootless": true,
+        "server_version": "26.1.5+dfsg1",
+        "storage_driver": "overlay2"
+      },
+      "selection": {
+        "agent": "none",
+        "docker": "rootless",
+        "herdr": "false",
+        "podman": "false"
+      },
+      "source_policy": "installed updater source_policy accepted",
+      "ssh_key_login": true
+    },
+    {
+      "base_version": "0.1.0~alpha8-1",
+      "clean_shutdown": true,
+      "explicit_sudo_authority": "unprivileged",
+      "firmware": "uefi",
+      "offline_container_payload_passed": true,
+      "operator_uid": 1000,
+      "podman_present": false,
+      "root_capacity_bytes": 16694517760,
+      "rootless_docker": {
+        "cgroup_driver": "systemd",
+        "rootless": true,
+        "server_version": "26.1.5+dfsg1",
+        "storage_driver": "overlay2"
+      },
+      "selection": {
+        "agent": "none",
+        "docker": "rootless",
+        "herdr": "false",
+        "podman": "false"
+      },
+      "source_policy": "installed updater source_policy accepted",
+      "ssh_key_login": true
+    }
+  ],
+  "distinct_machine_identities": true,
+  "distinct_ssh_host_identities": true,
+  "ephemeral_test_identity_values_omitted": true,
+  "image_sha256": "54b4bb61b4a49b5e6a5440938561c27c1be84eeba5d29bea70daa5dfca3dae6c",
+  "image_unchanged": true,
+  "passed": true,
+  "schema": 1
+}

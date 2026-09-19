@@ -1,0 +1,10 @@
+# Rougarou OS terminal palette — The Architect's Grimoire.
+# Shared by the welcome. No desktop or theme-manager dependency.
+background = "#080F0B"
+foreground = "#DFE7DF"
+accent = "#79C58E"
+muted = "#A6B5AA"
+identity = "#086B35"
+surface = "#111C15"
+selection = "#243B2E"
+magic = "#A58ACB"

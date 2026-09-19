@@ -1,0 +1,10 @@
+PRETTY_NAME="Rougarou OS 0.1.0-alpha.8 (Debian 13)"
+NAME="Rougarou OS"
+ID=rougarou
+ID_LIKE=debian
+VERSION_ID="13"
+VERSION="13 (trixie); Rougarou 0.1.0-alpha.8"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL="13"
+ROUGAROU_VERSION="0.1.0-alpha.8"
+ANSI_COLOR="38;2;121;197;142"

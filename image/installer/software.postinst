@@ -1,0 +1,29 @@
+#!/bin/sh
+set -eu
+. /usr/share/debconf/confmodule
+db_capb backup
+db_settitle rougarou/software-title
+for question in agent docker podman herdr; do
+    db_input critical "rougarou/$question" || true
+done
+db_go || exit 10
+db_get rougarou/agent
+agent=$RET
+case "$agent" in none|codex|opencode|gemini|claude) ;; *) exit 1 ;; esac
+db_get rougarou/docker
+docker=$RET
+case "$docker" in none|rootless|system) ;; *) exit 1 ;; esac
+db_get rougarou/podman
+podman=$RET
+case "$podman" in true|false) ;; *) exit 1 ;; esac
+db_get rougarou/herdr
+herdr=$RET
+case "$herdr" in true|false) ;; *) exit 1 ;; esac
+# Record only completed choices. The late hook refuses a missing record;
+# template defaults alone do not authorize installing optional software.
+mkdir -p /run/rougarou
+umask 077
+record=/run/rougarou/software.next
+printf 'agent=%s\ndocker=%s\npodman=%s\nherdr=%s\n' \
+    "$agent" "$docker" "$podman" "$herdr" > "$record"
+mv "$record" /run/rougarou/software

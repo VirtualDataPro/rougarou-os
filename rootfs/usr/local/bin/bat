@@ -1,0 +1,3 @@
+#!/bin/sh
+# Debian names the executable batcat; keep the operator's portable bat command.
+exec /usr/bin/batcat "$@"

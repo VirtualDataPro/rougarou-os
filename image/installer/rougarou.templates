@@ -1,0 +1,124 @@
+Template: debian-installer/rougarou-welcome/title
+Type: text
+Description: Begin Rougarou installation
+
+Template: rougarou/welcome
+Type: note
+Description: ROUGAROU OS
+ A quiet server. A capable operator. AI within reach.
+ .
+ Set up your location, network and operator account.
+ Choose access permissions and optional tools, then review storage.
+ .
+ Debian server foundations and SSH are always installed.
+ You choose your AI agent and container tools; neither is required.
+ Connect GitHub and your AI provider after your first login.
+ .
+ Your shell is always available. Internet is optional for installation.
+
+Template: debian-installer/rougarou-access/title
+Type: text
+Description: Choose operator access
+
+Template: rougarou/operator-access
+Type: select
+Choices-C: headless, password
+Choices: Headless operator, Password sudo
+Default: headless
+Description: How should ${OPERATOR} administer this server?
+ Headless operator: sudo works without a password. This gives the operator
+ and any AI or program they run full root access to the server.
+ .
+ Password sudo: administrative commands require the operator's password.
+ Agents must ask you to authorize those commands.
+ .
+ SSH still requires authentication. Root SSH login stays disabled.
+ You can change this choice later with rougarou access.
+
+Template: rougarou/access-missing-owner
+Type: error
+Description: Create an operator account first
+ Rougarou needs a regular operator account for SSH, AI and administration.
+ Return to Set up users and passwords, then create the operator account.
+
+Template: rougarou/access-title
+Type: text
+Description: ROUGAROU OS / Operator access
+
+Template: debian-installer/rougarou-software/title
+Type: text
+Description: Choose agents and container tools
+
+Template: rougarou/software-title
+Type: text
+Description: ROUGAROU OS / Make it yours
+
+Template: rougarou/agent
+Type: select
+Choices-C: none, codex, opencode, gemini, claude
+Choices: None / bring your own, Codex, OpenCode (download after login), Gemini CLI, Claude Code (download after login)
+Default: none
+Description: Which AI agent should be installed?
+ Install only your chosen agent, or start with a plain server.
+ Codex and Gemini CLI can be installed offline from this image.
+ OpenCode and Claude Code use a verified download after your first login.
+ .
+ Connect your own account or provider after your first login.
+ You can add an agent later; your shell always works without one.
+
+Template: rougarou/docker
+Type: select
+Choices-C: none, rootless, system
+Choices: No Docker, Rootless Docker, System Docker
+Default: rootless
+Description: How should this server run Docker?
+ Rootless Docker runs under your operator account. Its tools are installed;
+ start the user service when ready with rougarou-docker setup.
+ .
+ System Docker enables a root-owned daemon. Use sudo docker to manage it;
+ the operator is not added to the privileged docker group.
+ .
+ Choose No Docker if you do not need it. Podman is a separate choice.
+
+Template: rougarou/podman
+Type: boolean
+Default: false
+Description: Install Podman?
+ Podman runs containers without a persistent Docker daemon.
+ Its rootless dependencies will be included. You can install it alongside
+ Docker, or use it on its own.
+
+Template: rougarou/herdr
+Type: boolean
+Default: false
+Description: Install Herdr for managing agent sessions?
+ Herdr is an optional terminal workspace for AI agents.
+ It is separate from your selected agent and starts only when you run it.
+
+Template: rougarou/stage-verify
+Type: text
+Description: Rougarou / 1 of 5 / Verifying installation media
+
+Template: rougarou/stage-unpack
+Type: text
+Description: Rougarou / 2 of 5 / Preparing signed offline packages
+
+Template: rougarou/stage-packages
+Type: text
+Description: Rougarou / 3 of 5 / Installing your selected tools
+
+Template: rougarou/stage-configure
+Type: text
+Description: Rougarou / 4 of 5 / Configuring your server and operator access
+
+Template: rougarou/stage-finish
+Type: text
+Description: Rougarou / 5 of 5 / Ready for your first login
+
+Template: rougarou/install-error
+Type: error
+Description: Rougarou could not finish installation
+ ${STAGE} failed. Your installation has not been marked complete.
+ .
+ Details are in /target/var/log/rougarou-install.log.
+ Return to the installer menu to inspect the failure before rebooting.

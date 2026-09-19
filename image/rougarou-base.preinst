@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+dpkg-maintscript-helper rm_conffile /etc/profile.d/rougarou-readline.sh 0.1.0~alpha4-5~ -- "$@"
+exit 0

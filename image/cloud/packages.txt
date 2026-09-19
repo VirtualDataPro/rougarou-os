@@ -1,0 +1,4 @@
+# Additional roots only for the cloud artifact; never added to ISO core.
+cloud-init
+cloud-initramfs-growroot
+cloud-guest-utils

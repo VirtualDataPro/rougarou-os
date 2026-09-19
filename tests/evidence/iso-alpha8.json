@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "release": "0.1.0-alpha.8",
+  "result": "PASS",
+  "artifact": {
+    "file": "rougarou-os-0.1.0-alpha.8-amd64.iso",
+    "sha256": "e6f014401a422970e843a0b02f335766b11b401ad340d1ed335c0f2995036ec3",
+    "bytes": 1353973760
+  },
+  "source_inputs_verified": 99,
+  "package_count": 277,
+  "package_lifecycle": "PASS",
+  "upgrade_preservation": {
+    "unmodified_configuration": "PASS",
+    "operator_modified_configuration": "PASS"
+  },
+  "custom_artifact_audit": {
+    "result": "PASS",
+    "rootfs_files_match": 44,
+    "codex_official_files_match": 44,
+    "package_hashes_match": 277,
+    "codex_flags_supported": true,
+    "herdr_official_binary_matches": true,
+    "herdr_dependency_sources_and_notices_match": 265,
+    "gemini_official_bundle_files_match": 451,
+    "gemini_dependency_sources_and_notices_match": 471,
+    "gemini_offline_package_metadata_matches": true,
+    "default_desktop_packages": false,
+    "credentials_or_machine_identity_in_custom_payload": false
+  },
+  "runtime_equivalence": {
+    "release": "0.1.0-alpha.8",
+    "result": "PASS",
+    "baseline_iso_sha256": "88f78a02338b0bf930dafc5c90d2fecdea873c5fd2bb7e42df0d2e5b3b8b5898",
+    "final_iso_sha256": "e6f014401a422970e843a0b02f335766b11b401ad340d1ed335c0f2995036ec3",
+    "final_iso_bytes": 1353973760,
+    "iso_entries_compared": 2305,
+    "path_types_and_modes_unchanged": true,
+    "runtime_byte_equivalent": true,
+    "installer_initrd_compressed_byte_equal": true,
+    "installer_initrd_decompressed_sha256": "2b017761800a57bc3cfe98ab71d6e3e6f9650484e79df5c954e88ff732927a7d",
+    "bootstrap_key_payload_byte_equal": true,
+    "repository_packages_byte_equal": 277,
+    "repository_package_indexes_byte_equal": true,
+    "cdebconf_udeb_sources_patches_and_build_tools_byte_equal": true,
+    "all_other_iso_entries_byte_equal": true,
+    "changed_iso_entries": [
+      "md5sum.txt",
+      "rougarou/SHA256SUMS",
+      "rougarou/build-manifest.json",
+      "rougarou/installer-manifest.json",
+      "rougarou/repo.tar",
+      "rougarou/sources/cdebconf/build.log",
+      "rougarou/sources/cdebconf/extract.log"
+    ],
+    "reviewed_metadata_changes": {
+      "build_inputs": [
+        "image/cloud/Dockerfile",
+        "scripts/cloud-image.py"
+      ],
+      "build_manifest": "Build timestamp, exactly two cloud build-source hashes, and frontend log hashes.",
+      "frontend_logs": "Same lines after normalizing generated temporary directory; parallel output order may differ.",
+      "installer_manifest": "Only the two generated build/extract log hashes.",
+      "repository": "Only Release Date/Valid-Until plus signatures; package indexes and package bytes unchanged.",
+      "checksum_indexes": "Recomputed for the reviewed metadata differences."
+    },
+    "native_media_audit": "PASS",
+    "native_artifact_audit": "PASS",
+    "fresh_original_media_boots": {
+      "iso_sha256": "e6f014401a422970e843a0b02f335766b11b401ad340d1ed335c0f2995036ec3",
+      "started_utc": "2026-09-19T19:04:30Z",
+      "tests": [
+        {
+          "name": "bios-release-iso-boot",
+          "passed": true,
+          "detail": "Original ISO menu, Rougarou welcome and native language choice visible over serial."
+        },
+        {
+          "name": "uefi-release-iso-boot",
+          "passed": true,
+          "detail": "Original ISO menu, Rougarou welcome and native language choice visible over serial."
+        }
+      ],
+      "scope": "Original final ISO boot-only verification after cloud build-source changes; no installed-system tests rerun here.",
+      "finished_utc": "2026-09-19T19:04:56Z"
+    },
+    "baseline_acceptance": {
+      "result": "PASS",
+      "checks": 9,
+      "iso_sha256": "88f78a02338b0bf930dafc5c90d2fecdea873c5fd2bb7e42df0d2e5b3b8b5898",
+      "install_seconds": {
+        "bios": 467,
+        "uefi": 501,
+        "bios-system": 416
+      },
+      "scope": "Three clean offline installations and installed-system checks, plus original BIOS/UEFI boots and unique installed identities."
+    },
+    "acceptance_reuse": "The nine-check installation result belongs to the baseline hash. It is carried forward only after exact runtime equivalence; full installations were not rerun on the final metadata-only rebuild. The exact final ISO received fresh original BIOS/UEFI boot and signed-media/artifact checks.",
+    "limitations": [
+      "No real provider authentication or model request.",
+      "No existing Proxmox VM modified.",
+      "Secure Boot and encrypted/manual partition variants were not tested.",
+      "Automated profile selections do not prove installer highlighted defaults."
+    ],
+    "raw_logs_included": false,
+    "personal_or_test_identity_values_included": false
+  },
+  "selected_profiles": {
+    "bios": {
+      "agent": "none",
+      "docker": "rootless",
+      "podman": false,
+      "herdr": false
+    },
+    "uefi": {
+      "agent": "codex",
+      "docker": "rootless",
+      "podman": true,
+      "herdr": true
+    },
+    "bios-system": {
+      "agent": "gemini",
+      "docker": "system",
+      "podman": false,
+      "herdr": false
+    }
+  },
+  "privacy": {
+    "raw_logs_included": false,
+    "operator_or_test_identity_values_included": false
+  }
+}

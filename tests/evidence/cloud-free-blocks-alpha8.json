@@ -1,0 +1,31 @@
+{
+  "release": "0.1.0-alpha.8",
+  "result": "PASS",
+  "artifact_sha256": "54b4bb61b4a49b5e6a5440938561c27c1be84eeba5d29bea70daa5dfca3dae6c",
+  "artifact_bytes": 1454637056,
+  "gpt_crc_verified": true,
+  "partition_bounds_verified": true,
+  "raw_bytes": 8589934592,
+  "raw_sha256": "2d0df003d71fc49e1f67ea2a3749fef524a6e4fbd50acb445901f119c6dba257",
+  "method": "Independent native libext2fs read-only allocation-map scan; 16 MiB bounded reads of every free root-filesystem block. Uninitialized block groups and implicit reserved metadata are handled by libext2fs.",
+  "allocation_library": "libext2fs 1.47.4",
+  "filesystem_open_read_only": true,
+  "raw_disk_open_read_only": true,
+  "journal_recovery_not_required": true,
+  "block_size": 4096,
+  "filesystem_blocks": 2064379,
+  "allocation_groups": 63,
+  "uninitialized_block_groups": 36,
+  "free_blocks_checked": 1492220,
+  "recorded_free_blocks": 1492220,
+  "free_bytes_checked": 6112133120,
+  "bounded_read_ranges": 3080,
+  "nonzero_free_blocks": 0,
+  "bitmap_count_matches_superblock": true,
+  "all_free_blocks_zero": true,
+  "limits": [
+    "Covers free blocks of the root ext4 filesystem. Allocated files, other partitions, and unallocated disk regions are covered by the separate whole-disk privacy scan.",
+    "This test is independent of the zeroing implementation and does not alter the disk."
+  ],
+  "private_values_included": false
+}

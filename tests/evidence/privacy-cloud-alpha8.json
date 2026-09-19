@@ -1,0 +1,72 @@
+{
+  "active_files_and_metadata": {
+    "archives_scanned": 9,
+    "bytes_scanned": 959541373,
+    "generic_pattern_matches_attributed_to_authenticated_upstream_content": true,
+    "members_scanned": 9517,
+    "operator_specific_identifier_matches": 0,
+    "scan_errors": 0
+  },
+  "artifact": {
+    "bytes": 1454637056,
+    "file": "rougarou-os-0.1.0-alpha.8-cloud-amd64.qcow2",
+    "sha256": "54b4bb61b4a49b5e6a5440938561c27c1be84eeba5d29bea70daa5dfca3dae6c",
+    "virtual_size": 8589934592
+  },
+  "build_identity": {
+    "cloud_instance_cache_absent": true,
+    "machine_id": "uninitialized",
+    "method": "read-only libguestfs appliance; final image never booted",
+    "operator_accounts_absent": true,
+    "passed": true,
+    "random_seed_absent": true,
+    "root_ssh_directory_absent": true,
+    "ssh_host_keys_absent": true
+  },
+  "build_manifest_sha256": "8cac4562ee7642b4d275a48b839365ded61a9396727ddd42f47bda7370f8b95b",
+  "complete_key_structures": {
+    "openssh": 0,
+    "packaged_gnutls_selftests": 8,
+    "unattributed": 0
+  },
+  "decoded_bytes_scanned": 8589934592,
+  "free_space_sealing": {
+    "filesystems": [
+      "/",
+      "/boot/efi"
+    ],
+    "method": "offline ext4 allocation-bitmap zerofree after unmount; FAT zero-free-space; standalone work disk before compression",
+    "upstream_modified": false
+  },
+  "generated_apt_archive": {
+    "members": 6,
+    "normalized_uid_gid_names_modes_times": true,
+    "pax_headers_absent": true
+  },
+  "method": "sealed image never booted; read-only filesystem export and full decoded virtual-disk scan; separately booted disposable clones",
+  "passed": true,
+  "public_archive_key_is_intentional": true,
+  "release_image_unchanged_after_inspection_and_tests": true,
+  "schema": 1,
+  "scope_limit": "Pattern scanning and identity checks do not classify upstream cryptographic self-tests as operator secrets. Signed upstream notices, contributor attribution, and generic network examples remain intact.",
+  "sealing_regression_sha256": "b444552991b85cab1cb1971f439601ae29415431ecd6619fdd92b44a22d717c2",
+  "token_shape_matches": {
+    "raw_occurrences": 34,
+    "unattributed_shapes": 0,
+    "unique_shapes_attributed_to_authenticated_packages": 5,
+    "unique_token_shapes": 5
+  },
+  "upstream_fixture_attribution": {
+    "file_sha256": "4b14edde42e7cbeefd8a6d88d035e096f2e6412a535388bb1d073a1c196e2822",
+    "package": "libgnutls30t64",
+    "package_sha256": "18a8bdfd91c7e3bcb01719d55a2b56849c7160b34f1f52b1c4fdfdd41bf1352b",
+    "path": "/usr/lib/x86_64-linux-gnu/libgnutls.so.30.40.3",
+    "version": "3.8.9-3+deb13u4"
+  },
+  "upstream_fixture_source": {
+    "file_sha256": "fce9355507865b53ba0b5c5587932b9d8519be2cd195650b0d9ff69ac2c335c7",
+    "path": "gnutls-3.8.9/lib/crypto-selftests-pk.c",
+    "source_package": "gnutls28",
+    "version": "3.8.9-3+deb13u4"
+  }
+}

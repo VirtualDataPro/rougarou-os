@@ -1,0 +1,23 @@
+#!/bin/sh
+# Restore only branding files that still equal the last applied template.
+# Operator edits, accounts, networking and package sources are untouched.
+set -e
+dpkg-maintscript-helper rm_conffile /etc/profile.d/rougarou-readline.sh 0.1.0~alpha4-5~ -- "$@"
+case "$1" in
+  remove|purge)
+    state=/var/lib/rougarou/branding
+    for name in issue motd os-release; do
+      if [ -f "$state/$name.applied" ] && cmp -s "/etc/$name" "$state/$name.applied"; then
+        rm -f "/etc/$name"
+        if [ -e "$state/$name.original" ] || [ -L "$state/$name.original" ]; then
+          cp -a "$state/$name.original" "/etc/$name"
+        fi
+      fi
+    done
+    if [ "$1" = purge ]; then
+      rm -rf "$state"
+      rm -f /usr/lib/os-release.debian
+    fi
+    ;;
+esac
+exit 0

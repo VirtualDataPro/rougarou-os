@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+. /usr/share/debconf/confmodule
+db_capb backup
+db_get passwd/username
+operator=$RET
+case "$operator" in
+  ''|root)
+    db_input critical rougarou/access-missing-owner || true
+    db_go || true
+    exit 1
+    ;;
+esac
+db_subst rougarou/operator-access OPERATOR "$operator"
+db_settitle rougarou/access-title
+db_input critical rougarou/operator-access || true
+db_go || exit 10
+db_get rougarou/operator-access
+case "$RET" in
+  headless|password) ;;
+  *) exit 1 ;;
+esac
+# Only this interactive component records consent. The late installation hook
+# must not infer headless consent from the template's default value alone.
+mkdir -p /run/rougarou
+umask 077
+printf '%s\n' "$operator" > /run/rougarou/operator
+printf '%s\n' "$RET" > /run/rougarou/operator-access

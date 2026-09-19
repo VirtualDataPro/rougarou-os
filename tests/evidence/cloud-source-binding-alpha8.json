@@ -1,0 +1,2737 @@
+{
+  "schema": 1,
+  "release": "0.1.0-alpha.8",
+  "result": "PASS",
+  "cloud_sha256": "54b4bb61b4a49b5e6a5440938561c27c1be84eeba5d29bea70daa5dfca3dae6c",
+  "package_manifest_sha256": "16a26dd2f0d174d7828bbb091848536930a92dfc6a61c087e019c8b36e1421d6",
+  "repository_packages_sha256": "8527d8043fadbd533e2a8d66fb5c6c3fbb3ea06bec490d0d73987431bba13c47",
+  "source_bundle_manifest_sha256": "3bfd7e0ef5503245c1ad1c81bf4a4398be58daf449c38e6c019865bbf62e1311",
+  "installed_packages": 389,
+  "all_installed_versions_in_signed_repository": true,
+  "all_debian_sources_retained": true,
+  "coverage": [
+    {
+      "package": "adduser",
+      "version": "3.152",
+      "binary_sha256": "e50984d2e1ef6300e3fd51303839842189a077b10cb5cadff1923df10c61c493",
+      "source_package": "adduser",
+      "source_version": "3.152"
+    },
+    {
+      "package": "apparmor",
+      "version": "4.1.0-1",
+      "binary_sha256": "a08bf026cde3895f76d27cb5f9ba3d31d0ecf8b5b00cab9b70edaa7473d4b0a1",
+      "source_package": "apparmor",
+      "source_version": "4.1.0-1"
+    },
+    {
+      "package": "apt",
+      "version": "3.0.3",
+      "binary_sha256": "55e341fbe92d7502c98faf1b3c235393ea0744db119cf2173603e965b658aef4",
+      "source_package": "apt",
+      "source_version": "3.0.3"
+    },
+    {
+      "package": "apt-listchanges",
+      "version": "4.8",
+      "binary_sha256": "859048bdf17193912002ed5f131a229899f866af9ef45233d21da701aad91e47",
+      "source_package": "apt-listchanges",
+      "source_version": "4.8"
+    },
+    {
+      "package": "apt-utils",
+      "version": "3.0.3",
+      "binary_sha256": "679daae89a4f3a514e17de6efb7a6125fd727eb4999cdbaeacd8bab118b8ee69",
+      "source_package": "apt",
+      "source_version": "3.0.3"
+    },
+    {
+      "package": "base-files",
+      "version": "13.8+deb13u7",
+      "binary_sha256": "fcd42bb5cb63f7bfc4326a92541247872206d60a192fdff65ca14eb83ed408b9",
+      "source_package": "base-files",
+      "source_version": "13.8+deb13u7"
+    },
+    {
+      "package": "base-passwd",
+      "version": "3.6.7",
+      "binary_sha256": "cf31c6956ab5f65815d9d9ea1615c4f78ecd2893c31119658248a4756cee83e7",
+      "source_package": "base-passwd",
+      "source_version": "3.6.7"
+    },
+    {
+      "package": "bash",
+      "version": "5.2.37-2+b10",
+      "binary_sha256": "2fd7b04f1b7caa29c4e683f5216e6af354a41e3cdcf6e75394d7cda680f9ab82",
+      "source_package": "bash",
+      "source_version": "5.2.37-2"
+    },
+    {
+      "package": "bash-completion",
+      "version": "1:2.16.0-7",
+      "binary_sha256": "e94b49cbfeccbf620effb20f4e9968bbbe6a5acbe0a5d7140ba394249060464a",
+      "source_package": "bash-completion",
+      "source_version": "1:2.16.0-7"
+    },
+    {
+      "package": "bat",
+      "version": "0.25.0-2+b2",
+      "binary_sha256": "c9b07d62cc707253576f2ac3da2b2f625fe4b0be4812b7aa5dd7564f045fca70",
+      "source_package": "rust-bat",
+      "source_version": "0.25.0-2"
+    },
+    {
+      "package": "bind9-dnsutils",
+      "version": "1:9.20.29-1~deb13u1",
+      "binary_sha256": "8b65cffec2f183ccbd6d73ee7cac852ae70172493d23dc14defad2c54e3faab8",
+      "source_package": "bind9",
+      "source_version": "1:9.20.29-1~deb13u1"
+    },
+    {
+      "package": "bind9-host",
+      "version": "1:9.20.29-1~deb13u1",
+      "binary_sha256": "80f7933cb9e699f5f67e569be28a80fc804fd89f599fce06da217ca4cc0fe7c8",
+      "source_package": "bind9",
+      "source_version": "1:9.20.29-1~deb13u1"
+    },
+    {
+      "package": "bind9-libs",
+      "version": "1:9.20.29-1~deb13u1",
+      "binary_sha256": "9c28709dd3d9ca54cec00855b79fbd6e8181e8d062c024fe52aa4c03d2ed5cf4",
+      "source_package": "bind9",
+      "source_version": "1:9.20.29-1~deb13u1"
+    },
+    {
+      "package": "bind9-utils",
+      "version": "1:9.20.29-1~deb13u1",
+      "binary_sha256": "6f53cd1af8adfeb557dc21386e09c66589cc31794ae36ad70a5c12de8b1fffc6",
+      "source_package": "bind9",
+      "source_version": "1:9.20.29-1~deb13u1"
+    },
+    {
+      "package": "bsdextrautils",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "bf9888552d2f5dac61a3d434252af30a7619bfad1152d2a3c73bcf4b3be74526",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "binary_sha256": "d935a5102752a1108bdf1e815c89a84ac88d1949bf049a784178f946a09b14da",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "ca-certificates",
+      "version": "20250419",
+      "binary_sha256": "ef590f89563aa4b46c8260d49d1cea0fc1b181d19e8df3782694706adf05c184",
+      "source_package": "ca-certificates",
+      "source_version": "20250419"
+    },
+    {
+      "package": "cloud-guest-utils",
+      "version": "0.33-1",
+      "binary_sha256": "d41d092d2bbf1edc6f44f3999f62f1cca7ec79e149e684c2bb86fb9765638c11",
+      "source_package": "cloud-utils",
+      "source_version": "0.33-1"
+    },
+    {
+      "package": "cloud-image-utils",
+      "version": "0.33-1",
+      "binary_sha256": "d67cfd0a74f9ef6bfd3b386a957a22fa7aa29e589ff0714e31ddd2df28a97254",
+      "source_package": "cloud-utils",
+      "source_version": "0.33-1"
+    },
+    {
+      "package": "cloud-init",
+      "version": "25.1.4-1+deb13u1",
+      "binary_sha256": "1b120a44110e7234c9cf9ccde78fb5d5ea1292c94ef0ca70d09a580f72980df3",
+      "source_package": "cloud-init",
+      "source_version": "25.1.4-1+deb13u1"
+    },
+    {
+      "package": "cloud-initramfs-growroot",
+      "version": "0.18.debian14",
+      "binary_sha256": "4c61d9f5894e11ebcc02e243a4ab05143359ce2e484affafbbcbf7a479c226cc",
+      "source_package": "cloud-initramfs-tools",
+      "source_version": "0.18.debian14"
+    },
+    {
+      "package": "cloud-utils",
+      "version": "0.33-1",
+      "binary_sha256": "7f230b541109e699e15e0ef7b97e49c06144eab5323904553277e5e9d3b515db",
+      "source_package": "cloud-utils",
+      "source_version": "0.33-1"
+    },
+    {
+      "package": "containerd",
+      "version": "1.7.24~ds1-6+deb13u1",
+      "binary_sha256": "ed708deb96fe476a3bce4efa5c0538dfbcf717ab9a7c7944ba7260342c25899c",
+      "source_package": "containerd",
+      "source_version": "1.7.24~ds1-6+deb13u1"
+    },
+    {
+      "package": "coreutils",
+      "version": "9.7-3",
+      "binary_sha256": "1299ab6f9389a288eb2f5f3dd222c26cc777b9a2d5ecb6ee4cbd340cebcdada2",
+      "source_package": "coreutils",
+      "source_version": "9.7-3"
+    },
+    {
+      "package": "cpio",
+      "version": "2.15+dfsg-2",
+      "binary_sha256": "d8faece250bcf72e91ac15a5fef198be173af18c9f48bae257e7ee937fbc6cdc",
+      "source_package": "cpio",
+      "source_version": "2.15+dfsg-2"
+    },
+    {
+      "package": "curl",
+      "version": "8.14.1-2+deb13u5",
+      "binary_sha256": "ebb7e0cbe30ad23bce0d28a848ccfeb9b73b82817eb4fe12fa20d2845f62dc73",
+      "source_package": "curl",
+      "source_version": "8.14.1-2+deb13u5"
+    },
+    {
+      "package": "dash",
+      "version": "0.5.12-12",
+      "binary_sha256": "a8902cb6d8650134764a25fb80aec8589d858ef71ece1680a62e84816c37bb04",
+      "source_package": "dash",
+      "source_version": "0.5.12-12"
+    },
+    {
+      "package": "dbus",
+      "version": "1.16.2-2",
+      "binary_sha256": "f5c47639614324dac9a4c0baf5081676f698f815dd846060952b1d2e6e50f274",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "dbus-bin",
+      "version": "1.16.2-2",
+      "binary_sha256": "a7c0785f89d3763bb83e2912237135a7d1c610e06f487c39b1d6408e88d46fb5",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "dbus-daemon",
+      "version": "1.16.2-2",
+      "binary_sha256": "c91558cbd019bd5ec3e9fde0084976d5f61977f4ef0a9ed1ff48fe3a129b91d4",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "dbus-session-bus-common",
+      "version": "1.16.2-2",
+      "binary_sha256": "98bd27836c7170839ed9c84b00daad9ed7155bd3d42e3f0ec3faf497aafa5f5f",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "dbus-system-bus-common",
+      "version": "1.16.2-2",
+      "binary_sha256": "262e9ec8aae4e38bfa341648f9498b29280a81458601e1c265a36a24771d120a",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "dbus-user-session",
+      "version": "1.16.2-2",
+      "binary_sha256": "0f9aa775a708b28b1a3ad784e9d1f0c96227521bc29e99ddbfe05ff008b5d246",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "debconf",
+      "version": "1.5.91",
+      "binary_sha256": "1ddc7e6c5925f748eefb7ca811d98e049f18c158bb21fbc7e122262ce6011e49",
+      "source_package": "debconf",
+      "source_version": "1.5.91"
+    },
+    {
+      "package": "debian-archive-keyring",
+      "version": "2025.1",
+      "binary_sha256": "9ea7778e443144ca490668737a8ab22dd3e748bb99e805e22ec055abeb3c7fac",
+      "source_package": "debian-archive-keyring",
+      "source_version": "2025.1"
+    },
+    {
+      "package": "debianutils",
+      "version": "5.23.2",
+      "binary_sha256": "720e43fda316676076498b4224ad3318049deafe60cc7c601011048de03ee97d",
+      "source_package": "debianutils",
+      "source_version": "5.23.2"
+    },
+    {
+      "package": "dhcpcd-base",
+      "version": "1:10.1.0-11+deb13u4",
+      "binary_sha256": "5226a1743fdee8d1c48c4640941f014eed6ddd3f87d0e3a8f48a4e07a7eaa062",
+      "source_package": "dhcpcd",
+      "source_version": "1:10.1.0-11+deb13u4"
+    },
+    {
+      "package": "dialog",
+      "version": "1.3-20250116-1",
+      "binary_sha256": "31a7870a8906b2bbe90b4aaf09cf2eaa18dbd4939941902ca26f78b799dfa4b9",
+      "source_package": "dialog",
+      "source_version": "1.3-20250116-1"
+    },
+    {
+      "package": "diffutils",
+      "version": "1:3.10-4",
+      "binary_sha256": "d3412669f7ae53ba895c3a509620ea7494ec1a36faa204c5215442ced381a479",
+      "source_package": "diffutils",
+      "source_version": "1:3.10-4"
+    },
+    {
+      "package": "dirmngr",
+      "version": "2.4.7-21+deb13u1+b5",
+      "binary_sha256": "385b4689f43678dbd097ada002ec19733179777ac2a6c0229ae292cae17f0833",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "distro-info-data",
+      "version": "0.66+deb13u2",
+      "binary_sha256": "91bf35d6efa2a12e0d81abea1819e87fef2d292899f41c40a7ee1085e92cba60",
+      "source_package": "distro-info-data",
+      "source_version": "0.66+deb13u2"
+    },
+    {
+      "package": "dmsetup",
+      "version": "2:1.02.205-2",
+      "binary_sha256": "4771f7ab0a907a8e5d02a6358ff016ae7cb49124906bada02fa882e141b615a0",
+      "source_package": "lvm2",
+      "source_version": "2.03.31-2"
+    },
+    {
+      "package": "docker-cli",
+      "version": "26.1.5+dfsg1-9+deb13u1",
+      "binary_sha256": "e78ac35b7a21652546ca1a739f63e4f31fe52e4385a9baf7020be400c594f23d",
+      "source_package": "docker.io",
+      "source_version": "26.1.5+dfsg1-9+deb13u1"
+    },
+    {
+      "package": "docker.io",
+      "version": "26.1.5+dfsg1-9+deb13u1",
+      "binary_sha256": "142fe32f839a20720b2e6074b8d28d883b01bc45345f7315586b0c2d348dae87",
+      "source_package": "docker.io",
+      "source_version": "26.1.5+dfsg1-9+deb13u1"
+    },
+    {
+      "package": "dosfstools",
+      "version": "4.2-1.2",
+      "binary_sha256": "628551496a02e80eee83054b9c696b06ba8177159bf0afe9a5b4ab2fb94b1b41",
+      "source_package": "dosfstools",
+      "source_version": "4.2-1.2"
+    },
+    {
+      "package": "dpkg",
+      "version": "1.22.22",
+      "binary_sha256": "3e800c6d75e8e709007ed1c356e5fa8509a75c1694fb0a1183709abc9cfdc1f3",
+      "source_package": "dpkg",
+      "source_version": "1.22.22"
+    },
+    {
+      "package": "dracut-install",
+      "version": "106-6",
+      "binary_sha256": "5ef87c15510db933d4ec7617b88012b436b0ebfc248e4c7d3b6baf9aa5acbc76",
+      "source_package": "dracut",
+      "source_version": "106-6"
+    },
+    {
+      "package": "e2fsprogs",
+      "version": "1.47.2-3+b12",
+      "binary_sha256": "e9e638eb3e22b5f14d01ce0b28aa512a5a22fcc0e70d1c733444579b67ea236b",
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.2-3"
+    },
+    {
+      "package": "eject",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "23c6090b3b65de7c25c26ec425868dc86c3b2f1bd8f4205a6059a6a43f5944c2",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "ethtool",
+      "version": "1:6.14.2-1",
+      "binary_sha256": "5c592ac6e65c3863c5ba9c9b8380f913a35f39803aa89ccc59c11c5c953a46ef",
+      "source_package": "ethtool",
+      "source_version": "1:6.14.2-1"
+    },
+    {
+      "package": "eza",
+      "version": "0.21.0-1+b1",
+      "binary_sha256": "dc438ba185af32588fe4105d4f57795f200e8247e0238ebd3402abea4e7aa06d",
+      "source_package": "rust-eza",
+      "source_version": "0.21.0-1"
+    },
+    {
+      "package": "fdisk",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "7f37094ca3f63c3a07b4431532b0bcc4aa64291e75c48cabebf41bf42ad706b1",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "file",
+      "version": "1:5.46-5",
+      "binary_sha256": "5b980b02a7d91aab9cb50c65ac7e059678a36d36ed626ec52506442f4501a1a7",
+      "source_package": "file",
+      "source_version": "1:5.46-5"
+    },
+    {
+      "package": "findutils",
+      "version": "4.10.0-3",
+      "binary_sha256": "3edf02b016456b6a98cefdbab99c5ce6f829b786f63affe970badea221aecfc7",
+      "source_package": "findutils",
+      "source_version": "4.10.0-3"
+    },
+    {
+      "package": "fuse-overlayfs",
+      "version": "1.14-1+b1",
+      "binary_sha256": "e796f6f3c6b7dbef0df283f0a7c277d60a97db0e50665199dafbd2e3733ccae0",
+      "source_package": "fuse-overlayfs",
+      "source_version": "1.14-1"
+    },
+    {
+      "package": "fuse3",
+      "version": "3.17.2-3",
+      "binary_sha256": "4866550a235224b538a66fcaf95c8a796b6968d21c6f231086e142350b302eea",
+      "source_package": "fuse3",
+      "source_version": "3.17.2-3"
+    },
+    {
+      "package": "fzf",
+      "version": "0.60.3-1+b2",
+      "binary_sha256": "51624b9176ab3f5cebbca7329efd74240bfa8a079b9d24953dee8d4cd352b3f5",
+      "source_package": "fzf",
+      "source_version": "0.60.3-1"
+    },
+    {
+      "package": "gcc-14-base",
+      "version": "14.2.0-19",
+      "binary_sha256": "5b6825de4263824b78c4c51f6476414f3b4e89c2ab63e81dc8b9b5501e867cf6",
+      "source_package": "gcc-14",
+      "source_version": "14.2.0-19"
+    },
+    {
+      "package": "gdisk",
+      "version": "1.0.10-2",
+      "binary_sha256": "a64944b38e8477bf23b9a0ffb6fc653c8847facb1f851864b1a5c40a931456d2",
+      "source_package": "gdisk",
+      "source_version": "1.0.10-2"
+    },
+    {
+      "package": "genisoimage",
+      "version": "9:1.1.11-4",
+      "binary_sha256": "e6dc605d0ef3fc375d6cc96c16af32b48a1053e2f08db769d3483d3c7fdb6884",
+      "source_package": "cdrkit",
+      "source_version": "9:1.1.11-4"
+    },
+    {
+      "package": "gettext-base",
+      "version": "0.23.1-2",
+      "binary_sha256": "1a3dfadd661520ff01d379fd89cd0d49972a5a775d490609f1712134ee3d62ca",
+      "source_package": "gettext",
+      "source_version": "0.23.1-2"
+    },
+    {
+      "package": "gh",
+      "version": "2.46.0-3",
+      "binary_sha256": "4af2d243a11c94ade52aa2e66bb28d8a048fc05f95e2f7cb0e0ecad2343ea872",
+      "source_package": "gh",
+      "source_version": "2.46.0-3"
+    },
+    {
+      "package": "git",
+      "version": "1:2.47.3-0+deb13u1",
+      "binary_sha256": "3e35662fd5c46add561703e54031a1d8ad9df45811927689f0a51122b13be722",
+      "source_package": "git",
+      "source_version": "1:2.47.3-0+deb13u1"
+    },
+    {
+      "package": "git-man",
+      "version": "1:2.47.3-0+deb13u1",
+      "binary_sha256": "b58306b60e1dff920e1e18bc7e1e499f2ef75184190ab3d98657b165969bf7c9",
+      "source_package": "git",
+      "source_version": "1:2.47.3-0+deb13u1"
+    },
+    {
+      "package": "gnupg",
+      "version": "2.4.7-21+deb13u1",
+      "binary_sha256": "e68f0fd24a7a62f1112ae3e442564e134f21040492f11d1aefa7b18de93ebf6e",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "gnupg-l10n",
+      "version": "2.4.7-21+deb13u1",
+      "binary_sha256": "65c0b5b06123f81f08cfa9b0be313cbc9cf6255c550d70eabd8b175ce8928a35",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "gpg",
+      "version": "2.4.7-21+deb13u1+b5",
+      "binary_sha256": "3aeedf3d223e5e6aff08f03227af6ce308f4317472609f383350fd2ec20d33ae",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "gpg-agent",
+      "version": "2.4.7-21+deb13u1+b5",
+      "binary_sha256": "ebc440c05dd5c5ba35f0b0035d7653866ce26c47c826ffbb5a3440773f28da03",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "gpgconf",
+      "version": "2.4.7-21+deb13u1+b5",
+      "binary_sha256": "14668f3f4847d2544bdff03c2ca8dbdd2fe0ad1bc7ded00941db291954c60f1b",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "gpgsm",
+      "version": "2.4.7-21+deb13u1+b5",
+      "binary_sha256": "092f4675a1810ca7b51a1d53595f9e0c3ab65210c15805749e91030769e2301b",
+      "source_package": "gnupg2",
+      "source_version": "2.4.7-21+deb13u1"
+    },
+    {
+      "package": "grep",
+      "version": "3.11-4",
+      "binary_sha256": "2d78ed07d86a530ebf538f05cb2415f37c8daf908596bc32fc2563cc7e88c55a",
+      "source_package": "grep",
+      "source_version": "3.11-4"
+    },
+    {
+      "package": "groff-base",
+      "version": "1.23.0-9",
+      "binary_sha256": "cb13bd856be0837d683377d618f2c0cc9b56b4abb2a821aafe33baf2b8ac215c",
+      "source_package": "groff",
+      "source_version": "1.23.0-9"
+    },
+    {
+      "package": "grub-cloud-amd64",
+      "version": "0.1.1",
+      "binary_sha256": "02756786a9f097101c2442f42fb06dfb81ab1d63f50c09471ad21926b73b94c4",
+      "source_package": "grub-cloud",
+      "source_version": "0.1.1"
+    },
+    {
+      "package": "grub-common",
+      "version": "2.12-9+deb13u2",
+      "binary_sha256": "a59d34a52e98450165ffc05b75886e139ad77b9d851d25b11eaa973cbdcb3bdd",
+      "source_package": "grub2",
+      "source_version": "2.12-9+deb13u2"
+    },
+    {
+      "package": "grub-efi-amd64-bin",
+      "version": "2.12-9+deb13u2",
+      "binary_sha256": "d486d62c83aa197f83c1dd0560ffd96d91c896f4d58485164eb7e1623e7bfde2",
+      "source_package": "grub2",
+      "source_version": "2.12-9+deb13u2"
+    },
+    {
+      "package": "grub-efi-amd64-signed",
+      "version": "1+2.12+9+deb13u2",
+      "binary_sha256": "da8bb31308a3682a7d9343fc42bf7f603ad85bb5483eeb3ece23e2f1be2e9bbd",
+      "source_package": "grub-efi-amd64-signed",
+      "source_version": "1+2.12+9+deb13u2"
+    },
+    {
+      "package": "grub-efi-amd64-unsigned",
+      "version": "2.12-9+deb13u2",
+      "binary_sha256": "f30a4ab589f70af74bea89df37f538ad2faa7c6c41b2e7fa3b54a8fb81bf4193",
+      "source_package": "grub2",
+      "source_version": "2.12-9+deb13u2"
+    },
+    {
+      "package": "grub-pc-bin",
+      "version": "2.12-9+deb13u2",
+      "binary_sha256": "ebeaa7a12f6a96127dec15d2a64a6d3d8278b9a8bc5531185d990e1c97a4728d",
+      "source_package": "grub2",
+      "source_version": "2.12-9+deb13u2"
+    },
+    {
+      "package": "grub2-common",
+      "version": "2.12-9+deb13u2",
+      "binary_sha256": "0eeac6998ef810a67ecd6bef103bc4005e2b3559a99ee0e06483f3b6a473ad1f",
+      "source_package": "grub2",
+      "source_version": "2.12-9+deb13u2"
+    },
+    {
+      "package": "gzip",
+      "version": "1.13-1+deb13u1",
+      "binary_sha256": "74cf12212beee4ab8d473bdc0107abf9e8cef737492198e2f4944a19f142b0ac",
+      "source_package": "gzip",
+      "source_version": "1.13-1+deb13u1"
+    },
+    {
+      "package": "hostname",
+      "version": "3.25",
+      "binary_sha256": "9c2a27e5d4d87137211fe46631b05b2ee8892ec76aae926304e4485ba02e1015",
+      "source_package": "hostname",
+      "source_version": "3.25"
+    },
+    {
+      "package": "htop",
+      "version": "3.4.1-5",
+      "binary_sha256": "42725cc15e215e9286bf169fe734fbf47826dae209f319f6d0370cb950112fbf",
+      "source_package": "htop",
+      "source_version": "3.4.1-5"
+    },
+    {
+      "package": "init",
+      "version": "1.69~deb13u1",
+      "binary_sha256": "159ed19fb67055f2337c23cf92d6e29040dc969742e8b52fb5fd1b9033a6cce6",
+      "source_package": "init-system-helpers",
+      "source_version": "1.69~deb13u1"
+    },
+    {
+      "package": "init-system-helpers",
+      "version": "1.69~deb13u1",
+      "binary_sha256": "addf78073e1cbc5a5508937e11d2571055e29835e00ee8fab52a66775649378f",
+      "source_package": "init-system-helpers",
+      "source_version": "1.69~deb13u1"
+    },
+    {
+      "package": "initramfs-tools",
+      "version": "0.148.4",
+      "binary_sha256": "4c65a6c385a3815aa65706066ae3a35395bf4ae7e13c9d4df4c655bd1d1ef956",
+      "source_package": "initramfs-tools",
+      "source_version": "0.148.4"
+    },
+    {
+      "package": "initramfs-tools-bin",
+      "version": "0.148.4",
+      "binary_sha256": "e4cbca64522133f8a9e23810029b217f496a40dc6d98a6082fc2eece8a95d69b",
+      "source_package": "initramfs-tools",
+      "source_version": "0.148.4"
+    },
+    {
+      "package": "initramfs-tools-core",
+      "version": "0.148.4",
+      "binary_sha256": "03cb11b8acd188e3b441526698536694f515ea6f2f5a20aef5ae70e5eb485a7a",
+      "source_package": "initramfs-tools",
+      "source_version": "0.148.4"
+    },
+    {
+      "package": "iproute2",
+      "version": "6.15.0-1",
+      "binary_sha256": "7b2dcade4a83ded723fcab21c5a53c47f29352c9c5e1661a089a1e481b3fb48a",
+      "source_package": "iproute2",
+      "source_version": "6.15.0-1"
+    },
+    {
+      "package": "iptables",
+      "version": "1.8.11-2",
+      "binary_sha256": "95ba166bb68a76ca1513196dd59d91e3c33b2096884c6de80406f302b18a030e",
+      "source_package": "iptables",
+      "source_version": "1.8.11-2"
+    },
+    {
+      "package": "iputils-ping",
+      "version": "3:20240905-3",
+      "binary_sha256": "a78f6118527796bde8c34d410dda1e5457f4e4e2de080a0b852cd59d7058ef6f",
+      "source_package": "iputils",
+      "source_version": "3:20240905-3"
+    },
+    {
+      "package": "jq",
+      "version": "1.7.1-6+deb13u3",
+      "binary_sha256": "4415dc18d4ea29d8e12d410dd8c71c567d44d8ec5e24afaed3aa7a149b063643",
+      "source_package": "jq",
+      "source_version": "1.7.1-6+deb13u3"
+    },
+    {
+      "package": "klibc-utils",
+      "version": "2.0.14-1",
+      "binary_sha256": "6d4d6b154f3147771709e47ac2fca84c38d9bd57407cf0bc1f806f9fc082b9fc",
+      "source_package": "klibc",
+      "source_version": "2.0.14-1"
+    },
+    {
+      "package": "kmod",
+      "version": "34.2-2",
+      "binary_sha256": "d56f9311beb17cd15447d11d91fd4de94d23a47d4619e8806b1b807b40c72e53",
+      "source_package": "kmod",
+      "source_version": "34.2-2"
+    },
+    {
+      "package": "less",
+      "version": "668-1",
+      "binary_sha256": "ba3c216e68298a2d375d4e386baa935e245f0f23ddb74502b12582f8de061d4f",
+      "source_package": "less",
+      "source_version": "668-1"
+    },
+    {
+      "package": "libacl1",
+      "version": "2.3.2-2+b1",
+      "binary_sha256": "08074f01e384bc07c0c2d79a58cf4a6523f71cf75d1808101c79617656c9a39d",
+      "source_package": "acl",
+      "source_version": "2.3.2-2"
+    },
+    {
+      "package": "libaio1t64",
+      "version": "0.3.113-8+b1",
+      "binary_sha256": "490c8a2d116001a5f3b0a6d7a7aabf6a7b629366590dc5c3f75b078e931dd129",
+      "source_package": "libaio",
+      "source_version": "0.3.113-8"
+    },
+    {
+      "package": "libapparmor1",
+      "version": "4.1.0-1",
+      "binary_sha256": "4158976c77038b93021967f425b4cc505df18c4f5e3f444732399e7ed4af4419",
+      "source_package": "apparmor",
+      "source_version": "4.1.0-1"
+    },
+    {
+      "package": "libapt-pkg7.0",
+      "version": "3.0.3",
+      "binary_sha256": "fdcc9f780c7de466c7f0038e6e242c73cb63c8f9fe2781a3185a2c810984ab0a",
+      "source_package": "apt",
+      "source_version": "3.0.3"
+    },
+    {
+      "package": "libassuan9",
+      "version": "3.0.2-2",
+      "binary_sha256": "9d78ef8f016e7f24b5e20d1ce91939fe0f1f897e5f9059793201e930ded7eb8e",
+      "source_package": "libassuan",
+      "source_version": "3.0.2-2"
+    },
+    {
+      "package": "libatomic1",
+      "version": "14.2.0-19",
+      "binary_sha256": "212b399aae2f7299203d261a57e49372e09565a9a5ea971905f94a3960366c05",
+      "source_package": "gcc-14",
+      "source_version": "14.2.0-19"
+    },
+    {
+      "package": "libattr1",
+      "version": "1:2.5.2-3",
+      "binary_sha256": "606b5ee12ea2786be607a17f40c1fb5e65c76ceaff66665bdf8f8c6c1b71d1fb",
+      "source_package": "attr",
+      "source_version": "1:2.5.2-3"
+    },
+    {
+      "package": "libaudit-common",
+      "version": "1:4.0.2-2+deb13u1",
+      "binary_sha256": "b9d32e5ff04fd747aacb7d6b3ebbbbf734ddefb2f1695f0b1b2a4b5e51b1052e",
+      "source_package": "audit",
+      "source_version": "1:4.0.2-2+deb13u1"
+    },
+    {
+      "package": "libaudit1",
+      "version": "1:4.0.2-2+deb13u1",
+      "binary_sha256": "3d1dd3f031a56f01b747e2acc0e14575212580e6fa63d800c44cb0a31f1edfd7",
+      "source_package": "audit",
+      "source_version": "1:4.0.2-2+deb13u1"
+    },
+    {
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "81535f3c2c0efc732965907c8749103a0a26377c761622c9ce39b4c92dcde52f",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "libbpf1",
+      "version": "1:1.5.0-3",
+      "binary_sha256": "04c96ead3024888d80d08c8d08cc8cf4589f4614627acc69519f87ffb5adc1c2",
+      "source_package": "libbpf",
+      "source_version": "1.5.0-3"
+    },
+    {
+      "package": "libbrotli1",
+      "version": "1.1.0-2+b7",
+      "binary_sha256": "0fb79f88db210afbd69282ab9649e525f393ec6950ca34da1a6b359250b8d7db",
+      "source_package": "brotli",
+      "source_version": "1.1.0-2"
+    },
+    {
+      "package": "libbsd0",
+      "version": "0.12.2-2",
+      "binary_sha256": "e5a85986fa6bec3307ab1bc860736b478b331882bc45e17675a7bdf88eecb43a",
+      "source_package": "libbsd",
+      "source_version": "0.12.2-2"
+    },
+    {
+      "package": "libbz2-1.0",
+      "version": "1.0.8-6",
+      "binary_sha256": "cba4cda04244b5e481bb15524bc3c983a7d1b6f330013b9b381706a2fcb65310",
+      "source_package": "bzip2",
+      "source_version": "1.0.8-6"
+    },
+    {
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "binary_sha256": "dc8c79647fe3a5f37f72a400414f70263d0212f010ff2c09f990e30d91e38d1c",
+      "source_package": "glibc",
+      "source_version": "2.41-12+deb13u4"
+    },
+    {
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "binary_sha256": "dbaa885f5504c67fe43c079f76e2b2b39fcf647ae39880aab3dd66e48f5e772d",
+      "source_package": "glibc",
+      "source_version": "2.41-12+deb13u4"
+    },
+    {
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "binary_sha256": "967aa62605721081c3eb2a17650611a792aa802d76a6511d1840242623d204c9",
+      "source_package": "glibc",
+      "source_version": "2.41-12+deb13u4"
+    },
+    {
+      "package": "libcap-ng0",
+      "version": "0.8.5-4+b1",
+      "binary_sha256": "20a9e4b0619a3eb2566338223bed135dde5a601eaa2f8fdd5f20b94506addcac",
+      "source_package": "libcap-ng",
+      "source_version": "0.8.5-4"
+    },
+    {
+      "package": "libcap2",
+      "version": "1:2.75-10+deb13u1+b3",
+      "binary_sha256": "89fc4d34fc7a28ad6f0fcd0c561ab253b9dedf6f77f5a000b47c276c8295bf67",
+      "source_package": "libcap2",
+      "source_version": "1:2.75-10+deb13u1"
+    },
+    {
+      "package": "libcap2-bin",
+      "version": "1:2.75-10+deb13u1+b3",
+      "binary_sha256": "6404b8ee315ce3eb8e273981650e419ff0e91aed5213d4975a6895f98944ea80",
+      "source_package": "libcap2",
+      "source_version": "1:2.75-10+deb13u1"
+    },
+    {
+      "package": "libcbor0.10",
+      "version": "0.10.2-2",
+      "binary_sha256": "2457686e375dcb7567ba01da6638a0711e2a55725d084d65de44dd11bb1f52e2",
+      "source_package": "libcbor",
+      "source_version": "0.10.2-2"
+    },
+    {
+      "package": "libcom-err2",
+      "version": "1.47.2-3+b12",
+      "binary_sha256": "bd43e020b8fed399db3eebf098111f10fba4c436fff99ccad72cc7e27c9764ec",
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.2-3"
+    },
+    {
+      "package": "libcrypt1",
+      "version": "1:4.4.38-1",
+      "binary_sha256": "0ebc144d662e3197982d1bf3a7b8b35ca845e54c68811de0328b1f0d7c67585c",
+      "source_package": "libxcrypt",
+      "source_version": "1:4.4.38-1"
+    },
+    {
+      "package": "libcurl3t64-gnutls",
+      "version": "8.14.1-2+deb13u5",
+      "binary_sha256": "19da93544615a4c9a3d7df473f5bf8ebca99442454622e9b0460168dadf7b8ae",
+      "source_package": "curl",
+      "source_version": "8.14.1-2+deb13u5"
+    },
+    {
+      "package": "libcurl4t64",
+      "version": "8.14.1-2+deb13u5",
+      "binary_sha256": "0dedddfe614fc4a4335c9167b73c64a50136edd76b7991aa851408d0795163eb",
+      "source_package": "curl",
+      "source_version": "8.14.1-2+deb13u5"
+    },
+    {
+      "package": "libdb5.3t64",
+      "version": "5.3.28+dfsg2-9",
+      "binary_sha256": "18d02510ee78b67e4504ba050176797a200ff24214a7cd318082ab60ad7bf3fc",
+      "source_package": "db5.3",
+      "source_version": "5.3.28+dfsg2-9"
+    },
+    {
+      "package": "libdbus-1-3",
+      "version": "1.16.2-2",
+      "binary_sha256": "bbcb711daff7e104b5f80f9b05475b6142674bfe65518a36a56e96a91068a3f5",
+      "source_package": "dbus",
+      "source_version": "1.16.2-2"
+    },
+    {
+      "package": "libdebconfclient0",
+      "version": "0.280",
+      "binary_sha256": "25acadc8b394bc86d05df16e70975e523f8f839a7d8d6d5e22c1cafdcef741aa",
+      "source_package": "cdebconf",
+      "source_version": "0.280"
+    },
+    {
+      "package": "libdevmapper1.02.1",
+      "version": "2:1.02.205-2",
+      "binary_sha256": "e924e0df8823987f271b7d3a375dc2f8adcd76db66f09d0273043c885edb0af0",
+      "source_package": "lvm2",
+      "source_version": "2.03.31-2"
+    },
+    {
+      "package": "libdialog15",
+      "version": "1.3-20250116-1",
+      "binary_sha256": "62546547d12ee0170005204ac8df00233e3f4f58cde2ef059bff13c4d6a696cb",
+      "source_package": "dialog",
+      "source_version": "1.3-20250116-1"
+    },
+    {
+      "package": "libduktape207",
+      "version": "2.7.0-2+b2",
+      "binary_sha256": "2d92606f49cf79e23fb4ea67ab7702d52e016a671d32edc51482c4f1e3bade7c",
+      "source_package": "duktape",
+      "source_version": "2.7.0-2"
+    },
+    {
+      "package": "libedit2",
+      "version": "3.1-20250104-1",
+      "binary_sha256": "b002ea172b9c1e34a67bc497c523c67bb74c3f0a4e98113cb083990a1f1d3bfe",
+      "source_package": "libedit",
+      "source_version": "3.1-20250104-1"
+    },
+    {
+      "package": "libefiboot1t64",
+      "version": "38-3.1+b1",
+      "binary_sha256": "932d5799069e2af3f044cfd615518f0c1539400f1e8e1cdd9eeb407ca213926e",
+      "source_package": "efivar",
+      "source_version": "38-3.1"
+    },
+    {
+      "package": "libefivar1t64",
+      "version": "38-3.1+b1",
+      "binary_sha256": "34bfb96ca9422af293aeac800438682112b4019adc5ed25728bc35dff4ad4ca4",
+      "source_package": "efivar",
+      "source_version": "38-3.1"
+    },
+    {
+      "package": "libelf1t64",
+      "version": "0.192-4",
+      "binary_sha256": "94497b7e17b6f574a0605b380d454e20d3f01a9c63b70c2a2263f679d30053e1",
+      "source_package": "elfutils",
+      "source_version": "0.192-4"
+    },
+    {
+      "package": "liberror-perl",
+      "version": "0.17030-1",
+      "binary_sha256": "06110a972bdc52f6c6d6615dddbe97f836c61d0e36c685ef4107c2eaa81f871f",
+      "source_package": "liberror-perl",
+      "source_version": "0.17030-1"
+    },
+    {
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.13-stable-1~deb13u1",
+      "binary_sha256": "faa7d20cc8fa05ac3b0497065fa60bc920eacd3711ff039649d43a7aa34421ce",
+      "source_package": "libevent",
+      "source_version": "2.1.13-stable-1~deb13u1"
+    },
+    {
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "binary_sha256": "38abe0e710a07688e9c149d74536e67cfee0364bdb64dd6d644c32a1cfad389f",
+      "source_package": "expat",
+      "source_version": "2.8.3-1~deb13u1"
+    },
+    {
+      "package": "libext2fs2t64",
+      "version": "1.47.2-3+b12",
+      "binary_sha256": "9f5783fa48239e42260d41846fbc6c8b19c233251063524456096195660eaa09",
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.2-3"
+    },
+    {
+      "package": "libfdisk1",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "7f96d173cc01787201691f80ca9b335b8c7d6cdcc6fb81011302d4a005ff5089",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "libffi8",
+      "version": "3.4.8-2",
+      "binary_sha256": "0ebdc340de33333639c3c63874cd4b15ac2e83dfa1ef3053b7eefaf4919f4f68",
+      "source_package": "libffi",
+      "source_version": "3.4.8-2"
+    },
+    {
+      "package": "libfido2-1",
+      "version": "1.15.0-1+b1",
+      "binary_sha256": "094fc0fe20c652be848ab2a8b3793eb03bc4327140ebd232145356352004e6c0",
+      "source_package": "libfido2",
+      "source_version": "1.15.0-1"
+    },
+    {
+      "package": "libfreetype6",
+      "version": "2.13.3+dfsg-1+deb13u1",
+      "binary_sha256": "e4947f3291528f03d574f2b01d5c5fc45c58c47480f32888a5cdf0f231ab584e",
+      "source_package": "freetype",
+      "source_version": "2.13.3+dfsg-1+deb13u1"
+    },
+    {
+      "package": "libfstrm0",
+      "version": "0.6.1-1+b3",
+      "binary_sha256": "e3e4ceaaa408ce08214f3f9747a0cf6ede419cb789ca3966d8e7dcc9d1daf98e",
+      "source_package": "fstrm",
+      "source_version": "0.6.1-1"
+    },
+    {
+      "package": "libfuse3-4",
+      "version": "3.17.2-3",
+      "binary_sha256": "92e2d521ff872755a13aa69dba7b24025a7dc0f0f5aa708c9a86cd3565f570da",
+      "source_package": "fuse3",
+      "source_version": "3.17.2-3"
+    },
+    {
+      "package": "libgcc-s1",
+      "version": "14.2.0-19",
+      "binary_sha256": "3c71917b490d1a17aed43196a2787a256ecf060526cdb20216a74bedc061b150",
+      "source_package": "gcc-14",
+      "source_version": "14.2.0-19"
+    },
+    {
+      "package": "libgcrypt20",
+      "version": "1.11.0-7+deb13u1",
+      "binary_sha256": "f0eb41f8cb40896e0822e9ab65611e8383c12b721c76c54764f744abb4a8c247",
+      "source_package": "libgcrypt20",
+      "source_version": "1.11.0-7+deb13u1"
+    },
+    {
+      "package": "libgdbm-compat4t64",
+      "version": "1.24-2",
+      "binary_sha256": "2cbd43cf2dfbf57ff48188b5d79d29cf7ea8f0dedaa61ab0bcc02eceff50ea01",
+      "source_package": "gdbm",
+      "source_version": "1.24-2"
+    },
+    {
+      "package": "libgdbm6t64",
+      "version": "1.24-2",
+      "binary_sha256": "e7b42c68c391e278733adb3c1efdacd24d660862bd7bac0efbc10a91e5696dfc",
+      "source_package": "gdbm",
+      "source_version": "1.24-2"
+    },
+    {
+      "package": "libgit2-1.9",
+      "version": "1.9.0+ds-2+deb13u1",
+      "binary_sha256": "2fb4b6503fb8f143a8035077b9de99118326ac2b26565779e71c4648e01e75ee",
+      "source_package": "libgit2",
+      "source_version": "1.9.0+ds-2+deb13u1"
+    },
+    {
+      "package": "libglib2.0-0t64",
+      "version": "2.84.4-3~deb13u5",
+      "binary_sha256": "e2baf92c57d1db1753e5781a61450d9a01e7833c7bd2dfe87776a6811c11ecc2",
+      "source_package": "glib2.0",
+      "source_version": "2.84.4-3~deb13u5"
+    },
+    {
+      "package": "libgmp10",
+      "version": "2:6.3.0+dfsg-3",
+      "binary_sha256": "d0d0265eb01770f17afd0f7c8c0622f80479dcfbbe13653a0debeec61464e622",
+      "source_package": "gmp",
+      "source_version": "2:6.3.0+dfsg-3"
+    },
+    {
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "binary_sha256": "18a8bdfd91c7e3bcb01719d55a2b56849c7160b34f1f52b1c4fdfdd41bf1352b",
+      "source_package": "gnutls28",
+      "source_version": "3.8.9-3+deb13u4"
+    },
+    {
+      "package": "libgpg-error0",
+      "version": "1.51-4",
+      "binary_sha256": "22b95570fd41c113ef6f5651563b4d748292844baab1278a46eb940c1dec2322",
+      "source_package": "libgpg-error",
+      "source_version": "1.51-4"
+    },
+    {
+      "package": "libgpm2",
+      "version": "1.20.7-11+b2",
+      "binary_sha256": "c8779444e5bb8df39c8bce3ef7dd3d662686a9ab770dcc96bb0f4aeb2077a67c",
+      "source_package": "gpm",
+      "source_version": "1.20.7-11"
+    },
+    {
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "binary_sha256": "30847c1fde4240567d7ed3aeab4f655dd591203758b857e85e824045aae70299",
+      "source_package": "krb5",
+      "source_version": "1.21.3-5+deb13u1"
+    },
+    {
+      "package": "libhogweed6t64",
+      "version": "3.10.1-1",
+      "binary_sha256": "b059ed155115ac09da295322de48ee1ed58ef5fa45edcc9e12ff0e94636ef25f",
+      "source_package": "nettle",
+      "source_version": "3.10.1-1"
+    },
+    {
+      "package": "libhttp-parser2.9",
+      "version": "2.9.4-6+b2",
+      "binary_sha256": "eb226fd47bec216a02ca6282ab348a3515d1832c58edf1d71b2b5e7948ef3d03",
+      "source_package": "http-parser",
+      "source_version": "2.9.4-6"
+    },
+    {
+      "package": "libidn2-0",
+      "version": "2.3.8-2",
+      "binary_sha256": "90b039bcdc4578f8e1c4935adf8dbb525e36a164deefdbbb8c45bac347d48278",
+      "source_package": "libidn2",
+      "source_version": "2.3.8-2"
+    },
+    {
+      "package": "libip4tc2",
+      "version": "1.8.11-2",
+      "binary_sha256": "762e4d9c7f86b3fdaefee2baf61ce40073d46d7602651433f2cb7a5eabfb47b4",
+      "source_package": "iptables",
+      "source_version": "1.8.11-2"
+    },
+    {
+      "package": "libip6tc2",
+      "version": "1.8.11-2",
+      "binary_sha256": "d5ecaad5595dc88d08f317997beb53a4906c45ea79ee14ec89103f72573e3f99",
+      "source_package": "iptables",
+      "source_version": "1.8.11-2"
+    },
+    {
+      "package": "libjansson4",
+      "version": "2.14-2+b3",
+      "binary_sha256": "60707a62fe6c1228c3389b12a13ca4efd76defc5532473e547a29e99cf7d2a6e",
+      "source_package": "jansson",
+      "source_version": "2.14-2"
+    },
+    {
+      "package": "libjemalloc2",
+      "version": "5.3.0-3",
+      "binary_sha256": "e7d64919e620e8ea46960104efe1e9c977d751e5b610a5d89b0b51aeae9530d7",
+      "source_package": "jemalloc",
+      "source_version": "5.3.0-3"
+    },
+    {
+      "package": "libjq1",
+      "version": "1.7.1-6+deb13u3",
+      "binary_sha256": "62444043e4b8f21a5154e5b7084d85db00da509e163c52a950bb8aeb75e4012e",
+      "source_package": "jq",
+      "source_version": "1.7.1-6+deb13u3"
+    },
+    {
+      "package": "libjson-c5",
+      "version": "0.18+ds-1",
+      "binary_sha256": "4fbd5fb4d54c626f05d68abf38a31533fbf1bf4a87068696abe041ee9c974fe0",
+      "source_package": "json-c",
+      "source_version": "0.18+ds-1"
+    },
+    {
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "binary_sha256": "7da07ee674b47f1f0be7cc89317c25310086a1f1761217d0f72e6ae2c5a69b84",
+      "source_package": "krb5",
+      "source_version": "1.21.3-5+deb13u1"
+    },
+    {
+      "package": "libkeyutils1",
+      "version": "1.6.3-6",
+      "binary_sha256": "0b11ad17be0300b63ad4eeb4c6450fed24d34b7b740f23e5363dcb29ee6d5eba",
+      "source_package": "keyutils",
+      "source_version": "1.6.3-6"
+    },
+    {
+      "package": "libklibc",
+      "version": "2.0.14-1",
+      "binary_sha256": "8c71660ca790ef06f46a4e64febc6ad515499a7364aa9aa98c88b5655f9c5bda",
+      "source_package": "klibc",
+      "source_version": "2.0.14-1"
+    },
+    {
+      "package": "libkmod2",
+      "version": "34.2-2",
+      "binary_sha256": "ee6c50ebac79aa9795e8bf9aa01d94c99984d09d22598c66be0f8ba917b62179",
+      "source_package": "kmod",
+      "source_version": "34.2-2"
+    },
+    {
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "binary_sha256": "47d71d6a7f2e59b9bae5f89602397594805113b95889ad18fa703cd53abafc97",
+      "source_package": "krb5",
+      "source_version": "1.21.3-5+deb13u1"
+    },
+    {
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "binary_sha256": "3a0acd8b37955c0e102c756b52c97df2a31f67b96453c35dab70df218d309117",
+      "source_package": "krb5",
+      "source_version": "1.21.3-5+deb13u1"
+    },
+    {
+      "package": "libksba8",
+      "version": "1.6.7-2+b1",
+      "binary_sha256": "45bc1bfaf41a5e1136b1c1f58c495a950888da33a617de24202f3568e45b9572",
+      "source_package": "libksba",
+      "source_version": "1.6.7-2"
+    },
+    {
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "abb76aecbf51479e6e193873dfddaa1b88667dc0b1db82a11286a67550ba1557",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "binary_sha256": "60069e4a550ca890113fa89d3001417781b18e146ec5d637d31e368dec9909bd",
+      "source_package": "openldap",
+      "source_version": "2.6.10+dfsg-1"
+    },
+    {
+      "package": "liblmdb0",
+      "version": "0.9.31-1+b2",
+      "binary_sha256": "97636442b412a6dff51d23ba74f0cdc12ac1edece661a16c43cba294a98cf543",
+      "source_package": "lmdb",
+      "source_version": "0.9.31-1"
+    },
+    {
+      "package": "liblz4-1",
+      "version": "1.10.0-4",
+      "binary_sha256": "c31ec4c7c82755a38b2f3fe066fc0c5518cc91a601a268fbcd19bdacb1f22e1e",
+      "source_package": "lz4",
+      "source_version": "1.10.0-4"
+    },
+    {
+      "package": "liblzma5",
+      "version": "5.8.1-1+deb13u1",
+      "binary_sha256": "1cfcc6e0dc36f438a79b6e2189facdb9d150b08f57d190a60e01c98075c7f896",
+      "source_package": "xz-utils",
+      "source_version": "5.8.1-1+deb13u1"
+    },
+    {
+      "package": "libmagic-mgc",
+      "version": "1:5.46-5",
+      "binary_sha256": "1368da7c4c7dd10fb2f9ee3ed8a70801650c0c1d249a4076af15e2ddfbb14b46",
+      "source_package": "file",
+      "source_version": "1:5.46-5"
+    },
+    {
+      "package": "libmagic1t64",
+      "version": "1:5.46-5",
+      "binary_sha256": "53f653873216b135570b42c423ea93825c008ac464780b4578e80ee424237a4e",
+      "source_package": "file",
+      "source_version": "1:5.46-5"
+    },
+    {
+      "package": "libmaxminddb0",
+      "version": "1.12.2-1",
+      "binary_sha256": "025e1acec95ff56c44c0cb21c4c5fc42eeae323c263900729931ea5a1b95bc21",
+      "source_package": "libmaxminddb",
+      "source_version": "1.12.2-1"
+    },
+    {
+      "package": "libmbedcrypto16",
+      "version": "3.6.6-0.1~deb13u1",
+      "binary_sha256": "b38baf2ecaca7b28b3005d34b8108ee9b17681426b20662813995e939aea6dfa",
+      "source_package": "mbedtls",
+      "source_version": "3.6.6-0.1~deb13u1"
+    },
+    {
+      "package": "libmbedtls21",
+      "version": "3.6.6-0.1~deb13u1",
+      "binary_sha256": "9e280505afa5f5aa7034e494e7466c82d8e9af2eb3bf2edf46bab0bd7b62e1ac",
+      "source_package": "mbedtls",
+      "source_version": "3.6.6-0.1~deb13u1"
+    },
+    {
+      "package": "libmbedx509-7",
+      "version": "3.6.6-0.1~deb13u1",
+      "binary_sha256": "e0b6630efcf9eae2e05172496576bc3235be134a6bbf8da4cf3570fba65f65b8",
+      "source_package": "mbedtls",
+      "source_version": "3.6.6-0.1~deb13u1"
+    },
+    {
+      "package": "libmd0",
+      "version": "1.1.0-2+b1",
+      "binary_sha256": "7244ec3839b61fac0c1884fe08aaa040f26e8f1f35f1f5d3482eacefd30d1b44",
+      "source_package": "libmd",
+      "source_version": "1.1.0-2"
+    },
+    {
+      "package": "libmnl0",
+      "version": "1.0.5-3",
+      "binary_sha256": "4ec9c1096e0b954e3bdb03a62314ee7f49999045d3d55be3e4ded520ffc9baf5",
+      "source_package": "libmnl",
+      "source_version": "1.0.5-3"
+    },
+    {
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "6d00f45f2e80e078e906e3eedecd3ba6913e39fef49bff361ee583f17f00ec05",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "libncurses6",
+      "version": "6.5+20250216-2",
+      "binary_sha256": "e00cbcc8c0826993f881f492c05f33ba8d79b5375dc5a2ab59c82e0c7b9179a9",
+      "source_package": "ncurses",
+      "source_version": "6.5+20250216-2"
+    },
+    {
+      "package": "libncursesw6",
+      "version": "6.5+20250216-2",
+      "binary_sha256": "47baa2e11579583654583a066b69bd5a5d2f22423081f707ed6c0c3ba6d538b7",
+      "source_package": "ncurses",
+      "source_version": "6.5+20250216-2"
+    },
+    {
+      "package": "libnetfilter-conntrack3",
+      "version": "1.1.0-1",
+      "binary_sha256": "ffbac5d06fbe432d5171f2eb5b2504968377f27be133f72c81e71250a9957506",
+      "source_package": "libnetfilter-conntrack",
+      "source_version": "1.1.0-1"
+    },
+    {
+      "package": "libnetplan1",
+      "version": "1.1.2-7",
+      "binary_sha256": "007b5541494d01127d367385cff32caf976c3cf3e4300554d34b1579d5461180",
+      "source_package": "netplan.io",
+      "source_version": "1.1.2-7"
+    },
+    {
+      "package": "libnettle8t64",
+      "version": "3.10.1-1",
+      "binary_sha256": "1b03d4a9cd9c8143ba50fe6396f36937e901a317d492d179f4596862c1731cfe",
+      "source_package": "nettle",
+      "source_version": "3.10.1-1"
+    },
+    {
+      "package": "libnewt0.52",
+      "version": "0.52.25-1",
+      "binary_sha256": "083faa786377345d00669886b50eb4b3767d572518a668e94cda1ae34d027d28",
+      "source_package": "newt",
+      "source_version": "0.52.25-1"
+    },
+    {
+      "package": "libnfnetlink0",
+      "version": "1.0.2-3",
+      "binary_sha256": "5e4c3c40a04ffdb4139e4bef1136585e151a8eb8c71efa6c7250b636b3c0d1b1",
+      "source_package": "libnfnetlink",
+      "source_version": "1.0.2-3"
+    },
+    {
+      "package": "libnftables1",
+      "version": "1.1.3-1",
+      "binary_sha256": "c7cbee3dce8452ae5c3c4269f6f52e96b896d36a46ea3c490e0e11e8ff359896",
+      "source_package": "nftables",
+      "source_version": "1.1.3-1"
+    },
+    {
+      "package": "libnftnl11",
+      "version": "1.2.9-1",
+      "binary_sha256": "1b3eae46bfb9c6ab44e404797fb45278045f926d73974a84097ad47a3e27d983",
+      "source_package": "libnftnl",
+      "source_version": "1.2.9-1"
+    },
+    {
+      "package": "libnghttp2-14",
+      "version": "1.64.0-1.1+deb13u1",
+      "binary_sha256": "896cb217537c09251fb909b8541349010ac279d802d871e98c06a62a2c67ce2c",
+      "source_package": "nghttp2",
+      "source_version": "1.64.0-1.1+deb13u1"
+    },
+    {
+      "package": "libnghttp3-9",
+      "version": "1.8.0-1",
+      "binary_sha256": "388e4c33b72829cbf0d098afdc8539fa5ba7458eddb077f5538fdb4d5538716b",
+      "source_package": "nghttp3",
+      "source_version": "1.8.0-1"
+    },
+    {
+      "package": "libngtcp2-16",
+      "version": "1.11.0-1+deb13u1",
+      "binary_sha256": "627eec81ebbd48c4e6091f5cd9dc5070b792b7075000eed60ab08c7daa961caf",
+      "source_package": "ngtcp2",
+      "source_version": "1.11.0-1+deb13u1"
+    },
+    {
+      "package": "libngtcp2-crypto-gnutls8",
+      "version": "1.11.0-1+deb13u1",
+      "binary_sha256": "2a7f109c0c4db6a800e4661c5e5e34e1f1f83c8162482276183d1ada9da7c96c",
+      "source_package": "ngtcp2",
+      "source_version": "1.11.0-1+deb13u1"
+    },
+    {
+      "package": "libnpth0t64",
+      "version": "1.8-3",
+      "binary_sha256": "37d489976ef91ca0165a7789a7a7ac5923ee3cfadf316ac3e87582e15d0523d7",
+      "source_package": "npth",
+      "source_version": "1.8-3"
+    },
+    {
+      "package": "libnss-myhostname",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "5b7ac96d265e0645f2c550ee04567f3653aa4461af71fbe0fe661a96ebda5489",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "libnss-resolve",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "1fa3ee1c0a6951aa2a8dec9f3cc5d2021e6ead9df8fcd15508f63d33a6d037b3",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "libnuma1",
+      "version": "2.0.19-1",
+      "binary_sha256": "e578583f73f8208564e5035b18aa729c441fc7ecb389c666923552e123f4d655",
+      "source_package": "numactl",
+      "source_version": "2.0.19-1"
+    },
+    {
+      "package": "libonig5",
+      "version": "6.9.9-1+b1",
+      "binary_sha256": "3abee130696244050500bcc7870e3b4cb82ddd87149ece3fd55010c3d4e1d18c",
+      "source_package": "libonig",
+      "source_version": "6.9.9-1"
+    },
+    {
+      "package": "libp11-kit0",
+      "version": "0.25.5-3",
+      "binary_sha256": "784bf2063e166c8bc851a32623b74ebd85c499043a9d57c5bbd64fa63447f45a",
+      "source_package": "p11-kit",
+      "source_version": "0.25.5-3"
+    },
+    {
+      "package": "libpam-modules",
+      "version": "1.7.0-5",
+      "binary_sha256": "9679ade117f8775ac0471f48a92652ab8e8dcda4e2ff06de75158cded9cfd83c",
+      "source_package": "pam",
+      "source_version": "1.7.0-5"
+    },
+    {
+      "package": "libpam-modules-bin",
+      "version": "1.7.0-5",
+      "binary_sha256": "cc72066d008444317738e8e931d6131b301466b4e2dd5ef5baa75fb1a45d61a7",
+      "source_package": "pam",
+      "source_version": "1.7.0-5"
+    },
+    {
+      "package": "libpam-runtime",
+      "version": "1.7.0-5",
+      "binary_sha256": "b02792c9ed6174db695a653b95ef3629fdac3a73ba1eff1754ab161b5711bfbf",
+      "source_package": "pam",
+      "source_version": "1.7.0-5"
+    },
+    {
+      "package": "libpam-systemd",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "fcf4ee7d09e14ac9e52d8a9adb8f609ba06cc6a3ecbccc205e2c9a1ba1c39d16",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "libpam0g",
+      "version": "1.7.0-5",
+      "binary_sha256": "4f5bde27d8df2de6ea8990319b42d9974f56a3ba9907ce7296fd0f8964fc9fb1",
+      "source_package": "pam",
+      "source_version": "1.7.0-5"
+    },
+    {
+      "package": "libpcap0.8t64",
+      "version": "1.10.5-2",
+      "binary_sha256": "6a756d536a5b0cd3ef92f19ff9f22ed80c66baadbc0fe55d599f4aa0c27d3f86",
+      "source_package": "libpcap",
+      "source_version": "1.10.5-2"
+    },
+    {
+      "package": "libpci3",
+      "version": "1:3.13.0-2",
+      "binary_sha256": "f8f01883368fe86417b3845aa08ea3508ca59f5e1bb0983673629e227f5ac868",
+      "source_package": "pciutils",
+      "source_version": "1:3.13.0-2"
+    },
+    {
+      "package": "libpcre2-8-0",
+      "version": "10.46-1~deb13u2",
+      "binary_sha256": "1252b96a5bc44bb5db982bef8eb18e54f5047cede2aff641bce4f8e1edb91c3e",
+      "source_package": "pcre2",
+      "source_version": "10.46-1~deb13u2"
+    },
+    {
+      "package": "libperl5.40",
+      "version": "5.40.1-6+deb13u1",
+      "binary_sha256": "e44777ff47ad248d1debd57e1f96ab5e89061a341008ae39880ba3b5fc15f273",
+      "source_package": "perl",
+      "source_version": "5.40.1-6+deb13u1"
+    },
+    {
+      "package": "libpipeline1",
+      "version": "1.5.8-1",
+      "binary_sha256": "edf2aadc18f204a3ebbda0ca2797bf0d1fe8f6534ac1b2c23195561eec87a796",
+      "source_package": "libpipeline",
+      "source_version": "1.5.8-1"
+    },
+    {
+      "package": "libpng16-16t64",
+      "version": "1.6.48-1+deb13u5",
+      "binary_sha256": "2465b4e9fa85cff54dc10a6da3e64074d8d9292c86e4a8f989b809d6b158e97e",
+      "source_package": "libpng1.6",
+      "source_version": "1.6.48-1+deb13u5"
+    },
+    {
+      "package": "libpolkit-agent-1-0",
+      "version": "126-2",
+      "binary_sha256": "51e009b34beaf895f87c22a1579f4a46157381342af8f5f5090944d8de0026b5",
+      "source_package": "policykit-1",
+      "source_version": "126-2"
+    },
+    {
+      "package": "libpolkit-gobject-1-0",
+      "version": "126-2",
+      "binary_sha256": "7f8dd1d863614ab3842906985355c74a7738437c723b7b3736e8db33c3586702",
+      "source_package": "policykit-1",
+      "source_version": "126-2"
+    },
+    {
+      "package": "libpopt0",
+      "version": "1.19+dfsg-2",
+      "binary_sha256": "07f649b706852af937654295697dcfc7858f3295718ec18681dce1704663e4f2",
+      "source_package": "popt",
+      "source_version": "1.19+dfsg-2"
+    },
+    {
+      "package": "libproc2-0",
+      "version": "2:4.0.4-9",
+      "binary_sha256": "c9d61caab1b2ddfc3f17edb95be31b9809fcb2daf27d853dff615bc4ebd08b4b",
+      "source_package": "procps",
+      "source_version": "2:4.0.4-9"
+    },
+    {
+      "package": "libprotobuf-c1",
+      "version": "1.5.1-1",
+      "binary_sha256": "9fa7e6932f620c7155aab365ed277f04cae3e04ac80ee048fb09d1e838738d14",
+      "source_package": "protobuf-c",
+      "source_version": "1.5.1-1"
+    },
+    {
+      "package": "libpsl5t64",
+      "version": "0.21.2-1.1+b1",
+      "binary_sha256": "59d42bb1f9ebc0d1776fe616efb08a7a8568b05982e00f70b03c63863db768ab",
+      "source_package": "libpsl",
+      "source_version": "0.21.2-1.1"
+    },
+    {
+      "package": "libpython3-stdlib",
+      "version": "3.13.5-1",
+      "binary_sha256": "7e142ed64a81ccdd39714f213467bd365736ef341adb2be11be981f638b9175f",
+      "source_package": "python3-defaults",
+      "source_version": "3.13.5-1"
+    },
+    {
+      "package": "libpython3.13-minimal",
+      "version": "3.13.5-2+deb13u5",
+      "binary_sha256": "a4aa6a9a8c77f87bfe545e1d14ec42c001d189ace90e3aa75deec882b39dee49",
+      "source_package": "python3.13",
+      "source_version": "3.13.5-2+deb13u5"
+    },
+    {
+      "package": "libpython3.13-stdlib",
+      "version": "3.13.5-2+deb13u5",
+      "binary_sha256": "db161322a3481d2c0c3b9a3b9a03c3ab0e2b1718f54b88755fb4a3f939165b84",
+      "source_package": "python3.13",
+      "source_version": "3.13.5-2+deb13u5"
+    },
+    {
+      "package": "libreadline8t64",
+      "version": "8.2-6",
+      "binary_sha256": "eeadf2b5e755c9f183883feea2d9b5b28560284275d5f54d3e55d0923b1d0967",
+      "source_package": "readline",
+      "source_version": "8.2-6"
+    },
+    {
+      "package": "librtmp1",
+      "version": "2.4+20151223.gitfa8646d.1-2+b5",
+      "binary_sha256": "93baa2004cbe6c8721b9e81beed078612540aef120970b4751305c51c6697368",
+      "source_package": "rtmpdump",
+      "source_version": "2.4+20151223.gitfa8646d.1-2"
+    },
+    {
+      "package": "libsasl2-2",
+      "version": "2.1.28+dfsg1-9",
+      "binary_sha256": "66e49d7ae026811b49a0050f18b0325960a2625ffd1ff60d91b7844a815fa9d2",
+      "source_package": "cyrus-sasl2",
+      "source_version": "2.1.28+dfsg1-9"
+    },
+    {
+      "package": "libsasl2-modules-db",
+      "version": "2.1.28+dfsg1-9",
+      "binary_sha256": "a5c38659fbd62c33c6d9bfa2be43e75a572d1818531aad32dd74d0a58cc4bd19",
+      "source_package": "cyrus-sasl2",
+      "source_version": "2.1.28+dfsg1-9"
+    },
+    {
+      "package": "libseccomp2",
+      "version": "2.6.0-2",
+      "binary_sha256": "89d5138e05fb6a86b9afd8b54dc0fb4b14f4c27c05e6c5f767c2132bdf808531",
+      "source_package": "libseccomp",
+      "source_version": "2.6.0-2"
+    },
+    {
+      "package": "libselinux1",
+      "version": "3.8.1-1",
+      "binary_sha256": "68bb8d32bd8d6d7d2f5952a169db03d1484b46ae1e52abccdec42a19dccea5d5",
+      "source_package": "libselinux",
+      "source_version": "3.8.1-1"
+    },
+    {
+      "package": "libsemanage-common",
+      "version": "3.8.1-1",
+      "binary_sha256": "65375d886749c236bd1da4d9990b7c2469d2fe66019a28e5614f6814376d3dcb",
+      "source_package": "libsemanage",
+      "source_version": "3.8.1-1"
+    },
+    {
+      "package": "libsemanage2",
+      "version": "3.8.1-1",
+      "binary_sha256": "f97da7505d17ad3bdd8fc56302256df7e158e5e0d8b02cb766654199cbc406a9",
+      "source_package": "libsemanage",
+      "source_version": "3.8.1-1"
+    },
+    {
+      "package": "libsepol2",
+      "version": "3.8.1-1",
+      "binary_sha256": "3595d2d3a6d24695e7953f4f00cdfe6974c9242d9a8dfee8998e77fbf7b2ba09",
+      "source_package": "libsepol",
+      "source_version": "3.8.1-1"
+    },
+    {
+      "package": "libslang2",
+      "version": "2.3.3-5+b2",
+      "binary_sha256": "49b52a2cbe0f2257f4f7c68a0eaecd90962edabf08097611548b3ea4bd73292e",
+      "source_package": "slang2",
+      "source_version": "2.3.3-5"
+    },
+    {
+      "package": "libslirp0",
+      "version": "4.8.0-1+deb13u1",
+      "binary_sha256": "6125698173f8be0d0de01ff897a0df3c5e50fb09f70238b26dd6574aaa0934e1",
+      "source_package": "libslirp",
+      "source_version": "4.8.0-1+deb13u1"
+    },
+    {
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "d96bac9c8805685f2734885098a214b82950da6ebb182c27a6b7a124a0323392",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "libsodium23",
+      "version": "1.0.18-1+deb13u1",
+      "binary_sha256": "9ff9d97bb7ce3aee7f6e6ec3a785cdbe237454a7b9fd84728121bc4ef2bebebe",
+      "source_package": "libsodium",
+      "source_version": "1.0.18-1+deb13u1"
+    },
+    {
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "binary_sha256": "0a459adaffd901109f7811ab65f58e7a957b4907d05539cf3d1184efdcde0468",
+      "source_package": "sqlite3",
+      "source_version": "3.46.1-7+deb13u2"
+    },
+    {
+      "package": "libss2",
+      "version": "1.47.2-3+b12",
+      "binary_sha256": "c5d38d71984c1bf774c1254238636e605fc4e0dc24d853f709921eb740327f4a",
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.2-3"
+    },
+    {
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u2",
+      "binary_sha256": "dbb1024c192d4d292b7cfa902b96076cfe81b56a5eed4fb28da36e8bf543e49a",
+      "source_package": "libssh2",
+      "source_version": "1.11.1-1+deb13u2"
+    },
+    {
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "binary_sha256": "916f7f40b34a06e6ebfaefcdab331bff458328411da672598f126a760472467d",
+      "source_package": "openssl",
+      "source_version": "3.5.7-1~deb13u2"
+    },
+    {
+      "package": "libstdc++6",
+      "version": "14.2.0-19",
+      "binary_sha256": "ab1fa05837aa7a92aae748fd07a18a35f7d18bb4a71c4724fe2bbf0e32089de0",
+      "source_package": "gcc-14",
+      "source_version": "14.2.0-19"
+    },
+    {
+      "package": "libsubid5",
+      "version": "1:4.17.4-2",
+      "binary_sha256": "4d4faef8143c117a055a9041a7e99f8ba014c420a9b6e2fef5c693482581a204",
+      "source_package": "shadow",
+      "source_version": "1:4.17.4-2"
+    },
+    {
+      "package": "libsystemd-shared",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "2d349824e57f88507e2a33360610d8afc143a4ad5e80ee4bf8f37b826d6f37f9",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "ab0d4127b5e46e6f8c015a1db15a62ba9ae274cdefa150083adf90ada0600ea1",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "libtasn1-6",
+      "version": "4.20.0-2+deb13u1",
+      "binary_sha256": "23fec6e06583ce2bad9b2c04c9b485e90440e259b1abf8677cd80d3ce60831ad",
+      "source_package": "libtasn1-6",
+      "source_version": "4.20.0-2+deb13u1"
+    },
+    {
+      "package": "libtext-charwidth-perl",
+      "version": "0.04-11+b4",
+      "binary_sha256": "3a1d44df306e0252e8a16df07eba457bc9f2ef736ee890a1c35ffdfd548eafa0",
+      "source_package": "libtext-charwidth-perl",
+      "source_version": "0.04-11"
+    },
+    {
+      "package": "libtext-wrapi18n-perl",
+      "version": "0.06-10",
+      "binary_sha256": "17f98c7c09af8ac3bdbfd5a5dad32f3f51c71b02cdfc411366f49092a395de85",
+      "source_package": "libtext-wrapi18n-perl",
+      "source_version": "0.06-10"
+    },
+    {
+      "package": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "binary_sha256": "8b9f6a7983e9418564e48a627518de4c03917b56efe68d7f3e93bd8fffa1cc10",
+      "source_package": "ncurses",
+      "source_version": "6.5+20250216-2"
+    },
+    {
+      "package": "libtirpc-common",
+      "version": "1.3.6+ds-1",
+      "binary_sha256": "300f582e2c9151a8d329568c705cadc76252c417147312fe331c4560d2c7a6c3",
+      "source_package": "libtirpc",
+      "source_version": "1.3.6+ds-1"
+    },
+    {
+      "package": "libtirpc3t64",
+      "version": "1.3.6+ds-1",
+      "binary_sha256": "ef4536c09bf5063554310e22d586ae90990100ba66d2fe7c35660e9e658913b6",
+      "source_package": "libtirpc",
+      "source_version": "1.3.6+ds-1"
+    },
+    {
+      "package": "libuchardet0",
+      "version": "0.0.8-1+b2",
+      "binary_sha256": "eb772a1649d900ac46ffeab61a8b911e81d571f88ef5dcd0eed9aad5b45b003e",
+      "source_package": "uchardet",
+      "source_version": "0.0.8-1"
+    },
+    {
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "5d41c284f5a93b05bc7d648b61a02dd2bb9ff05b2261ad1a8b7d96044a0cfa88",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "libunistring5",
+      "version": "1.3-2",
+      "binary_sha256": "6dd3490bef06ea1096f32d10766b7e016cf579bfae8451d1b7df15ce05b8aa46",
+      "source_package": "libunistring",
+      "source_version": "1.3-2"
+    },
+    {
+      "package": "liburcu8t64",
+      "version": "0.15.2-2",
+      "binary_sha256": "bf6d8fe515004a491947c72af8ce2c015c5f9b4e8d024b81952ee8f372d507e9",
+      "source_package": "liburcu",
+      "source_version": "0.15.2-2"
+    },
+    {
+      "package": "liburing2",
+      "version": "2.9-1",
+      "binary_sha256": "4b589c00c7a51172aace2cb2fb3d3ff32daf86c644023126dcfcaa840cc941ea",
+      "source_package": "liburing",
+      "source_version": "2.9-1"
+    },
+    {
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "c1bf4c4c3ff48c57fabf93307dfb56996b60cfa33927afc4158b5db36fb2721e",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "libuv1t64",
+      "version": "1.50.0-2",
+      "binary_sha256": "5fec8035002e0c745b64d1c5b3e1dc42790d1a77574315b976cf3e4aab9ddc0a",
+      "source_package": "libuv1",
+      "source_version": "1.50.0-2"
+    },
+    {
+      "package": "libwrap0",
+      "version": "7.6.q-36",
+      "binary_sha256": "cde12afa15d6b1556c5e0564d22edf3b99e6b8fa94c59ccd8b8eebbb62dc19ec",
+      "source_package": "tcp-wrappers",
+      "source_version": "7.6.q-36"
+    },
+    {
+      "package": "libwtmpdb0",
+      "version": "0.73.0-3+deb13u1",
+      "binary_sha256": "8d6bc1c961d734da58b2d4c35b0a3cd6ad2fe81655bd982c655a97c2255b1c9b",
+      "source_package": "wtmpdb",
+      "source_version": "0.73.0-3+deb13u1"
+    },
+    {
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "binary_sha256": "e0c6b63ce4602a036a526f60fe5e6c1586710688058d98fc1001b9b3147b7efd",
+      "source_package": "libxml2",
+      "source_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3"
+    },
+    {
+      "package": "libxtables12",
+      "version": "1.8.11-2",
+      "binary_sha256": "4de5aa59faef5e98d6ba9f5f521a915be5641f224f597862f8d29e8319e8db16",
+      "source_package": "iptables",
+      "source_version": "1.8.11-2"
+    },
+    {
+      "package": "libxxhash0",
+      "version": "0.8.3-2",
+      "binary_sha256": "81da7064d56fc044f5db4bb3c1e80ff50a4986dcbbf80d958eeca565b44c157f",
+      "source_package": "xxhash",
+      "source_version": "0.8.3-2"
+    },
+    {
+      "package": "libyaml-0-2",
+      "version": "0.2.5-2",
+      "binary_sha256": "8a5475402801de445a17887bb72d03613565a6a84b216b4b606d1462c613eeb2",
+      "source_package": "libyaml",
+      "source_version": "0.2.5-2"
+    },
+    {
+      "package": "libzstd1",
+      "version": "1.5.7+dfsg-1",
+      "binary_sha256": "2f6a2aeacfc925eba8b00ac9139bc4bfccf8cacb09eb93de067074b26948eef9",
+      "source_package": "libzstd",
+      "source_version": "1.5.7+dfsg-1"
+    },
+    {
+      "package": "linux-base",
+      "version": "4.12.1",
+      "binary_sha256": "d86e703aff81f404f2104af9411fd2acbae5fdb65f9264e488bb276a77a562be",
+      "source_package": "linux-base",
+      "source_version": "4.12.1"
+    },
+    {
+      "package": "linux-image-6.12.107+deb13-amd64",
+      "version": "6.12.107-1",
+      "binary_sha256": "7794643cf4560de2a7e3b069e8ca8511ad2a568d652ea285f0fe051f79bc9e99",
+      "source_package": "linux-signed-amd64",
+      "source_version": "6.12.107+1"
+    },
+    {
+      "package": "linux-image-amd64",
+      "version": "6.12.107-1",
+      "binary_sha256": "85d3ddb7095c6b339530ca2c8cfd8fc6c64dce67c6d1dc4bafbaa1ce7d748104",
+      "source_package": "linux-signed-amd64",
+      "source_version": "6.12.107+1"
+    },
+    {
+      "package": "linux-sysctl-defaults",
+      "version": "4.12.1",
+      "binary_sha256": "025ed30ad079eaad556483db388e6dfb37dfda80dbd251a8a69dadd415fcb27a",
+      "source_package": "linux-base",
+      "source_version": "4.12.1"
+    },
+    {
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "binary_sha256": "ffc5578d5c2c30ca70d46113908f200a09ab6e5e9eda199463af3285dbbaae8c",
+      "source_package": "glibc",
+      "source_version": "2.41-12+deb13u4"
+    },
+    {
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "binary_sha256": "8fc5869532a73d577c4abb5ed917e048bbd72148702ea1dcadd3817064f3e887",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "login.defs",
+      "version": "1:4.17.4-2",
+      "binary_sha256": "b4bbb8242cbf5588de7aafeb9d578a3dee1db2891f444ab454fd30bd80ccf2b4",
+      "source_package": "shadow",
+      "source_version": "1:4.17.4-2"
+    },
+    {
+      "package": "logsave",
+      "version": "1.47.2-3+b12",
+      "binary_sha256": "aa028720743b79bd054749af34c501c093f0ab5e044e4dc44273765be5e95de5",
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.2-3"
+    },
+    {
+      "package": "lsb-release",
+      "version": "12.1-1",
+      "binary_sha256": "f81c836ce58d50c37039567ee85bbd76c0b6048c0b8f207e55529433694338ae",
+      "source_package": "lsb-release-minimal",
+      "source_version": "12.1-1"
+    },
+    {
+      "package": "man-db",
+      "version": "2.13.1-1",
+      "binary_sha256": "d5a407221a0d59845484b5343a37ec6374102e949353e4b158eaa2cbaf27aa5a",
+      "source_package": "man-db",
+      "source_version": "2.13.1-1"
+    },
+    {
+      "package": "manpages",
+      "version": "6.9.1-1",
+      "binary_sha256": "91b7df0b4bd4e1a3b8ba5b229abd844e03f4c82c45ccb8c964a035190c29a501",
+      "source_package": "manpages",
+      "source_version": "6.9.1-1"
+    },
+    {
+      "package": "mawk",
+      "version": "1.3.4.20250131-1",
+      "binary_sha256": "ade14470c4dff8921bca6ca8b1ea20eadc0f2178b48caff3c74534b17a633292",
+      "source_package": "mawk",
+      "source_version": "1.3.4.20250131-1"
+    },
+    {
+      "package": "media-types",
+      "version": "13.0.0",
+      "binary_sha256": "0788e4b0b72db1bcf74a19cb24c3511e7770ad0b341f0f30e361701c3072f53e",
+      "source_package": "media-types",
+      "source_version": "13.0.0"
+    },
+    {
+      "package": "mokutil",
+      "version": "0.7.2-1",
+      "binary_sha256": "1918fd2775b06e35429a06c59586d548bcccd6c544684799a22ae532a8bb83e4",
+      "source_package": "mokutil",
+      "source_version": "0.7.2-1"
+    },
+    {
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "eb70a615114ac40123768beb20e302554d5cb7edb33290be7e418ebe1075c878",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "mtr-tiny",
+      "version": "0.95-1.1+b1",
+      "binary_sha256": "4c1c39da74bbd1fa77ef7d5cb15dcf7ed28b5553ee620bc92c62b27c89269b1e",
+      "source_package": "mtr",
+      "source_version": "0.95-1.1"
+    },
+    {
+      "package": "nano",
+      "version": "8.4-1+deb13u1",
+      "binary_sha256": "38d496c9e432ca38ef386f6d832f5c18d6a0a48c78d6711223ca1541f4306a04",
+      "source_package": "nano",
+      "source_version": "8.4-1+deb13u1"
+    },
+    {
+      "package": "ncdu",
+      "version": "1.22-1",
+      "binary_sha256": "7cc760487cff9992532db1ec7cb6a028799bff08b230c4055f5babd81f95a87c",
+      "source_package": "ncdu",
+      "source_version": "1.22-1"
+    },
+    {
+      "package": "ncurses-base",
+      "version": "6.5+20250216-2",
+      "binary_sha256": "190e775260a38973c415a36ae99f33ad1b37ea6ca99929d7c5d53843fc23e914",
+      "source_package": "ncurses",
+      "source_version": "6.5+20250216-2"
+    },
+    {
+      "package": "ncurses-bin",
+      "version": "6.5+20250216-2",
+      "binary_sha256": "40a525f4761e9ed4b8adcd1783cb9a6467ff8008215ae99b3597825bdefc61e4",
+      "source_package": "ncurses",
+      "source_version": "6.5+20250216-2"
+    },
+    {
+      "package": "netbase",
+      "version": "6.5",
+      "binary_sha256": "76bafa92947ebd37b0a6f9ec6570412041f56edebc1c66d323731216d318471e",
+      "source_package": "netbase",
+      "source_version": "6.5"
+    },
+    {
+      "package": "netcat-openbsd",
+      "version": "1.229-1",
+      "binary_sha256": "d24b18012d4567e9b8fce551293a2373c2bfea5373d012d7f7e81bf5bf17b13e",
+      "source_package": "netcat-openbsd",
+      "source_version": "1.229-1"
+    },
+    {
+      "package": "netplan-generator",
+      "version": "1.1.2-7",
+      "binary_sha256": "f27d32bb0e3d63479750ff747f1fce28dbd39529aab99ba2b6aa4a222e42c504",
+      "source_package": "netplan.io",
+      "source_version": "1.1.2-7"
+    },
+    {
+      "package": "netplan.io",
+      "version": "1.1.2-7",
+      "binary_sha256": "f25b10e4531cd241806412135afce78a7d32b8194b073203acd23c4c1b45db02",
+      "source_package": "netplan.io",
+      "source_version": "1.1.2-7"
+    },
+    {
+      "package": "nftables",
+      "version": "1.1.3-1",
+      "binary_sha256": "2ddfa61baaf3a76e2c499db9e521ba6affb226f85af0b6fef739f346ac5f0c39",
+      "source_package": "nftables",
+      "source_version": "1.1.3-1"
+    },
+    {
+      "package": "openssh-client",
+      "version": "1:10.0p1-7+deb13u4",
+      "binary_sha256": "8fff343654f86c3b3266f94cd338c7b4da2e386da029327815118ea00bce03b9",
+      "source_package": "openssh",
+      "source_version": "1:10.0p1-7+deb13u4"
+    },
+    {
+      "package": "openssh-server",
+      "version": "1:10.0p1-7+deb13u4",
+      "binary_sha256": "b4a02524fd2be375624d917ee8102a16567e9e8dd786b41c35e22360cdd37f9d",
+      "source_package": "openssh",
+      "source_version": "1:10.0p1-7+deb13u4"
+    },
+    {
+      "package": "openssh-sftp-server",
+      "version": "1:10.0p1-7+deb13u4",
+      "binary_sha256": "28a82485438fafc8d6a7552ab61cac827338c16f39e3790d6ebcc146d452e542",
+      "source_package": "openssh",
+      "source_version": "1:10.0p1-7+deb13u4"
+    },
+    {
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "binary_sha256": "4ff006f431d8c2e69fa736885a3b6e779f2448535f69dbde821d9f0ff87ad8ea",
+      "source_package": "openssl",
+      "source_version": "3.5.7-1~deb13u2"
+    },
+    {
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "binary_sha256": "f155c8191ae6d41da73d792f4182680aeafeb85c3dd223934ee9fdd115c4f1fa",
+      "source_package": "openssl",
+      "source_version": "3.5.7-1~deb13u2"
+    },
+    {
+      "package": "passwd",
+      "version": "1:4.17.4-2",
+      "binary_sha256": "c5eaef41c6947d2888fa3462f787a7e02158b997bd0119154283f425ba57b8b8",
+      "source_package": "shadow",
+      "source_version": "1:4.17.4-2"
+    },
+    {
+      "package": "pci.ids",
+      "version": "0.0~2025.06.09-1",
+      "binary_sha256": "132bc7520473e53939e277cbf4512261b8d73ae244d77c277f674ecaf174598c",
+      "source_package": "pci.ids",
+      "source_version": "0.0~2025.06.09-1"
+    },
+    {
+      "package": "pciutils",
+      "version": "1:3.13.0-2",
+      "binary_sha256": "bd0e35ccc3378825b7b5f967e1eae687850025a91a49b055e433f1522bfa80f6",
+      "source_package": "pciutils",
+      "source_version": "1:3.13.0-2"
+    },
+    {
+      "package": "perl",
+      "version": "5.40.1-6+deb13u1",
+      "binary_sha256": "ef145c247787d6f40dcdefd5b417502484827cde0d555998c17fd5b27ec1e1dd",
+      "source_package": "perl",
+      "source_version": "5.40.1-6+deb13u1"
+    },
+    {
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "binary_sha256": "b795464137a0f4d443fc9284f4b93e883fb83883cb533adf300ac660807a352a",
+      "source_package": "perl",
+      "source_version": "5.40.1-6+deb13u1"
+    },
+    {
+      "package": "perl-modules-5.40",
+      "version": "5.40.1-6+deb13u1",
+      "binary_sha256": "4c46cdd8f3135aa1c95f07e817f8e5d9be590687441ac1c27e3a8c49400f35ce",
+      "source_package": "perl",
+      "source_version": "5.40.1-6+deb13u1"
+    },
+    {
+      "package": "pinentry-curses",
+      "version": "1.3.1-2",
+      "binary_sha256": "aed82cd9cc92b8a37f1332f951737f549595a3126aa609e632f9205d95405efc",
+      "source_package": "pinentry",
+      "source_version": "1.3.1-2"
+    },
+    {
+      "package": "polkitd",
+      "version": "126-2",
+      "binary_sha256": "d5a9482759b4f7379eb0d83f7afb49b315165adcfd38ebb00512bb27b7cc5d74",
+      "source_package": "policykit-1",
+      "source_version": "126-2"
+    },
+    {
+      "package": "procps",
+      "version": "2:4.0.4-9",
+      "binary_sha256": "4db90bb6776772fc52585d6b1fbfc52ec2a85480e1b4363b743fbb2ffa2a5375",
+      "source_package": "procps",
+      "source_version": "2:4.0.4-9"
+    },
+    {
+      "package": "psmisc",
+      "version": "23.7-2",
+      "binary_sha256": "19e772bca5ad0b28620229fe4f91383044c5c6322c7c50ae46da1c60d73d9960",
+      "source_package": "psmisc",
+      "source_version": "23.7-2"
+    },
+    {
+      "package": "python-apt-common",
+      "version": "3.0.0",
+      "binary_sha256": "9aacb635fa04e01ab56a0af4869a034a94aadcd564d662a91048cd19fe7d6e0c",
+      "source_package": "python-apt",
+      "source_version": "3.0.0"
+    },
+    {
+      "package": "python3",
+      "version": "3.13.5-1",
+      "binary_sha256": "c1388174dc7140e6c19a6dd39f8a0dcb38a835cd66c65644e0dded43d5223cb0",
+      "source_package": "python3-defaults",
+      "source_version": "3.13.5-1"
+    },
+    {
+      "package": "python3-apt",
+      "version": "3.0.0",
+      "binary_sha256": "e7d7ab8ddb63da8410288b902c4d2237b8689a12ba000851af37ae429e90e618",
+      "source_package": "python-apt",
+      "source_version": "3.0.0"
+    },
+    {
+      "package": "python3-attr",
+      "version": "25.3.0-1",
+      "binary_sha256": "72cee7fff9e57e8410956e3071ffe910d9de14ddedf14d598a616319428b369c",
+      "source_package": "python-attrs",
+      "source_version": "25.3.0-1"
+    },
+    {
+      "package": "python3-bcrypt",
+      "version": "4.2.0-2.1+b1",
+      "binary_sha256": "7485d96fc2669e9407056474c61aea5bd83ef5f406b46a1d7500ae17fab0a830",
+      "source_package": "python-bcrypt",
+      "source_version": "4.2.0-2.1"
+    },
+    {
+      "package": "python3-blinker",
+      "version": "1.9.0-1",
+      "binary_sha256": "6151635fa46377928e42c461966e05a89cb9fb0a4df61c0a6958e266820385bc",
+      "source_package": "blinker",
+      "source_version": "1.9.0-1"
+    },
+    {
+      "package": "python3-certifi",
+      "version": "2025.1.31+ds-1",
+      "binary_sha256": "939b1a979218ec23b5f9469e2ad8a809de588f586bbaf3292b4e617d987824bd",
+      "source_package": "python-certifi",
+      "source_version": "2025.1.31+ds-1"
+    },
+    {
+      "package": "python3-cffi-backend",
+      "version": "1.17.1-3",
+      "binary_sha256": "7cfe53f3eff772127fd22e503876e3dd2b34b4c2a68fe9a524ce214e5bb7927a",
+      "source_package": "python-cffi",
+      "source_version": "1.17.1-3"
+    },
+    {
+      "package": "python3-chardet",
+      "version": "5.2.0+dfsg-2",
+      "binary_sha256": "06d26a4755a176d56d3c68510fe35f394b86640003360b9c6ad047d9a35268bc",
+      "source_package": "chardet",
+      "source_version": "5.2.0+dfsg-2"
+    },
+    {
+      "package": "python3-charset-normalizer",
+      "version": "3.4.2-1",
+      "binary_sha256": "84acc2d79eb675e00c41a8031157e87529a97bc550430d9a6146069285fee8bc",
+      "source_package": "python-charset-normalizer",
+      "source_version": "3.4.2-1"
+    },
+    {
+      "package": "python3-configobj",
+      "version": "5.0.9-1",
+      "binary_sha256": "8f439d6e7f92c67644e33b050a2988886923112d21e37b55a0a3404a846f659c",
+      "source_package": "configobj",
+      "source_version": "5.0.9-1"
+    },
+    {
+      "package": "python3-cryptography",
+      "version": "43.0.0-3+deb13u1",
+      "binary_sha256": "edfc3aab6cbc4941aa19798059867696eeae90eb41b6dc2c5197c521da548972",
+      "source_package": "python-cryptography",
+      "source_version": "43.0.0-3+deb13u1"
+    },
+    {
+      "package": "python3-dbus",
+      "version": "1.4.0-1",
+      "binary_sha256": "62d05b99e55dfd06f3cf8a8bd4912d572bd1dfa82bdc9dec5d1e23bdad7c8e46",
+      "source_package": "dbus-python",
+      "source_version": "1.4.0-1"
+    },
+    {
+      "package": "python3-debconf",
+      "version": "1.5.91",
+      "binary_sha256": "8423ff522e37278a366929e11a7418550d80386d89b34c3ace42ddb8b5a862c5",
+      "source_package": "debconf",
+      "source_version": "1.5.91"
+    },
+    {
+      "package": "python3-debian",
+      "version": "1.0.1",
+      "binary_sha256": "41ab65cba82050e18b12afbf34040ffc7c3d6fe32152f0ae5f33b434f1d1e443",
+      "source_package": "python-debian",
+      "source_version": "1.0.1"
+    },
+    {
+      "package": "python3-debianbts",
+      "version": "4.1.1",
+      "binary_sha256": "38fe1a293e05cc13af1002ba5910291eab66eea4f4ef39624466b6040aff246c",
+      "source_package": "python-debianbts",
+      "source_version": "4.1.1"
+    },
+    {
+      "package": "python3-distro",
+      "version": "1.9.0-1",
+      "binary_sha256": "b48975ae9c1c6fcc06301a3febeee390a817b21604576228807f7f37af458473",
+      "source_package": "python-distro",
+      "source_version": "1.9.0-1"
+    },
+    {
+      "package": "python3-distro-info",
+      "version": "1.13",
+      "binary_sha256": "11848888a90676314dd977fd2788e2d1f11f5e471d879313b8158a28488dc062",
+      "source_package": "distro-info",
+      "source_version": "1.13"
+    },
+    {
+      "package": "python3-idna",
+      "version": "3.10-1+deb13u1",
+      "binary_sha256": "5cf05020b0e5c523ace373a4feac7e074de3e95df30b5a2d584842accba6e60b",
+      "source_package": "python-idna",
+      "source_version": "3.10-1+deb13u1"
+    },
+    {
+      "package": "python3-jinja2",
+      "version": "3.1.6-1",
+      "binary_sha256": "3271804134e18dbc8dbd146f58399817789373e86a58be44d10ce159cf8c4600",
+      "source_package": "jinja2",
+      "source_version": "3.1.6-1"
+    },
+    {
+      "package": "python3-json-pointer",
+      "version": "2.4-3",
+      "binary_sha256": "f2bea696a502de3dc54decb19671ffc4224194781d9272a2d8b176ecd2f87e8d",
+      "source_package": "python-json-pointer",
+      "source_version": "2.4-3"
+    },
+    {
+      "package": "python3-jsonpatch",
+      "version": "1.32-5",
+      "binary_sha256": "431bf89846f6c5d0dd33b89c779d50fb57ff8446eb32285d4194601169420a2d",
+      "source_package": "python-json-patch",
+      "source_version": "1.32-5"
+    },
+    {
+      "package": "python3-jsonschema",
+      "version": "4.19.2-6",
+      "binary_sha256": "e826c2777771ca3852bf3ea4c5df11d8bec99648375c849225eb557411d1b694",
+      "source_package": "python-jsonschema",
+      "source_version": "4.19.2-6"
+    },
+    {
+      "package": "python3-jsonschema-specifications",
+      "version": "2023.12.1-2",
+      "binary_sha256": "1057cbd1dbb47ca26400c4f96fff24249ef1a3d8300390740051d09b1488dac8",
+      "source_package": "python-jsonschema-specifications",
+      "source_version": "2023.12.1-2"
+    },
+    {
+      "package": "python3-jwt",
+      "version": "2.10.1-2+deb13u1",
+      "binary_sha256": "d6971f1c7b688e7edeff93483ccbab11083bdc19a754a7f5f37d2f7b4a97afe5",
+      "source_package": "pyjwt",
+      "source_version": "2.10.1-2+deb13u1"
+    },
+    {
+      "package": "python3-markupsafe",
+      "version": "2.1.5-1+b3",
+      "binary_sha256": "f82dbd759e6b9c111dc764b3ce7744633d0c97948aaa77294984b80e9db44a24",
+      "source_package": "markupsafe",
+      "source_version": "2.1.5-1"
+    },
+    {
+      "package": "python3-minimal",
+      "version": "3.13.5-1",
+      "binary_sha256": "a5d2371bebf3689f676e3f3bae800371bcc4392a8a51269e23d528249b399615",
+      "source_package": "python3-defaults",
+      "source_version": "3.13.5-1"
+    },
+    {
+      "package": "python3-netplan",
+      "version": "1.1.2-7",
+      "binary_sha256": "910a9ed9403408af11b26e6461e448c10f5bbef59a2b427e74ea277fff76a9c6",
+      "source_package": "netplan.io",
+      "source_version": "1.1.2-7"
+    },
+    {
+      "package": "python3-oauthlib",
+      "version": "3.2.2-3",
+      "binary_sha256": "96246105498eccac13513e18cfc1771ce9644b559e22d60bb518dcffeb4eeb73",
+      "source_package": "python-oauthlib",
+      "source_version": "3.2.2-3"
+    },
+    {
+      "package": "python3-referencing",
+      "version": "0.36.2-1",
+      "binary_sha256": "225df288973a2930418f95d71f6ab075c0f0a1fbb5f42c44f53330738de9d89b",
+      "source_package": "referencing",
+      "source_version": "0.36.2-1"
+    },
+    {
+      "package": "python3-reportbug",
+      "version": "13.2.0",
+      "binary_sha256": "7b09b59a7df9b7387660008a12733025252622527f2cd79aef081f46e1d61ce9",
+      "source_package": "reportbug",
+      "source_version": "13.2.0"
+    },
+    {
+      "package": "python3-requests",
+      "version": "2.32.3+dfsg-5+deb13u1",
+      "binary_sha256": "7d271bd47c6647b16aec9facc656c39eca763062ec392aea615dd6597b8304c2",
+      "source_package": "requests",
+      "source_version": "2.32.3+dfsg-5+deb13u1"
+    },
+    {
+      "package": "python3-rpds-py",
+      "version": "0.21.0-2+b1",
+      "binary_sha256": "dd015869b0ba0663a8f252995329c2c630e11bd588f0018b63075a54b6c0a9f0",
+      "source_package": "rpds-py",
+      "source_version": "0.21.0-2"
+    },
+    {
+      "package": "python3-urllib3",
+      "version": "2.3.0-3+deb13u2",
+      "binary_sha256": "8132c30c09060562e540025a5d5b1ee9dd3496234c36eab57339e8b94f9e6b38",
+      "source_package": "python-urllib3",
+      "source_version": "2.3.0-3+deb13u2"
+    },
+    {
+      "package": "python3-yaml",
+      "version": "6.0.2-1+b2",
+      "binary_sha256": "0019c4e7848c83a0d6bcb78cca902b5cdb1714aa6370ba01955b1fed6f667056",
+      "source_package": "pyyaml",
+      "source_version": "6.0.2-1"
+    },
+    {
+      "package": "python3.13",
+      "version": "3.13.5-2+deb13u5",
+      "binary_sha256": "460c1fd72845516ac3ce9d1686916f3ab2e4c86f8a9746e14d26243a47e2b98d",
+      "source_package": "python3.13",
+      "source_version": "3.13.5-2+deb13u5"
+    },
+    {
+      "package": "python3.13-minimal",
+      "version": "3.13.5-2+deb13u5",
+      "binary_sha256": "c1fda9e7b1bf15b2fa75a238d8a8710e142fe14c722fc650c5fc614f078c9073",
+      "source_package": "python3.13",
+      "source_version": "3.13.5-2+deb13u5"
+    },
+    {
+      "package": "qemu-guest-agent",
+      "version": "1:10.0.13+ds-0+deb13u1",
+      "binary_sha256": "7d7d6be6a52d6ea21eabdb78f686e4bb886f933171d33f5f3cf3cf2390343abd",
+      "source_package": "qemu",
+      "source_version": "1:10.0.13+ds-0+deb13u1"
+    },
+    {
+      "package": "qemu-utils",
+      "version": "1:10.0.13+ds-0+deb13u1",
+      "binary_sha256": "6d31339b1630153fe7c5f8a51426b8fa6ce35731aeb015a84f2d333c4e4dca30",
+      "source_package": "qemu",
+      "source_version": "1:10.0.13+ds-0+deb13u1"
+    },
+    {
+      "package": "readline-common",
+      "version": "8.2-6",
+      "binary_sha256": "f77e8aa0bf0de618f11cb0b21658a4ed60f177d63b3cf26d7fc3706b6d0eaaa9",
+      "source_package": "readline",
+      "source_version": "8.2-6"
+    },
+    {
+      "package": "reportbug",
+      "version": "13.2.0",
+      "binary_sha256": "d4c724b84512577095caec9546b3b32ab3510b06ee680841bb74fe8f8d312b9b",
+      "source_package": "reportbug",
+      "source_version": "13.2.0"
+    },
+    {
+      "package": "restic",
+      "version": "0.18.0-1+b4",
+      "binary_sha256": "4888fb20b272a28b84ac39171b7d7f0d9a58c2aeae51ec28e54684648d66e12c",
+      "source_package": "restic",
+      "source_version": "0.18.0-1"
+    },
+    {
+      "package": "ripgrep",
+      "version": "14.1.1-1+b4",
+      "binary_sha256": "7e0c32510c264c31335fe3b9ae37ab76dcd22f7d1627a0a08518a5bf28b17ac2",
+      "source_package": "rust-ripgrep",
+      "source_version": "14.1.1-1"
+    },
+    {
+      "package": "rootlesskit",
+      "version": "2.0.2-2+b9",
+      "binary_sha256": "e9f16eb64017074c2d49f1c6e788aa849070777a5b888fc07e5b57bded051a0c",
+      "source_package": "rootlesskit",
+      "source_version": "2.0.2-2"
+    },
+    {
+      "package": "rougarou-base",
+      "version": "0.1.0~alpha8-1",
+      "binary_sha256": "44bcff8c21ae7a9af285b7f743d7237317461a3e01f709f4c2d01f5c64f10dab",
+      "project_source_tag": "v0.1.0-alpha.8"
+    },
+    {
+      "package": "rsync",
+      "version": "3.4.1+ds1-5+deb13u4",
+      "binary_sha256": "8aa122f6ba8d2ff112c72bb9814ee096ee516f0213b36b98bbe79c83c92fb226",
+      "source_package": "rsync",
+      "source_version": "3.4.1+ds1-5+deb13u4"
+    },
+    {
+      "package": "runc",
+      "version": "1.1.15+ds1-2+b4",
+      "binary_sha256": "fad4f807a369677f0954bd4c61e56ddb2dd8b3f4aec30c3834c3165fc6d3c19f",
+      "source_package": "runc",
+      "source_version": "1.1.15+ds1-2"
+    },
+    {
+      "package": "runit-helper",
+      "version": "2.16.4",
+      "binary_sha256": "8a5866d3036a1645a1cff2bfe7dcf5b62e8d2c30ec31a115d4ccd2486645a54e",
+      "source_package": "dh-runit",
+      "source_version": "2.16.4"
+    },
+    {
+      "package": "screen",
+      "version": "4.9.1-3",
+      "binary_sha256": "c573c3d28581690a716d98c805b93f83bac05b69c54c620b649bfabd032ead12",
+      "source_package": "screen",
+      "source_version": "4.9.1-3"
+    },
+    {
+      "package": "sed",
+      "version": "4.9-2+deb13u1",
+      "binary_sha256": "7071270ed4f6adda55bc4f926347fb847bacaffbdee3dff917bc6006ed7e3775",
+      "source_package": "sed",
+      "source_version": "4.9-2+deb13u1"
+    },
+    {
+      "package": "sensible-utils",
+      "version": "0.0.25",
+      "binary_sha256": "873a9b73c3478cc3148cdbf5cc2084949a0a8e4fa16131d1cbc895d2f1f3470e",
+      "source_package": "sensible-utils",
+      "source_version": "0.0.25"
+    },
+    {
+      "package": "sgml-base",
+      "version": "1.31+nmu1",
+      "binary_sha256": "a355b832d9f0f4dc9eca1a661080db5dc118e6c435f107a5c4dd201d7af59ba8",
+      "source_package": "sgml-base",
+      "source_version": "1.31+nmu1"
+    },
+    {
+      "package": "shim-helpers-amd64-signed",
+      "version": "1+16.1+2~deb13u1",
+      "binary_sha256": "7e950d75d5a40ecc0a99f727452ce35780b47a04d9a2cc3b1ff7c2bb316c033e",
+      "source_package": "shim-helpers-amd64-signed",
+      "source_version": "1+16.1+2~deb13u1"
+    },
+    {
+      "package": "shim-signed",
+      "version": "1.51~1+deb13u1+16.1-2~deb13u1",
+      "binary_sha256": "3c802fa303c0e6bf126adee74028d1042e3120360d159c2c05181dc9b2f61005",
+      "source_package": "shim-signed",
+      "source_version": "1.51~1+deb13u1"
+    },
+    {
+      "package": "shim-signed-common",
+      "version": "1.51~1+deb13u1+16.1-2~deb13u1",
+      "binary_sha256": "d26f0c83436223bc805a3c77a025df18f60f4c8328f6c96233355bba8e0a5251",
+      "source_package": "shim-signed",
+      "source_version": "1.51~1+deb13u1"
+    },
+    {
+      "package": "shim-unsigned",
+      "version": "16.1-2~deb13u1",
+      "binary_sha256": "4e9a0742fef5419879ccef6b612bfffd0e92bf7047bf23a51f04106d33628f35",
+      "source_package": "shim",
+      "source_version": "16.1-2~deb13u1"
+    },
+    {
+      "package": "slirp4netns",
+      "version": "1.2.1-1.1",
+      "binary_sha256": "c294a4df952b9ae54e19e0ab19ac09a7e398fbf7aa8969cfcae07f92dc4f30ac",
+      "source_package": "slirp4netns",
+      "source_version": "1.2.1-1.1"
+    },
+    {
+      "package": "socat",
+      "version": "1.8.0.3-1+deb13u1",
+      "binary_sha256": "c87c1e6eccc6d5828138dda794d28a7f283fe4e4010074fffbe4dc8354eef08d",
+      "source_package": "socat",
+      "source_version": "1.8.0.3-1+deb13u1"
+    },
+    {
+      "package": "sqv",
+      "version": "1.3.0-3+b2",
+      "binary_sha256": "97760aa17acceee0cace13d9edbed781d891b43e0dec0d6ddc4bd5e4c3ac65aa",
+      "source_package": "rust-sequoia-sqv",
+      "source_version": "1.3.0-3"
+    },
+    {
+      "package": "ssh-import-id",
+      "version": "5.10-3",
+      "binary_sha256": "af0b43a7401f64e7c6b2b925701f15544b2cde9cd95f1fb2de90c0f76f5f665c",
+      "source_package": "ssh-import-id",
+      "source_version": "5.10-3"
+    },
+    {
+      "package": "starship",
+      "version": "1.22.1-5",
+      "binary_sha256": "be0d0a9a02d2f1e9ede0f70aa2113dde85013c7e87ae839a10399dcb546bd142",
+      "source_package": "starship",
+      "source_version": "1.22.1-5"
+    },
+    {
+      "package": "sudo",
+      "version": "1.9.16p2-3+deb13u2",
+      "binary_sha256": "4f926f8f0704575158a90135713977f98f7d50d185969d9a8a405cdce5e3e50c",
+      "source_package": "sudo",
+      "source_version": "1.9.16p2-3+deb13u2"
+    },
+    {
+      "package": "systemd",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "ee81302a1d5b7434762b6e784a572854d4b6cf6235e33e2d104ad4e1cae71ab4",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "systemd-resolved",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "cd8c1bf424def250b2c289859ee4513ddbe8b103b4fa0211dec21fe0d97e5f69",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "systemd-sysv",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "3bed48042b6e40f8a3c439e79b4a4ed6a12102eb3ab66123dc43aa18f0416729",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "systemd-timesyncd",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "3ac410275cc5cd29aa0e14588b2ebbaa10ae02ecb438ce2282fead1d170efe63",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "sysvinit-utils",
+      "version": "3.14-4",
+      "binary_sha256": "c7e957360dff89675b491e501b00047cf750695178cabab167c92fc260d358ec",
+      "source_package": "sysvinit",
+      "source_version": "3.14-4"
+    },
+    {
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "binary_sha256": "214c02e1aa291076a3147b8a4c4cae02fadf4c67df629186e3e313726faef1de",
+      "source_package": "tar",
+      "source_version": "1.35+dfsg-3.1"
+    },
+    {
+      "package": "tcpdump",
+      "version": "4.99.5-2",
+      "binary_sha256": "c35a180eb0ee118976c4648473de0beb36788dc2ec6986ab880722f5a9868ba6",
+      "source_package": "tcpdump",
+      "source_version": "4.99.5-2"
+    },
+    {
+      "package": "tini",
+      "version": "0.19.0-3+b8",
+      "binary_sha256": "a443b12107331f67836a64cb6efe1dd92d2765e15568eb4567dccb409a8cd2a0",
+      "source_package": "tini",
+      "source_version": "0.19.0-3"
+    },
+    {
+      "package": "tmux",
+      "version": "3.5a-3",
+      "binary_sha256": "e6b6aa51780044e2c4a0e618c33f832b70ec80caa30303e6c254a0c851b5af78",
+      "source_package": "tmux",
+      "source_version": "3.5a-3"
+    },
+    {
+      "package": "traceroute",
+      "version": "1:2.1.6-1",
+      "binary_sha256": "e2b8cd20ba38593251b1ad40133a11014ac25ae20c87592bbab41746a867c29c",
+      "source_package": "traceroute",
+      "source_version": "1:2.1.6-1"
+    },
+    {
+      "package": "tzdata",
+      "version": "2026c-0+deb13u1",
+      "binary_sha256": "813b9bbbe14ccda2b24617b8bade0ade4d745957e75921766c153d249886bd4c",
+      "source_package": "tzdata",
+      "source_version": "2026c-0+deb13u1"
+    },
+    {
+      "package": "ucf",
+      "version": "3.0052",
+      "binary_sha256": "ab5a6d5a621ad07034ce29d0c2587e6e267ecd2975458b2c8a7d0ada77dcb95b",
+      "source_package": "ucf",
+      "source_version": "3.0052"
+    },
+    {
+      "package": "udev",
+      "version": "257.13-1~deb13u1",
+      "binary_sha256": "a9d751b4d73a489120ef68a21caedf0b58fba80598fb22a17f85060f308bfe7e",
+      "source_package": "systemd",
+      "source_version": "257.13-1~deb13u1"
+    },
+    {
+      "package": "uidmap",
+      "version": "1:4.17.4-2",
+      "binary_sha256": "a017182d42a32ca241cd830a59153488e1f65ae6e31a760014575878044a9d2d",
+      "source_package": "shadow",
+      "source_version": "1:4.17.4-2"
+    },
+    {
+      "package": "unattended-upgrades",
+      "version": "2.12",
+      "binary_sha256": "a5e37d196598d2f2a7cb8c3ded760b77283d0ecf110d2f90d77d4821e3512eb6",
+      "source_package": "unattended-upgrades",
+      "source_version": "2.12"
+    },
+    {
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "7d5b1176cc3d8cc6b290b3ec17af458f362d9200845f30da22057a8198744430",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "uuid-runtime",
+      "version": "2.41.5-0+deb13u1",
+      "binary_sha256": "826690419ef231e93d3d756ab19835ebd0fe3029bb1314987fd8f76fd04c6983",
+      "source_package": "util-linux",
+      "source_version": "2.41.5-0+deb13u1"
+    },
+    {
+      "package": "vim",
+      "version": "2:9.1.1230-2",
+      "binary_sha256": "7050d710bbcd5dee68865d90fd95a9aa865bf16d9a3874c5bb6a4f1d69231cfe",
+      "source_package": "vim",
+      "source_version": "2:9.1.1230-2"
+    },
+    {
+      "package": "vim-common",
+      "version": "2:9.1.1230-2",
+      "binary_sha256": "bcf7e3e675cbc4eed1f444ea3a6dfbf420eae141615b0d35cee24cf23e18aa18",
+      "source_package": "vim",
+      "source_version": "2:9.1.1230-2"
+    },
+    {
+      "package": "vim-runtime",
+      "version": "2:9.1.1230-2",
+      "binary_sha256": "5addd2e7d3aae7d1907aba6c0c16c525e78ccfc0f6ee9ef9651c139a80c97058",
+      "source_package": "vim",
+      "source_version": "2:9.1.1230-2"
+    },
+    {
+      "package": "vim-tiny",
+      "version": "2:9.1.1230-2",
+      "binary_sha256": "675534b5adc7b92603287feac3cbfd5cbb4f5f0dc301878e40e1d90a73556f64",
+      "source_package": "vim",
+      "source_version": "2:9.1.1230-2"
+    },
+    {
+      "package": "wget",
+      "version": "1.25.0-2",
+      "binary_sha256": "5649cad63c781b2dcf5a7b87d70b3bf789291cd0d6bcabc4d521211f94980683",
+      "source_package": "wget",
+      "source_version": "1.25.0-2"
+    },
+    {
+      "package": "whiptail",
+      "version": "0.52.25-1",
+      "binary_sha256": "8a434b49f4e802958c0a39158e5cb08f769fd107e1fa970894d1f04f975f246f",
+      "source_package": "newt",
+      "source_version": "0.52.25-1"
+    },
+    {
+      "package": "xml-core",
+      "version": "0.19",
+      "binary_sha256": "079ec5e10b1c49aa23a6c53ae8e55e33aec121d1c87a131d2172bdabc3f4030e",
+      "source_package": "xml-core",
+      "source_version": "0.19"
+    },
+    {
+      "package": "xz-utils",
+      "version": "5.8.1-1+deb13u1",
+      "binary_sha256": "9e0a39d95373afdaad3c9dfaab3c8b0beb9a2c4654e6be10b4bcf458509a3217",
+      "source_package": "xz-utils",
+      "source_version": "5.8.1-1+deb13u1"
+    },
+    {
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "binary_sha256": "015be740d6236ad114582dea500c1d907f29e16d6db00566ca32fb68d71ac90d",
+      "source_package": "zlib",
+      "source_version": "1:1.3.dfsg+really1.3.1-1"
+    },
+    {
+      "package": "zstd",
+      "version": "1.5.7+dfsg-1",
+      "binary_sha256": "6da09b6aad171ef9b50d6a2bb4c62f756b3561aac5e05b452b80516223e5e0f5",
+      "source_package": "libzstd",
+      "source_version": "1.5.7+dfsg-1"
+    }
+  ],
+  "missing": []
+}

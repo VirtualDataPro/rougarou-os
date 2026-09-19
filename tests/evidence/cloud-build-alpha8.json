@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "bytes": 1454637056,
+    "file": "rougarou-os-0.1.0-alpha.8-cloud-amd64.qcow2",
+    "sha256": "54b4bb61b4a49b5e6a5440938561c27c1be84eeba5d29bea70daa5dfca3dae6c",
+    "virtual_size": 8589934592
+  },
+  "base_package": {
+    "sha256": "44bcff8c21ae7a9af285b7f743d7237317461a3e01f709f4c2d01f5c64f10dab",
+    "version": "0.1.0~alpha8-1"
+  },
+  "build_manifest_sha256": "8cac4562ee7642b4d275a48b839365ded61a9396727ddd42f47bda7370f8b95b",
+  "cloud_source_provenance_sha256": "b5d7fd05a188985a7bff728884ceb5e6c317361e0f19f5da886436c2f74e77fa",
+  "debian_apt_provenance_sha256": "849018bbd32548f1416349e028918b48b26df14d29d82d1afcd81f645295706b",
+  "frozen_inputs": {
+    "image/cloud/Dockerfile": "b3db8fc7b1a466599e45657be656d2ef355f2bf0036e4289a8daa20c9f152332",
+    "image/cloud/clean-image.sh": "0b15c3617740c90eb023dc0ff37fd9634400cea8860d82559362dcb8be481f07",
+    "image/cloud/configure-image.sh": "dc6fd76ee5953911cb7459519a04fdc0822f93918c2ea797b28506c3f5c591b2",
+    "image/cloud/packages.txt": "b98b939a8b67cf43c62a87a64626cfe869574fac74fcf87b3c0203e507d7f908",
+    "image/cloud/upstream.json": "53156d540e61ba020097f107096e5928e3028fb43af263691dadf30aa803f561",
+    "image/package-profiles.txt": "47d3dc1e3538421ba548109d66e77b96da4f838bac45f62c12bd6116c00b090e",
+    "packages.txt": "9f02b81b954e0d70d86cd017c3b5dfc3c500cc2f8b584bf796e9ba33edccc6a7",
+    "rootfs/usr/share/keyrings/rougarou-archive-keyring.gpg": "48b4fa7bdd79c78b77da838c63bfeb6693db1e208b662bacbc7f1911a11b537e",
+    "scripts/cloud-image.py": "ea6c9a4d011f06d0971dbaa2588b0ab46b37207da976e2f4054962187ce37ec8",
+    "scripts/repo.py": "0ab7e6b6aa8ec02f338f62d5a1576f3a1e1ee4e8a5975d504d5e7c961fbc3bd3",
+    "tests/cloud-sealed-audit.py": "a4255f57e312c5b47df8590db545fc3d662fa10e50d2cc16ae6da665edfbea5f",
+    "versions.env": "0abf0a00fb6f5ec762b069a53d9796333b86280a34bc3e9c8dafa6ac151b24d4"
+  },
+  "frozen_inputs_verified": 12,
+  "installed_debian_packages": 388,
+  "installed_packages": 389,
+  "package_manifest_sha256": "16a26dd2f0d174d7828bbb091848536930a92dfc6a61c087e019c8b36e1421d6",
+  "passed": true,
+  "repository_metadata": {
+    "InRelease": "14ce444d13447e6b6b33e9e47872531942329f739f8b9143e133eba85e8db9ed",
+    "Packages": "8527d8043fadbd533e2a8d66fb5c6c3fbb3ea06bec490d0d73987431bba13c47",
+    "Release": "547ed114292c83bd2fc7cca66af6770545af4277de4779b4ec45dc5056f72596"
+  },
+  "schema": 1,
+  "sealed_audit_sha256": "43dea5e0c0e50b86d60b27de12cccdde11c0e1e445fc1cab832b929734f792ff",
+  "upstream": {
+    "checksums_url": "https://cloud.debian.org/images/cloud/trixie/20260914-2601/SHA512SUMS",
+    "metadata_url": "https://cloud.debian.org/images/cloud/trixie/20260914-2601/debian-13-generic-amd64-20260914-2601.json",
+    "name": "debian-13-generic-amd64-20260914-2601.qcow2",
+    "schema": 1,
+    "sha512": "a733e7d49442a03e70d03e4eb5aaf3967f3efc69ef70952f9bb10fc1ee2c4876eb95956b5ad2d31350e5fada768feb651352535fb8cd1233f61998a5a7d2e93c",
+    "trust": "Dated official Debian image pinned to SHA512 obtained over HTTPS. This directory publishes no detached GPG signature; no upstream GPG-image authentication is claimed. Rougarou output receives its own release signature.",
+    "url": "https://cloud.debian.org/images/cloud/trixie/20260914-2601/debian-13-generic-amd64-20260914-2601.qcow2"
+  },
+  "upstream_metadata": {
+    "upstream-SHA512SUMS": "6e1f384b152ce4bc7c5f287b5559f18786de3036915e6e6c42b3fcb8dfd8709a",
+    "upstream-debian-13-generic-amd64-20260914-2601.json": "b9ee0bde0c8d0d2a487010a368a2c4b505555a7b4f86366abdd8bdc8d01e811a"
+  }
+}

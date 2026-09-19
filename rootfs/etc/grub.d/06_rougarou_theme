@@ -1,0 +1,11 @@
+#!/bin/sh
+# Installed-menu colors only; Debian owns kernel detection and boot commands.
+set -eu
+[ "${ROUGAROU_GRUB_PALETTE:-no}" = yes ] || exit 0
+[ -z "${GRUB_THEME:-}" ] && [ -z "${GRUB_BACKGROUND:-}" ] || exit 0
+cat <<'EOF'
+set color_normal=light-gray/black
+set color_highlight=black/green
+set menu_color_normal=light-gray/black
+set menu_color_highlight=black/green
+EOF

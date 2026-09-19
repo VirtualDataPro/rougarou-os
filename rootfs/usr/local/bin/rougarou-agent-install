@@ -1,0 +1,6 @@
+#!/usr/bin/python3 -I
+"""Download a reviewed agent only when explicitly requested by this operator."""
+import sys
+sys.path.insert(0, "/usr/lib/rougarou")
+from agent_install import main
+raise SystemExit(main(sys.argv[1:]))

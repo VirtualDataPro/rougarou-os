@@ -1,0 +1,22 @@
+Rougarou OS is an independent Debian derivative inspired by Omarchy.
+It is not endorsed by Debian, Omarchy, OpenAI, GitHub or Proxmox.
+
+Original integration code in this repository is MIT licensed. This does not
+relicense Linux, Debian packages, firmware, Codex or other bundled software.
+Debian package notices are installed under /usr/share/doc/<package>/copyright.
+Codex's upstream license accompanies its bundled binary. Other packaged agent
+licenses and notices must accompany their respective artifacts.
+
+The project palette and wolf artwork come from the Rougarou theme,
+"The Architect's Grimoire": Bayou Midnight #080F0B, Moonlit Fern #79C58E,
+Silver Mist #DFE7DF and Rougarou Green #086B35. The theme's Unicode wolf and
+ASCII fallback are retained as project branding. No proprietary model weights
+are bundled.
+
+Release images are accompanied by a corresponding-source bundle, source
+coverage manifests, upstream notices and verification instructions in
+docs/downloads.md. Original upstream archives retain their bytes and authorship;
+Rougarou's modifications and build scripts are in the matching release tag.
+Redistributors must preserve the notices and meet the obligations of each
+component's license. No proprietary model weights or provider credentials
+are included.

@@ -1,0 +1,45 @@
+# Shared interactive Bash defaults. Loaded by profile.d and the managed .bashrc
+# block; deliberately safe to load again after Debian's login prompt setup.
+if [ -n "${BASH_VERSION:-}" ]; then
+  case $- in
+    *i*)
+      export CODEX_TUI_DISABLE_KEYBOARD_ENHANCEMENT=1
+      alias a='rougarou ai'
+      alias ai='rougarou ai'
+      alias cy='codex --approve-for-me --no-alt-screen'
+      alias t='tmux new-session -A -s Work'
+      alias holdmybeer='sudo su -'
+      alias ..='cd ..'
+      alias ...='cd ../..'
+      alias ....='cd ../../..'
+      alias d='docker'
+      alias ff='fzf --preview '\''bat --style=numbers --color=always {}'\'''
+      alias g='git'
+      alias gcad='git commit -a --amend'
+      alias gcam='git commit -a -m'
+      alias gcm='git commit -m'
+      alias ls='eza -lh --group-directories-first --icons=auto'
+      alias lsa='ls -a'
+      alias lt='eza --tree --level=2 --long --icons --git'
+      alias lta='lt -a'
+      if [ "$EUID" -eq 0 ]; then
+        PS1='\[\e[31m\]\u@\h:\w\$\[\e[0m\] '
+      elif [ -n "${SSH_CONNECTION:-}${SSH_TTY:-}" ] &&
+           [ -t 0 ] && [ -t 1 ] &&
+           [ "${TERM:-dumb}" != dumb ] && [ "${TERM:-}" != linux ] &&
+           command -v starship >/dev/null 2>&1; then
+        if [ -z "${STARSHIP_CONFIG+x}" ]; then
+          if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml" ]; then
+            export STARSHIP_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml"
+          else
+            export STARSHIP_CONFIG=/usr/share/rougarou/starship.toml
+          fi
+        fi
+        eval "$(starship init bash)"
+      else
+        # Console and recovery sessions need no prompt subprocesses or glyphs.
+        PS1='\u@\h:\w\$ '
+      fi
+      ;;
+  esac
+fi

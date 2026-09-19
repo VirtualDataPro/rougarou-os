@@ -1,0 +1,13 @@
+# Optional installer profiles. Format: profile-id|space-separated package roots
+# Values are validated as package names, never evaluated as shell commands.
+# The ISO carries every profile; only explicitly chosen profiles are installed.
+codex|rougarou-codex
+gemini|rougarou-gemini nodejs
+# OpenCode is installed only by an explicit pinned upstream download after login.
+opencode|ca-certificates curl
+# Claude's binary is not redistributed; this prepares its explicit download flow.
+claude|ca-certificates curl gnupg
+herdr|rougarou-herdr
+docker-rootless|docker.io docker-cli rootlesskit uidmap slirp4netns fuse-overlayfs dbus-user-session
+docker-system|docker.io docker-cli
+podman|podman uidmap slirp4netns fuse-overlayfs dbus-user-session

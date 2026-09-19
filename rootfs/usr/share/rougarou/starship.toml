@@ -1,0 +1,52 @@
+add_newline = true
+command_timeout = 200
+palette = "rougarou"
+format = "$os$directory$git_branch$git_status$character"
+
+[palettes.rougarou]
+fern = "#79C58E"
+silver = "#A6B5AA"
+amber = "#D9B474"
+red = "#E0878D"
+
+[directory]
+style = "bold fern"
+truncation_length = 2
+truncation_symbol = "…/"
+repo_root_style = "bold fern"
+read_only_style = "red"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "italic silver"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "amber"
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+conflicted = "× "
+untracked = "? "
+modified = "~ "
+staged = "+ "
+renamed = "» "
+deleted = "− "
+stashed = ""
+
+[character]
+success_symbol = "[󰜴](bold fern)"
+error_symbol = "[󰜴](bold red)"
+vimcmd_symbol = "[⬅](bold fern)"
+
+[os]
+disabled = false
+format = "[$symbol]($style) "
+style = "bold fern"
+
+# Rougarou's mark, including generic Linux and Debian fallback detection.
+[os.symbols]
+Arch = ""
+Debian = ""
+Linux = ""
+Unknown = ""

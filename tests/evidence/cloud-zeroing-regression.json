@@ -1,0 +1,29 @@
+{
+  "actual_allocator_skipped_regions": {
+    "all_zero_after_bitmap_wipe": true,
+    "count": 3,
+    "original_unchanged": true,
+    "powered_off_identity_audit_passed": true
+  },
+  "method": "unmounted ext4 allocation-bitmap zerofree; FAT allocation-based zeroing",
+  "native_regression": {
+    "allocated_file_preserved": true,
+    "backing_overlay_refused": true,
+    "deleted_data_after": false,
+    "deleted_data_before": true,
+    "result": "PASS",
+    "source_unchanged": true,
+    "unmounted_ext4_bitmap_zeroing": true
+  },
+  "no_credentials_used_in_synthetic_test": true,
+  "passed": true,
+  "schema": 1,
+  "script_sha256": "ea6c9a4d011f06d0971dbaa2588b0ab46b37207da976e2f4054962187ce37ec8",
+  "whole_working_copy_scan": {
+    "complete_openssh_structures": 0,
+    "complete_structures": 8,
+    "decoded_bytes_scanned": 8589934592,
+    "packaged_gnutls_selftests": 8,
+    "unattributed_complete_structures": 0
+  }
+}

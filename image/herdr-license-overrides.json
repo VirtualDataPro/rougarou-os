@@ -1,0 +1,298 @@
+{
+  "block2-0.6.2": [
+    {
+      "commit": "b4167b582b2f75f9a1be75495c41b765344fd03c",
+      "name": "LICENSE.md",
+      "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+      "url": "https://raw.githubusercontent.com/madsmtm/objc2/b4167b582b2f75f9a1be75495c41b765344fd03c/LICENSE.md"
+    }
+  ],
+  "dispatch2-0.3.1": [
+    {
+      "commit": "8852b424193ca41602281b3d7540d7c8ed51e49a",
+      "name": "LICENSE.md",
+      "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+      "url": "https://raw.githubusercontent.com/madsmtm/objc2/8852b424193ca41602281b3d7540d7c8ed51e49a/LICENSE.md"
+    }
+  ],
+  "objc2-0.6.4": [
+    {
+      "commit": "8852b424193ca41602281b3d7540d7c8ed51e49a",
+      "name": "LICENSE.md",
+      "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+      "url": "https://raw.githubusercontent.com/madsmtm/objc2/8852b424193ca41602281b3d7540d7c8ed51e49a/LICENSE.md"
+    }
+  ],
+  "objc2-encode-4.1.0": [
+    {
+      "commit": "8d214f5477365ffcbcbb7de058c86ed9a518efb7",
+      "name": "LICENSE.md",
+      "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+      "url": "https://raw.githubusercontent.com/madsmtm/objc2/8d214f5477365ffcbcbb7de058c86ed9a518efb7/LICENSE.md"
+    }
+  ],
+  "r-efi-5.3.0": [
+    {
+      "commit": "97b55bed1c2c91dcbf787674849f05337ff80b33",
+      "name": "README.md",
+      "sha256": "420f65fec3ba2e89d49da51b222d2881d26959037a7b7d3794143db4bd4627b1",
+      "url": "https://raw.githubusercontent.com/r-efi/r-efi/97b55bed1c2c91dcbf787674849f05337ff80b33/README.md"
+    },
+    {
+      "commit": "97b55bed1c2c91dcbf787674849f05337ff80b33",
+      "name": "AUTHORS",
+      "sha256": "ff92bed461f50338dd703a9ba9aee496a425957873df1d91192776e4bdf5dda7",
+      "url": "https://raw.githubusercontent.com/r-efi/r-efi/97b55bed1c2c91dcbf787674849f05337ff80b33/AUTHORS"
+    }
+  ],
+  "r-efi-6.0.0": [
+    {
+      "commit": "7e1b0322d31d625f81a5656096330934f9cd835d",
+      "name": "README.md",
+      "sha256": "420f65fec3ba2e89d49da51b222d2881d26959037a7b7d3794143db4bd4627b1",
+      "url": "https://raw.githubusercontent.com/r-efi/r-efi/7e1b0322d31d625f81a5656096330934f9cd835d/README.md"
+    },
+    {
+      "commit": "7e1b0322d31d625f81a5656096330934f9cd835d",
+      "name": "AUTHORS",
+      "sha256": "d027e91dbc9cdbb2f1190068e498bd6b61cff022b6a032b191021ba658d96111",
+      "url": "https://raw.githubusercontent.com/r-efi/r-efi/7e1b0322d31d625f81a5656096330934f9cd835d/AUTHORS"
+    }
+  ],
+  "ratatui-0.30.0": [
+    {
+      "commit": "0a2a7c0363a4806b0cf05c1915bf7cdd438f756c",
+      "name": "LICENSE",
+      "sha256": "50eb43e8d742c9c61a9391e42b2184fce54dbd1893a1bb1c85b8c9ee217ab1f5",
+      "url": "https://raw.githubusercontent.com/ratatui/ratatui/0a2a7c0363a4806b0cf05c1915bf7cdd438f756c/LICENSE"
+    }
+  ],
+  "ratatui-core-0.1.0": [
+    {
+      "commit": "0a2a7c0363a4806b0cf05c1915bf7cdd438f756c",
+      "name": "LICENSE",
+      "sha256": "50eb43e8d742c9c61a9391e42b2184fce54dbd1893a1bb1c85b8c9ee217ab1f5",
+      "url": "https://raw.githubusercontent.com/ratatui/ratatui/0a2a7c0363a4806b0cf05c1915bf7cdd438f756c/LICENSE"
+    }
+  ],
+  "ratatui-crossterm-0.1.0": [
+    {
+      "commit": "0a2a7c0363a4806b0cf05c1915bf7cdd438f756c",
+      "name": "LICENSE",
+      "sha256": "50eb43e8d742c9c61a9391e42b2184fce54dbd1893a1bb1c85b8c9ee217ab1f5",
+      "url": "https://raw.githubusercontent.com/ratatui/ratatui/0a2a7c0363a4806b0cf05c1915bf7cdd438f756c/LICENSE"
+    }
+  ],
+  "ratatui-termwiz-0.1.0": [
+    {
+      "commit": "0a2a7c0363a4806b0cf05c1915bf7cdd438f756c",
+      "name": "LICENSE",
+      "sha256": "50eb43e8d742c9c61a9391e42b2184fce54dbd1893a1bb1c85b8c9ee217ab1f5",
+      "url": "https://raw.githubusercontent.com/ratatui/ratatui/0a2a7c0363a4806b0cf05c1915bf7cdd438f756c/LICENSE"
+    }
+  ],
+  "ratatui-widgets-0.3.0": [
+    {
+      "commit": "0a2a7c0363a4806b0cf05c1915bf7cdd438f756c",
+      "name": "LICENSE",
+      "sha256": "50eb43e8d742c9c61a9391e42b2184fce54dbd1893a1bb1c85b8c9ee217ab1f5",
+      "url": "https://raw.githubusercontent.com/ratatui/ratatui/0a2a7c0363a4806b0cf05c1915bf7cdd438f756c/LICENSE"
+    }
+  ],
+  "valuable-0.1.1": [
+    {
+      "commit": "9efc29b6e58cef28f6566a47aa7e142a55fead77",
+      "name": "LICENSE",
+      "sha256": "ed60d479b8fd1f64e9cbc3de449a16a53ac1b3d1b6aeb9bf9d190a8e93061b44",
+      "url": "https://raw.githubusercontent.com/tokio-rs/valuable/9efc29b6e58cef28f6566a47aa7e142a55fead77/LICENSE"
+    }
+  ],
+  "vtparse-0.6.2": [
+    {
+      "commit": "edeae72b5fc55c7fa4aa1d08bbefd08c5493f757",
+      "name": "LICENSE.md",
+      "sha256": "37db33bbbd7348969eda397b89a16f252d56c1ca7481b6ccaf56ccdcbab5dcca",
+      "url": "https://raw.githubusercontent.com/wez/wezterm/edeae72b5fc55c7fa4aa1d08bbefd08c5493f757/LICENSE.md"
+    },
+    {
+      "commit": "edeae72b5fc55c7fa4aa1d08bbefd08c5493f757",
+      "name": "licenses-ANGLE.md",
+      "sha256": "bf4da21bd20bcfb5b60b7ecc67fa864a79be049e21d6178076887f178dd6c71a",
+      "url": "https://raw.githubusercontent.com/wez/wezterm/edeae72b5fc55c7fa4aa1d08bbefd08c5493f757/licenses/ANGLE.md"
+    },
+    {
+      "commit": "edeae72b5fc55c7fa4aa1d08bbefd08c5493f757",
+      "name": "licenses-README.md",
+      "sha256": "268406dc3383fba9c7705c5b53c028f0e5d93a14086f0af96018ca27825e84ca",
+      "url": "https://raw.githubusercontent.com/wez/wezterm/edeae72b5fc55c7fa4aa1d08bbefd08c5493f757/licenses/README.md"
+    }
+  ],
+  "wasip2-1.0.2+wasi-0.2.9": [
+    {
+      "commit": "06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9",
+      "name": "LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasi-rs/06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9/LICENSE-APACHE"
+    },
+    {
+      "commit": "06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9",
+      "name": "LICENSE-Apache-2.0_WITH_LLVM-exception",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasi-rs/06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9/LICENSE-Apache-2.0_WITH_LLVM-exception"
+    },
+    {
+      "commit": "06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9",
+      "name": "LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasi-rs/06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9/LICENSE-MIT"
+    }
+  ],
+  "wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06": [
+    {
+      "commit": "06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9",
+      "name": "LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasi-rs/06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9/LICENSE-APACHE"
+    },
+    {
+      "commit": "06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9",
+      "name": "LICENSE-Apache-2.0_WITH_LLVM-exception",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasi-rs/06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9/LICENSE-Apache-2.0_WITH_LLVM-exception"
+    },
+    {
+      "commit": "06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9",
+      "name": "LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasi-rs/06ce201370fcde0d1b0d47cac8ecb1b0b312c9f9/LICENSE-MIT"
+    }
+  ],
+  "wasm-encoder-0.244.0": [
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-APACHE"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-Apache-2.0_WITH_LLVM-exception",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-Apache-2.0_WITH_LLVM-exception"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-MIT"
+    }
+  ],
+  "wasmparser-0.244.0": [
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-APACHE"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-Apache-2.0_WITH_LLVM-exception",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-Apache-2.0_WITH_LLVM-exception"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-MIT"
+    }
+  ],
+  "wezterm-input-types-0.1.0": [
+    {
+      "commit": "d5ca5509b95edc31291ba29bd1fcbf3f0b12c92d",
+      "name": "LICENSE.md",
+      "sha256": "37db33bbbd7348969eda397b89a16f252d56c1ca7481b6ccaf56ccdcbab5dcca",
+      "url": "https://raw.githubusercontent.com/wez/wezterm/d5ca5509b95edc31291ba29bd1fcbf3f0b12c92d/LICENSE.md"
+    },
+    {
+      "commit": "d5ca5509b95edc31291ba29bd1fcbf3f0b12c92d",
+      "name": "licenses-ANGLE.md",
+      "sha256": "bf4da21bd20bcfb5b60b7ecc67fa864a79be049e21d6178076887f178dd6c71a",
+      "url": "https://raw.githubusercontent.com/wez/wezterm/d5ca5509b95edc31291ba29bd1fcbf3f0b12c92d/licenses/ANGLE.md"
+    },
+    {
+      "commit": "d5ca5509b95edc31291ba29bd1fcbf3f0b12c92d",
+      "name": "licenses-README.md",
+      "sha256": "268406dc3383fba9c7705c5b53c028f0e5d93a14086f0af96018ca27825e84ca",
+      "url": "https://raw.githubusercontent.com/wez/wezterm/d5ca5509b95edc31291ba29bd1fcbf3f0b12c92d/licenses/README.md"
+    }
+  ],
+  "winapi-i686-pc-windows-gnu-0.4.0": [
+    {
+      "commit": "796a8e6c2971dc2ff1bcff166e6671284f9b5b6b",
+      "name": "LICENSE-APACHE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "url": "https://raw.githubusercontent.com/retep998/winapi-rs/796a8e6c2971dc2ff1bcff166e6671284f9b5b6b/LICENSE-APACHE"
+    },
+    {
+      "commit": "796a8e6c2971dc2ff1bcff166e6671284f9b5b6b",
+      "name": "LICENSE-MIT",
+      "sha256": "ce7bc3499fee93d5022ef430d5e4201e79a6d9154f3974e42f41349f0569e09b",
+      "url": "https://raw.githubusercontent.com/retep998/winapi-rs/796a8e6c2971dc2ff1bcff166e6671284f9b5b6b/LICENSE-MIT"
+    }
+  ],
+  "winapi-x86_64-pc-windows-gnu-0.4.0": [
+    {
+      "commit": "796a8e6c2971dc2ff1bcff166e6671284f9b5b6b",
+      "name": "LICENSE-APACHE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "url": "https://raw.githubusercontent.com/retep998/winapi-rs/796a8e6c2971dc2ff1bcff166e6671284f9b5b6b/LICENSE-APACHE"
+    },
+    {
+      "commit": "796a8e6c2971dc2ff1bcff166e6671284f9b5b6b",
+      "name": "LICENSE-MIT",
+      "sha256": "ce7bc3499fee93d5022ef430d5e4201e79a6d9154f3974e42f41349f0569e09b",
+      "url": "https://raw.githubusercontent.com/retep998/winapi-rs/796a8e6c2971dc2ff1bcff166e6671284f9b5b6b/LICENSE-MIT"
+    }
+  ],
+  "wit-component-0.244.0": [
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-APACHE"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-Apache-2.0_WITH_LLVM-exception",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-Apache-2.0_WITH_LLVM-exception"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-MIT"
+    }
+  ],
+  "wit-parser-0.244.0": [
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-APACHE"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-Apache-2.0_WITH_LLVM-exception",
+      "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-Apache-2.0_WITH_LLVM-exception"
+    },
+    {
+      "commit": "d4e317f22c3bace76cb3205003bcc34b4929037d",
+      "name": "LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "url": "https://raw.githubusercontent.com/bytecodealliance/wasm-tools/d4e317f22c3bace76cb3205003bcc34b4929037d/LICENSE-MIT"
+    }
+  ]
+}

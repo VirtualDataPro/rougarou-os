@@ -1,0 +1,35 @@
+[Unit]
+Description=Rougarou rootless Docker engine
+Documentation=https://docs.docker.com/engine/security/rootless/
+After=dbus.service
+Wants=dbus.service
+StartLimitBurst=3
+StartLimitIntervalSec=60
+
+[Service]
+Type=notify
+NotifyAccess=all
+Environment=PATH=/usr/sbin:/usr/bin:/sbin:/bin
+Environment=DOCKERD_ROOTLESS_ROOTLESSKIT_STATE_DIR=%t/rougarou-docker/rootlesskit
+Environment=DOCKERD_ROOTLESS_ROOTLESSKIT_NET=slirp4netns
+Environment=DOCKERD_ROOTLESS_ROOTLESSKIT_PORT_DRIVER=builtin
+Environment=DOCKERD_ROOTLESS_ROOTLESSKIT_DISABLE_HOST_LOOPBACK=true
+RuntimeDirectory=rougarou-docker
+RuntimeDirectoryMode=0700
+UMask=0077
+ExecStart=/usr/share/docker.io/contrib/dockerd-rootless.sh --config-file=%h/.config/rougarou/docker/daemon.json --data-root=%h/.local/share/rougarou/docker --exec-root=%t/rougarou-docker/exec --pidfile=%t/rougarou-docker/docker.pid --host=unix://%t/rougarou-docker/docker.sock
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=on-failure
+RestartSec=3
+TimeoutStartSec=90
+TimeoutStopSec=90
+KillMode=mixed
+Delegate=yes
+TasksMax=infinity
+LimitNOFILE=1048576
+LimitNPROC=infinity
+# newuidmap/newgidmap require their packaged privilege to map subordinate IDs.
+# NoNewPrivileges would prevent rootless startup; this service runs as its owner.
+
+[Install]
+WantedBy=default.target
