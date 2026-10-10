@@ -1,43 +1,71 @@
-# Terminal control menu
+# SSH control center
 
-Run the optional menu from an interactive terminal as your ordinary operator:
+Run `rougarou menu` as your ordinary operator, locally or over an SSH connection
+with a terminal (`ssh -t HOST rougarou menu`). Use arrow keys and Enter to select,
+Tab to move between buttons, and Esc to return. On SSH terminals, exiting restores
+the previous shell screen, including when using Esc or Ctrl-C. The overview shows worker and
+queue status. The interface supports terminals of at least 60 columns by 20 rows;
+80 by 24 or larger is recommended. Set `NO_COLOR=1` for monochrome rendering.
 
-```sh
-rougarou menu
+Schedules, jobs, workers, updates and backups each have their own screen. Select
+an existing record to see its settings and available actions. There is no need
+to copy a task name, job ID, update plan ID or backup snapshot ID. Lists refresh
+when reopened; the interface retains your last highlighted row during a session.
+
+The schedule editor opens with the saved definition. Select individual fields to
+change instructions, provider, model, workspace, permissions, frequency, timezone,
+runtime limit or catch-up behavior. New and edited schedules are saved paused.
+Run a manual test, inspect its output, then enable the schedule after it succeeds.
+Esc discards an unsaved editor draft. One-off jobs use the same editor.
+
+The model picker reads visible Codex models from its local cache, or installed
+Ollama models from `ollama list`. It also offers the saved model, provider default,
+and a custom identifier. It makes no billable requests. Cache entries may be
+stale; the provider checks availability when work runs. Responses-compatible
+providers offer their configured model and custom input. Other unattended CLIs
+use command tasks, with model arguments specified in the command.
+
+Each job carries its provider and model. The worker runs those jobs under the
+operator's account. Updates and backups are system operations without an AI model.
+Worker stop/restart actions explain that active work may be interrupted.
+
+Updates show the reviewed package changes and retain that exact plan for applying.
+You still provide an existing recovery point reference and confirm installation;
+the backend rejects stale plans. Backup selection uses the full snapshot ID
+internally. A successful preview and confirmation are required before restoring
+into a new recovery directory. Live workspaces are preserved.
+
+Settings provides account setup, provider connection, notifications and container
+tools. Some setup tools and privileged update operations use their native prompts,
+then return to the control center. Opening the menu does not enable services,
+create schedules, configure repositories or download models. Direct commands
+remain available for scripting and advanced options.
+
+## Command completion
+
+Bash also provides context-aware Tab completion at the shell prompt:
+
+```text
+rougarou ta<Tab>                       -> rougarou tasks
+rougarou tasks enable <Tab><Tab>       -> paused schedule names
+rougarou jobs cancel <Tab><Tab>        -> queued or running job IDs
+rougarou tasks add review --model <Tab><Tab>
+rougarou jobs submit --workspace ~/W<Tab>
 ```
 
-Use the numbered choices for agents, managed jobs, containers, guided updates,
-encrypted backups, notifications, host checks and account setup. Press Enter or
-choose `0` to go back; `0` from the main menu returns to your shell. Ctrl-C or
-Ctrl-D returns through the operator CLI's normal cancellation handling. The menu
-does not replace the shell or start at login automatically.
+It completes subcommands, options, sandbox/provider choices, timezones, local
+model identifiers and filesystem paths. Schedule suggestions reflect the action;
+job suggestions include up to 1,000 recent eligible runs. Codex model suggestions
+come from its visible local cache; other providers offer their configured model.
+Tab makes no network or AI requests and does not create a queue or run work.
 
-The menu invokes the same documented commands available at the prompt. It does
-not configure an agent, enable a worker or timer, download a model, initialize a
-backup repository, or change container services merely by opening a submenu.
-Child command failures leave the menu available. A selected child can have its
-own native prompts, permissions and network behavior.
+Completion loads automatically in a new Bash session. To enable it in an existing
+session immediately after upgrading:
 
-Update application asks for a reviewed plan ID and a recovery point reference,
-then requires confirmation. Backend plan and policy checks remain authoritative.
-A failed restore preview never advances to the restore confirmation. Restoring
-requires the full 64-character snapshot ID, a successful preview, and explicit
-confirmation; the result is staged in a new recovery directory for inspection.
-It does not replace a live workspace. Acknowledging every unsuccessful job also
-requires confirmation and preserves job history and logs.
+```bash
+source /usr/share/bash-completion/bash_completion
+source /usr/share/bash-completion/completions/rougarou
+```
 
-Paths, identifiers and recovery references are passed as separate command
-arguments. Spaces and shell metacharacters are not evaluated. Normal command
-validation still applies. Webhook configuration asks for the format and an
-optional private bearer-token file, then the notification command reads the URL
-with a hidden prompt.
-
-Use direct commands for scripting and fuller options, including multiple backup
-include paths. The menu requires both input and output to be a terminal; piped
-input is refused. See [backups](backups.md) and
-[notifications](notifications.md) for their configuration and recovery details.
-
-Validation covers real PTY input, blank/back navigation,
-interrupt/EOF cancellation, failed-preview gating, and actual subprocess argument
-capture using disposable child commands. No production operation is performed
-by those tests.
+The integration targets Rougarou's default Bash shell. Arguments forwarded to an
+agent or an unattended command retain ordinary file completion.

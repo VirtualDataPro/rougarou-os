@@ -638,7 +638,7 @@ def ai(extra: list[str]) -> int:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="rougarou", description="Rougarou OS operator tools. Your shell is always available.")
     parser.add_argument("--version", action="store_true", help="show Rougarou version")
-    parser.add_argument("command", nargs="?", default="welcome", choices=["welcome", "setup", "ai", "provider", "github", "access", "doctor", "status", "jobs", "worker", "service", "update", "backup", "notify", "menu", "version", "help"])
+    parser.add_argument("command", nargs="?", default="welcome", choices=["welcome", "setup", "ai", "provider", "github", "access", "doctor", "status", "jobs", "tasks", "schedule", "worker", "service", "update", "backup", "notify", "menu", "version", "help"])
     parser.add_argument("arguments", nargs=argparse.REMAINDER)
     args = parser.parse_args(argv)
     previous_umask = os.umask(0o077)
@@ -652,6 +652,8 @@ def main(argv: list[str] | None = None) -> int:
             print("jobs run -- cmd ...  Queue an explicit command under your account.")
             print("jobs list/show/logs/cancel/retry  Inspect and manage durable runs.")
             print("jobs ack [JOB_ID|--all]  Clear reviewed failures from login attention; retain history.")
+            print("schedule add/edit/list/show/run/enable/pause/remove/history/logs  Scheduled tasks.")
+            print("tasks               Alias for schedule; existing scripts remain supported.")
             print("menu                Open the terminal control menu.")
             print("update plan/refresh/apply/status/recovery  Review and apply signed updates.")
             print("backup init/create/list/check/restore  Encrypted operator backups and staged recovery.")
@@ -673,6 +675,9 @@ def main(argv: list[str] | None = None) -> int:
             return ai(extra)
         if args.command == "access":
             return access(args.arguments)
+        if args.command in {"schedule", "tasks"}:
+            from tasks import main as tasks_main
+            return tasks_main(args.arguments, prog="rougarou " + args.command)
         if args.command == "jobs":
             from jobs import main as jobs_main
             return jobs_main(args.arguments)

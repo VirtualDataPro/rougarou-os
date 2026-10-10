@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-10",
+  "result": "pass",
+  "package": "rougarou-base_0.1.0~alpha8-5_all.deb",
+  "sha256": "4f316d7556f603ee244ad19d955abd7616e5d17f6ee620662c77ce41eaf306b6",
+  "source_checks": {
+    "command": "scripts/check.sh",
+    "tests": 263,
+    "passed": 255,
+    "skipped": 8
+  },
+  "installed_lab": {
+    "completion_tests_passed": 7,
+    "fresh_ssh_login_autoload": true,
+    "real_tab_command_and_action_expansion": true,
+    "real_tab_saved_schedule_listing": true,
+    "existing_grub_preserved": true,
+    "dpkg_audit_clean": true,
+    "previous_package_and_queue_backup_retained": true
+  },
+  "scope": "Bash completion; local read-only candidate lookup; no provider requests; no stable publication"
+}

@@ -1,13 +1,16 @@
 # Downloads and verification
 
 Download Rougarou OS from the
-[alpha.8 release](https://github.com/VirtualDataPro/rougarou-os/releases/tag/v0.1.0-alpha.8).
-Choose one image:
+[alpha.9 release](https://github.com/VirtualDataPro/rougarou-os/releases/tag/v0.1.0-alpha.9).
+The new installer and the earlier cloud image are separate releases:
 
 | File | Purpose |
 | --- | --- |
-| `rougarou-os-0.1.0-alpha.8-amd64.iso` | Interactive installation onto a new VM disk |
-| `rougarou-os-0.1.0-alpha.8-cloud-amd64.qcow2` | Standalone cloud-init disk; configure your account and SSH key before boot |
+| `rougarou-os-0.1.0-alpha.9-amd64.iso` | Interactive installation onto a new VM disk |
+| `rougarou-os-0.1.0-alpha.8-cloud-amd64.qcow2` | Available from the [alpha.8 release](https://github.com/VirtualDataPro/rougarou-os/releases/tag/v0.1.0-alpha.8); configure your account and SSH key before boot |
+
+Use the checksum list and keyring from the same release as each image.
+Alpha.9 does not include a new cloud image.
 
 The cloud image has **no default login or password**. See
 [cloud onboarding](cloud-image.md#provision-an-operator-explicitly).
@@ -37,7 +40,7 @@ sha256sum --check --ignore-missing release-SHA256SUMS
 ```
 
 Every file you intend to use must appear with `OK`. Missing files are skipped
-because the signed list also covers the other image and source materials.
+because the signed list also covers other assets and source materials.
 The key identifies Rougarou's release signer; it does not establish that the
 software is free of defects. The current development key expires on 2027-09-18.
 
@@ -49,12 +52,12 @@ extracting that archive.
 
 ## Source materials
 
-The release provides corresponding source alongside its binary images:
+Alpha.9 provides corresponding source alongside its installer:
 
-- `rougarou-os-0.1.0-alpha.8-corresponding-source.tar.part-01`
-- `rougarou-os-0.1.0-alpha.8-corresponding-source.tar.part-02`
-- `rougarou-os-0.1.0-alpha.8-corresponding-source.manifest.json`
-- `rougarou-os-0.1.0-alpha.8-corresponding-source.README.md`
+- `rougarou-os-0.1.0-alpha.9-corresponding-source.tar.part-01`
+- `rougarou-os-0.1.0-alpha.9-corresponding-source.tar.part-02`
+- `rougarou-os-0.1.0-alpha.9-corresponding-source.manifest.json`
+- `rougarou-os-0.1.0-alpha.9-corresponding-source.README.md`
 
 These are parts of one tar archive. Verify both parts, the manifest and README
 against the signed release list before following the README's reassembly and
@@ -67,8 +70,8 @@ original bytes and attribution. The outer archive uses generic ownership and
 contains no workstation paths.
 
 Rougarou's integration source, patches and build scripts are in the
-[matching Git tag](https://github.com/VirtualDataPro/rougarou-os/tree/v0.1.0-alpha.8).
-The signed release list also covers `rougarou-os-0.1.0-alpha.8-source.tar.gz`,
+[matching Git tag](https://github.com/VirtualDataPro/rougarou-os/tree/v0.1.0-alpha.9).
+The signed release list also covers `rougarou-os-0.1.0-alpha.9-source.tar.gz`,
 an archive of that exact source tree.
 See [NOTICE](../NOTICE) and the packages' own copyright files for licenses.
 The release manifests identify the shipped versions; the source bundle does

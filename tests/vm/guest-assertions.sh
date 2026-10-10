@@ -23,6 +23,23 @@ test ! -e /home/tester/.config/gh/hosts.yml
 printf '=== package ownership ===\n'
 test -z "$(dpkg --audit)"
 dpkg-query -W rougarou-base
+test "$(dpkg-query -W '-f=${Status}' vim)" = 'install ok installed'
+vim --version
+python3 - <<'PY'
+import errno
+import socket
+from pathlib import Path
+assert 'ipv6.disable=1' in Path('/proc/cmdline').read_text().split()
+assert not Path('/proc/net/if_inet6').exists() or not Path('/proc/net/if_inet6').read_text().strip()
+try:
+    sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+except OSError as error:
+    assert error.errno == errno.EAFNOSUPPORT, error
+else:
+    sock.close()
+    raise AssertionError('IPv6 socket creation unexpectedly succeeded')
+print('IPV6_DISABLED_PASSED')
+PY
 dpkg-query -S /usr/local/bin/rougarou /usr/local/bin/bat /etc/issue
 python3 - <<'PY'
 import json, subprocess

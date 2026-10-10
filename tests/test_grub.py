@@ -66,13 +66,32 @@ class GrubDefaultsTests(unittest.TestCase):
     def test_native_console_defaults_have_brand_and_visible_menu(self):
         values = self.shell_defaults({'PATH': '/usr/bin:/bin'})
         self.assertEqual(values[:5], ['RougarouOS', 'menu', '5', 'console', 'console'])
+        self.assertEqual(values[5], 'ipv6.disable=1')
 
     def test_local_serial_timeout_kernel_and_recovery_settings_survive(self):
         values = self.shell_defaults({'PATH': '/usr/bin:/bin', 'GRUB_TIMEOUT': '17', 'GRUB_TIMEOUT_STYLE': 'countdown',
                                       'GRUB_TERMINAL': 'console serial', 'GRUB_CMDLINE_LINUX': 'cryptdevice=UUID=example console=ttyS0,115200',
                                       'GRUB_DISABLE_RECOVERY': 'true'})
         self.assertEqual(values[1:5], ['countdown', '17', 'console serial', 'console serial'])
-        self.assertEqual(values[5:], ['cryptdevice=UUID=example console=ttyS0,115200', 'true'])
+        self.assertEqual(values[5:], ['cryptdevice=UUID=example console=ttyS0,115200 ipv6.disable=1', 'true'])
+
+    def test_ipv6_default_is_repeatable_and_respects_explicit_override(self):
+        for flag in ('ipv6.disable=0', 'ipv6.disable=1'):
+            command_line = f'console=ttyS0 {flag} root=UUID=example'
+            values = self.shell_defaults({'PATH': '/usr/bin:/bin', 'GRUB_CMDLINE_LINUX': command_line})
+            self.assertEqual(values[5], command_line)
+        first = self.shell_defaults({'PATH': '/usr/bin:/bin'})[5]
+        self.assertEqual(self.shell_defaults({'PATH': '/usr/bin:/bin', 'GRUB_CMDLINE_LINUX': first})[5], first)
+
+    def test_all_installer_boot_entries_disable_ipv6(self):
+        for name, prefix in (('grub.cfg', 'linux '), ('isolinux.cfg', 'append ')):
+            with self.subTest(loader=name):
+                entries = [line.split() for line in (ROOT / 'image' / name).read_text().splitlines()
+                           if line.strip().startswith(prefix)]
+                self.assertEqual(len(entries), 4)
+                for entry in entries:
+                    self.assertEqual(entry.count('ipv6.disable=1'), 1)
+                    self.assertLess(entry.index('ipv6.disable=1'), entry.index('---'))
 
     def test_palette_requires_opt_in_and_respects_existing_visual_theme(self):
         def output(extra):

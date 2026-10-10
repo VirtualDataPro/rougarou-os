@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-10",
+  "scope": "Source checks and an SSH lab upgrade; not a fresh image release",
+  "package": {
+    "name": "rougarou-base",
+    "version": "0.1.0~alpha8-3",
+    "previous_version": "0.1.0~alpha8-1",
+    "sha256": "c79aee9e6521e6a929901b378219f0abb2f2162834f8697179dd9e68403c62f9",
+    "builder_image": "sha256:7e49f8d05bf4b6d83be7fa0b80685ccaf352fc95829f2fb563313595316a6315",
+    "builder_network": "none"
+  },
+  "source_checks": {
+    "command": "scripts/check.sh",
+    "tests_run": 251,
+    "passed": 246,
+    "skipped": 5,
+    "skip_reasons": ["Native Restic unavailable: four tests", "Native root shell requires Debian container/VM: one test"],
+    "shell_syntax": "passed",
+    "publication_scan": "passed"
+  },
+  "lab_checks": {
+    "prior_package_and_queue_backed_up": true,
+    "only_base_package_upgraded": true,
+    "existing_grub_configuration_preserved": true,
+    "dpkg_audit_clean": true,
+    "worker_healthy_after_upgrade": true,
+    "systemd_unit_verification": "passed",
+    "command_manual_runs_succeeded": 1,
+    "command_timer_runs_succeeded": 2,
+    "codex_version": "0.155.0",
+    "codex_manual_runs_succeeded": 2,
+    "codex_timer_runs_succeeded": 1,
+    "timer_codex_expected_response": "ROUGAROU_TIMER_CODEX_OK",
+    "timer_codex_actual_response": "ROUGAROU_TIMER_CODEX_OK",
+    "timer_codex_exit_code": 0,
+    "timer_ran_after_submitting_ssh_session_closed": true,
+    "ssh_pty_menu_navigation": "passed",
+    "pause_and_remove": "passed",
+    "run_history_retained_after_removal": true,
+    "final_enabled_task_timers": 0,
+    "remaining_example": "codex-smoke, paused",
+    "rollback_script": "saved and syntax checked; not executed"
+  },
+  "not_validated": [
+    "Fresh ISO/cloud boot and IPv6 acceptance",
+    "Reboot/downtime catch-up behavior on the lab",
+    "Real non-Codex provider authentication and CLI flags",
+    "Executing the package rollback"
+  ]
+}

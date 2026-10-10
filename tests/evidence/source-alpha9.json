@@ -1,0 +1,33 @@
+{
+  "release": "0.1.0-alpha.9",
+  "iso_sha256": "a12e573d50371af2622155b11f16973e6416a544195b32579ca2ccec7d9041a2",
+  "source_collection": {
+    "all_retained_file_sha256_reverified": true,
+    "all_signature_and_index_chains_reverified": true,
+    "all_source_descriptors_agree": true,
+    "passed": true,
+    "resolution": "Retained authenticated alpha.8 provenance plus current signed Debian security indexes for six new source versions.",
+    "source_file_bytes": 2751676466,
+    "source_pairs": 540,
+    "unique_files": 1651
+  },
+  "wrapper_audit": {
+    "all_member_bytes_match_staging": true,
+    "files_checked": 2511,
+    "headers_checked": 3137,
+    "part_and_whole_checksums_independently_verified": true,
+    "passed": true
+  },
+  "coverage": {
+    "debian_binary_archives_checked": 1001,
+    "custom_binary_archives_checked": 4,
+    "debian_source_pairs_retained": 540,
+    "unmapped_debian_binary_archives": 0,
+    "unmapped_installer_entries": 0
+  },
+  "project_owned_metadata_privacy": {
+    "files_checked": 61,
+    "findings": 0
+  },
+  "scope": "ISO only; retained alpha.8 source superset plus six authenticated security source versions. Upstream archives retain original bytes and attribution."
+}

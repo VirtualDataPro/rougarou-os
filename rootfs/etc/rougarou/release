@@ -1,4 +1,4 @@
 NAME="Rougarou OS"
-VERSION="0.1.0-alpha.8"
+VERSION="0.1.0-alpha.9"
 BASE="Debian 13 (trixie)"
 CHANNEL="alpha"

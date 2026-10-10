@@ -1,0 +1,131 @@
+# Context-aware completion for the Rougarou Bash shell.
+_rougarou_values()
+{
+    local value
+    while IFS= read -r value; do
+        [[ $value == "$cur"* ]] && COMPREPLY+=("$value")
+    done < <(/usr/bin/python3 -B "${BASH_SOURCE[0]%/*}/../../../lib/rougarou/completion.py" "$@" 2>/dev/null)
+}
+
+_rougarou()
+{
+    local cur prev words cword split
+    _init_completion -s || return
+    local group=${words[1]-} action=${words[2]-} options='' values='' word positional=0 i skip=0 provider=current
+    if (( cword == 1 )); then
+        COMPREPLY=($(compgen -W 'welcome setup ai provider github access doctor status jobs tasks schedule worker service update backup notify menu version help --help --version' -- "$cur"))
+        return
+    fi
+    [[ $group == schedule ]] && group=tasks
+    # Recognize remainder arguments before our own flags: these belong to the child.
+    for ((i=2; i<cword; i++)); do
+        word=${words[i]}
+        if (( skip )); then skip=0; continue; fi
+        case $word in
+            --command|--)
+                if (( i + 1 == cword )); then
+                    COMPREPLY=($(compgen -c -- "$cur"))
+                fi
+                _filedir
+                return ;;
+            --workspace|--timeout|--delay|--sandbox|--model|--on|--timezone|--provider|--prompt|--limit|--tail|--plan|--recovery-point|--repository|--password-file|--include|--target|--url-file|--token-file|--format)
+                skip=1 ;;
+            --*=*|-*) ;;
+            *)
+                if [[ $group == jobs && $action == run ]] && (( i > 2 )); then
+                    _filedir
+                    return
+                fi ;;
+        esac
+    done
+    case $prev in
+        --workspace|--repository|--include|--target) _filedir -d; return ;;
+        --password-file|--url-file|--token-file) _filedir; return ;;
+        --sandbox) values='read-only workspace-write' ;;
+        --provider) values='current codex' ;;
+        --format) values='json discord slack ntfy' ;;
+        --on) values='hourly daily weekly monthly' ;;
+        --timezone) _rougarou_values timezones; return ;;
+        --model)
+            for ((i=3; i<cword; i++)); do
+                case ${words[i]} in
+                    --provider) provider=${words[i+1]-current} ;;
+                    --provider=*) provider=${words[i]#*=} ;;
+                esac
+            done
+            _rougarou_values models "$provider"
+            return ;;
+        --timeout|--delay|--limit|--tail|--prompt|--plan|--recovery-point) return ;;
+    esac
+    if [[ -n $values ]]; then
+        COMPREPLY=($(compgen -W "$values" -- "$cur"))
+        return
+    fi
+    [[ $split == true ]] && return
+    if (( cword == 2 )); then
+        case $group in
+            tasks) values='add edit list show run enable pause remove history logs' ;;
+            jobs) values='submit run list history show logs cancel retry ack' ;;
+            service) values='status start stop restart enable disable' ;;
+            update) values='plan refresh apply status recovery' ;;
+            backup) values='init create list check restore' ;;
+            notify) values='configure test check status enable disable' ;;
+            access) values='status configure headless password' ;;
+        esac
+        if [[ -n $values ]]; then
+            COMPREPLY=($(compgen -W "$values --help" -- "$cur"))
+            return
+        fi
+    fi
+    case $group:$action in
+        tasks:add|tasks:edit) options='--on --timezone --catch-up --workspace --timeout --provider --model --sandbox --prompt --command' ;;
+        jobs:submit) options='--workspace --timeout --delay --sandbox --model' ;;
+        jobs:run) options='--workspace --timeout --delay --' ;;
+        jobs:list|jobs:history) options='--limit --json' ;;
+        jobs:show) options='--json' ;;
+        jobs:logs) options='--tail' ;;
+        jobs:ack) options='--all --json' ;;
+        update:apply) options='--plan --recovery-point --confirm --json' ;;
+        update:plan|update:refresh|update:status|update:recovery) options='--json' ;;
+        backup:init) options='--repository --password-file --include --existing' ;;
+        backup:restore) options='--target --apply --json' ;;
+        backup:check) options='--read-data --json' ;;
+        backup:create|backup:list) options='--json' ;;
+        notify:configure) options='--url-file --token-file --format' ;;
+        access:headless) options='--acknowledge-root-access' ;;
+        access:status) options='--json' ;;
+    esac
+    case $group in
+        status|doctor) options='--json' ;;
+        setup) options='--first-login' ;;
+        ai) _filedir; return ;;
+    esac
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W "$options --help" -- "$cur"))
+        return
+    fi
+    # Count positionals while skipping option arguments, including --option=value.
+    skip=0
+    for ((i=3; i<cword; i++)); do
+        word=${words[i]}
+        if (( skip )); then skip=0; continue; fi
+        case $word in
+            --workspace|--timeout|--delay|--sandbox|--model|--on|--timezone|--provider|--prompt|--limit|--tail|--plan|--recovery-point|--repository|--password-file|--include|--target|--url-file|--token-file|--format) skip=1 ;;
+            -*) ;;
+            *) ((positional+=1)) ;;
+        esac
+    done
+    if (( positional == 0 )); then
+        case $group:$action in
+            tasks:edit|tasks:show|tasks:run|tasks:enable|tasks:pause|tasks:remove|tasks:history|tasks:logs)
+                _rougarou_values tasks "$action" ;;
+            jobs:show|jobs:logs|jobs:cancel|jobs:retry|jobs:ack)
+                [[ " ${words[*]} " == *' --all '* ]] || _rougarou_values jobs "$action" ;;
+            jobs:run) COMPREPLY=($(compgen -c -- "$cur")); _filedir ;;
+        esac
+    fi
+    if [[ -z $cur ]]; then
+        COMPREPLY+=($(compgen -W "$options --help"))
+    fi
+}
+complete -F _rougarou rougarou

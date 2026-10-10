@@ -8,9 +8,19 @@ cloud=importlib.util.module_from_spec(spec); spec.loader.exec_module(cloud)
 PROBE=r'''set -eu
 cloud-init status --wait --format json
 python3 - <<'GUEST'
-import json,os,pwd,subprocess,sys
+import errno,json,os,pwd,socket,subprocess,sys
 from pathlib import Path
 run=lambda args: subprocess.check_output(args,text=True).strip()
+assert run(['dpkg-query','-W','-f=${Status}','vim'])=='install ok installed'
+assert 'ipv6.disable=1' in Path('/proc/cmdline').read_text().split()
+assert not Path('/proc/net/if_inet6').exists() or not Path('/proc/net/if_inet6').read_text().strip()
+try:
+    sock=socket.socket(socket.AF_INET6,socket.SOCK_STREAM)
+except OSError as error:
+    assert error.errno==errno.EAFNOSUPPORT,error
+else:
+    sock.close()
+    raise AssertionError('IPv6 socket creation unexpectedly succeeded')
 u=pwd.getpwnam('cloudtest')
 assert u.pw_uid==1000
 assert os.stat('/').st_uid==0

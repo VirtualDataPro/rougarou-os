@@ -415,6 +415,8 @@ def prepare_queue(target):
             db.execute("UPDATE jobs SET state='interrupted',finished=?,reason=?,cancel_requested=0 WHERE id=?", (now, reason, identifier))
             db.execute("INSERT INTO events(job_id,at,state,detail) VALUES(?,?,'interrupted',?)", (identifier, now, reason))
         db.execute("DELETE FROM worker")
+        if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='scheduled_tasks'").fetchone():
+            db.execute('UPDATE scheduled_tasks SET enabled=0')
         db.commit()
     return len(pending)
 

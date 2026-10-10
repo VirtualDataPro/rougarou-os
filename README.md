@@ -8,11 +8,13 @@ shell, an inline AI agent, GitHub onboarding and a restrained bayou-green
 identity. Linux and Debian remain the foundation; no desktop environment is
 installed.
 
-**0.1.0-alpha.8** is the first public alpha. Download the signed
-[installer ISO or cloud image](https://github.com/VirtualDataPro/rougarou-os/releases/tag/v0.1.0-alpha.8),
+**0.1.0-alpha.9** adds scheduled tasks and a visual SSH control center. Download the signed
+[installer ISO](https://github.com/VirtualDataPro/rougarou-os/releases/tag/v0.1.0-alpha.9),
 then follow the [verification guide](docs/downloads.md). See
 [release notes](docs/release-notes.md) and [tested configurations](docs/validation.md)
 before installing. This is experimental software for evaluation in a separate VM.
+
+The separate [cloud image](docs/cloud-image.md) remains at alpha.8.
 
 ## What ships
 
@@ -25,10 +27,10 @@ before installing. This is experimental software for evaluation in a separate VM
 - OpenSSH, QEMU guest agent, tmux, Git, GitHub CLI and terminal server tools.
 - First-login setup for Git identity, GitHub and an AI provider.
 - Inline agents using native approval modes and explicit operator authority.
-- Optional managed jobs, a systemd user worker and local health checks.
+- Scheduled tasks, managed jobs, selectable models and a systemd user worker.
 - Job acknowledgment that clears MOTD attention while preserving outcomes/logs.
 - Reviewed signed updates, recovery references and encrypted Restic backups.
-- Optional webhook notifications and a terminal control menu.
+- A visual terminal control center, contextual Bash completion and webhook notifications.
 - A responsive wolf welcome screen, plain Bash console, SSH Starship and red
   root prompt.
 - Optional rootless Docker, system Docker, Podman and Herdr workspaces.
@@ -61,8 +63,9 @@ Follow the [first installation guide](docs/first-test.md) and
 rougarou setup       # Repeat or resume operator setup
 rougarou ai          # Selected inline agent; aliases: a and ai
 rougarou doctor      # Local health and configuration checks
-rougarou menu        # Agents, jobs, updates, backups and notifications
+rougarou menu        # Agents, jobs, schedules, updates, backups and notifications
 rougarou jobs ack    # Acknowledge unsuccessful runs; keep their logs
+rougarou schedule list  # Scheduled tasks and next-run times
 ```
 
 The Codex shortcut is `cy`. Headless operator mode grants the named owner
@@ -75,7 +78,8 @@ but does not isolate the owner's account or user service manager. See
 Guides: [providers](docs/providers.md), [shell defaults](docs/shell-defaults.md),
 [terminal input](docs/terminal-input.md), [containers](docs/containers.md),
 [guided updates](docs/guided-updates.md), [backups](docs/backups.md),
-[notifications](docs/notifications.md), and [menu](docs/menu.md).
+[notifications](docs/notifications.md), [scheduled tasks](docs/scheduled-tasks.md),
+and [menu](docs/menu.md).
 
 ## Build and verify
 

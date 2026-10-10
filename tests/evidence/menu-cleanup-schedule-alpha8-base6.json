@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-10",
+  "result": "pass",
+  "package": "rougarou-base_0.1.0~alpha8-6_all.deb",
+  "sha256": "ae82421774d2a888476e6e2653f07fd9e3f2913b44d4853179b3d1c23572268a",
+  "source_checks": {
+    "command": "scripts/check.sh",
+    "tests": 265,
+    "passed": 256,
+    "skipped": 9
+  },
+  "regression": {
+    "old_version": "0.1.0~alpha8-5",
+    "exit_escape_ctrl_c_painted_on_shell_screen": true,
+    "fixed_version_restores_alternate_screen_and_tty_modes": true
+  },
+  "installed_lab": {
+    "native_menu_tests_passed": 4,
+    "completion_tests_passed": 7,
+    "schedule_help_uses_correct_command_name": true,
+    "schedule_and_tasks_list_identical": true,
+    "worker_healthy": true,
+    "existing_grub_preserved": true,
+    "dpkg_audit_clean": true,
+    "previous_package_and_queue_backup_retained": true
+  },
+  "limits": [
+    "Terminal restoration verified with xterm-256color over SSH",
+    "No ISO rebuild or stable promotion"
+  ]
+}

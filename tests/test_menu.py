@@ -1,28 +1,21 @@
-"""PTY navigation plus real subprocess argv capture; no operator actions run."""
+"""Selection, cancellation and backend boundary tests for the SSH control center."""
 import contextlib
 import io
 import json
 import os
 from pathlib import Path
-import pty
-import select
-import signal
 import subprocess
 import sys
 import tempfile
-import time
 import unittest
 from unittest.mock import patch
 
 LIB = Path(os.environ.get('ROUGAROU_TEST_LIB', Path(__file__).resolve().parents[1] / 'rootfs/usr/lib/rougarou'))
 sys.path.insert(0, str(LIB))
-STAGE = Path(__file__).parent
-if (STAGE / 'menu.py').exists():
-    sys.path.insert(0, str(STAGE))
-else:
-    STAGE = LIB
 import cli
+import jobs
 import menu
+import tasks
 
 
 class MenuTests(unittest.TestCase):
@@ -30,134 +23,118 @@ class MenuTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.capture = self.root / 'argv.jsonl'
-        fixture = self.root / 'usr/lib/rougarou/menu.py'
-        fixture.parent.mkdir(parents=True)
-        fixture.write_text('# fixture path only\n')
-        entry = self.root / 'usr/local/bin/rougarou'
-        entry.parent.mkdir(parents=True)
-        entry.write_text('import json,os,sys\nwith open(os.environ["MENU_CAPTURE"], "a") as stream:\n'
-                         '    stream.write(json.dumps(sys.argv[1:])+"\\n")\n'
-                         'raise SystemExit(int(os.environ.get("MENU_EXIT", "0")))\n')
-        env = patch.dict(os.environ, {'HOME': str(self.root), 'MENU_CAPTURE': str(self.capture), 'MENU_EXIT': '0'})
+        env = patch.dict(os.environ, {'HOME': str(self.root), 'XDG_STATE_HOME': str(self.root / 'state'),
+                                     'XDG_CONFIG_HOME': str(self.root / 'config'), 'CODEX_HOME': str(self.root / 'codex')})
         env.start()
         self.addCleanup(env.stop)
-        location = patch.object(menu, '__file__', str(fixture))
-        location.start()
-        self.addCleanup(location.stop)
-        self.output = io.StringIO()
+        menu.SELECTION.clear()
 
-    def calls(self):
-        return [json.loads(line) for line in self.capture.read_text().splitlines()] if self.capture.exists() else []
+    def test_picker_maps_hidden_tag_to_exact_identifier_and_remembers_selection(self):
+        with patch.object(menu, 'dialog', return_value='2') as ui:
+            self.assertEqual(menu.choose('Jobs', [('First run', 'a' * 16), ('Second run', 'b' * 16)]), 'b' * 16)
+        self.assertIn('--no-tags', ui.call_args.args)
+        self.assertEqual(menu.SELECTION['Jobs'], '2')
 
-    def run_menu(self, function, answers, confirmations=()):
-        with patch.object(cli, 'field', side_effect=answers), patch.object(cli, 'confirm', side_effect=confirmations) as confirm, \
-                contextlib.redirect_stdout(self.output):
-            function()
-        return confirm
+    def test_dialog_escape_raises_back_and_sanitizes_terminal_controls(self):
+        with patch.object(menu.subprocess, 'run', return_value=subprocess.CompletedProcess([], 255, '')) as run:
+            with self.assertRaises(menu.Back):
+                menu.dialog('Unsafe\x1b[2J', '--inputbox', 'Name', '10', '0', '')
+        self.assertNotIn('Unsafe\x1b[2J', run.call_args.args[0])
+        self.assertEqual(run.call_args.kwargs['env']['DIALOGRC'].split('/')[-1], 'dialogrc')
 
-    def test_paths_and_shell_metacharacters_are_single_literal_arguments(self):
-        marker = self.root / 'shell-was-executed'
-        directory = f'/mounted backup/$(touch {marker}); echo ignored'
-        password = '/private password/`id`'
-        include = '/service data/one; two'
-        self.run_menu(menu.backups_menu, ['1', directory, password, include, '0'], [True])
-        self.assertEqual(self.calls(), [['backup', 'init', '--repository', directory, '--password-file', password,
-                                        '--existing', '--include', include]])
-        self.assertFalse(marker.exists())
+    def test_model_picker_uses_visible_cache_and_preserves_saved_custom_model(self):
+        directory = self.root / 'codex'
+        directory.mkdir()
+        (directory / 'models_cache.json').write_text(json.dumps({'models': [
+            {'slug': 'model-a', 'display_name': 'Model A', 'visibility': 'list'},
+            {'slug': 'internal', 'display_name': 'Internal', 'visibility': 'hide'}]}))
+        options = menu.model_options({'kind': 'codex'}, 'saved-model')
+        self.assertIn(('Model A', 'model-a'), options)
+        self.assertIn(('saved-model', 'saved-model'), options)
+        self.assertNotIn(('Internal', 'internal'), options)
+        with patch.object(menu, 'choose', side_effect=menu.Back):
+            with self.assertRaises(menu.Back):
+                menu.pick_model({'kind': 'codex'}, 'saved-model')
 
-    def test_failed_restore_preview_prevents_confirmation_or_apply(self):
-        snapshot = 'a' * 64
-        with patch.dict(os.environ, {'MENU_EXIT': '7'}):
-            confirm = self.run_menu(menu.backups_menu, ['5', snapshot, '0'])
-        confirm.assert_not_called()
-        self.assertEqual(self.calls(), [['backup', 'restore', snapshot]])
-        self.assertIn('status 7', self.output.getvalue())
+    def test_model_override_is_emitted_once_for_all_builtin_providers(self):
+        for provider in ({'kind': 'codex'}, {'kind': 'ollama', 'model': 'old'},
+                         {'kind': 'responses', 'model': 'old', 'endpoint': 'https://example.com/v1', 'authenticated': False}):
+            spec = {'provider': provider, 'model': 'selected', 'prompt': 'Review', 'sandbox': 'read-only'}
+            argv, _, _ = jobs.command_for({'kind': 'ai', 'spec': json.dumps(spec)})
+            self.assertLessEqual(argv.count('--model'), 1)
+            self.assertNotIn('old', argv)
+            self.assertTrue('selected' in argv or 'model="selected"' in argv)
+            self.assertEqual(provider.get('model', 'old'), 'old')
 
-    def test_restore_requires_full_id_preview_success_and_explicit_confirmation(self):
+    def existing(self):
+        return {'name': 'review', 'kind': 'ai', 'spec': json.dumps({'provider': {'kind': 'ollama', 'model': 'original'},
+                'model': 'saved', 'prompt': 'Review $(literal)', 'sandbox': 'read-only'}),
+                'workspace': str(self.root), 'timeout': 300, 'calendar': '*-*-* 09:00:00 UTC', 'catch_up': 1}
+
+    def test_edit_preserves_provider_prompt_and_schedule_and_saves_new_model(self):
+        original = self.existing()
+        with tasks.database() as db:
+            tasks.save(db, 'review', original)
+        with patch.object(menu, 'choose', side_effect=['model', 'save']), patch.object(menu, 'pick_model', return_value='new-model'), \
+                patch.object(menu, 'confirm', return_value=True), patch.object(menu, 'show'):
+            menu.draft_task(original)
+        with tasks.database() as db:
+            saved = tasks.get(db, 'review')
+        self.assertEqual(saved['calendar'], original['calendar'])
+        self.assertEqual(saved['revision'], 2)
+        self.assertEqual(saved['enabled'], 0)
+        spec = json.loads(saved['spec'])
+        self.assertEqual(spec['provider'], {'kind': 'ollama', 'model': 'original'})
+        self.assertEqual(spec['prompt'], 'Review $(literal)')
+        self.assertEqual(spec['model'], 'new-model')
+
+    def test_cancelled_editor_does_not_write(self):
+        with patch.object(menu, 'choose', side_effect=menu.Back), patch.object(tasks, 'save') as save:
+            menu.screen(lambda: menu.draft_task(self.existing()))
+        save.assert_not_called()
+        self.assertFalse((jobs.state_dir() / 'jobs.sqlite3').exists())
+
+    def test_failed_restore_preview_never_applies(self):
         snapshot = 'b' * 64
-        target = '/new recovery/$(never-evaluate)'
-        confirm = self.run_menu(menu.backups_menu, ['5', 'latest', '5', 'b' * 8, '5', snapshot, target, '0'], [True])
-        self.assertEqual(confirm.call_count, 1)
-        self.assertEqual(self.calls(), [['backup', 'restore', snapshot],
-                                        ['backup', 'restore', snapshot, '--apply', '--target', target]])
-        self.assertIn('full snapshot ID', self.output.getvalue())
+        with patch.object(menu, 'choose', side_effect=['list', snapshot, menu.Back]), \
+                patch.object(menu, 'data', return_value=[{'id': snapshot, 'time': '2026-10-10T12:00:00Z'}]), \
+                patch.object(menu, 'command', return_value=1) as command, patch.object(menu, 'confirm') as confirm:
+            menu.screen(menu.backups_menu)
+        command.assert_called_once_with('backup', 'restore', snapshot)
+        confirm.assert_not_called()
 
-    def test_restore_default_decline_has_no_apply_or_target_prompt(self):
-        snapshot = 'c' * 64
-        self.run_menu(menu.backups_menu, ['5', snapshot, '0'], [False])
-        self.assertEqual(self.calls(), [['backup', 'restore', snapshot]])
+    def test_restore_uses_selected_full_id_and_literal_target(self):
+        snapshot, target = 'a' * 64, '/new recovery/$(never-execute)'
+        with patch.object(menu, 'choose', side_effect=['list', snapshot, menu.Back]), \
+                patch.object(menu, 'data', return_value=[{'id': snapshot, 'time': '2026-10-10T12:00:00Z'}]), \
+                patch.object(menu, 'command', return_value=0) as command, patch.object(menu, 'confirm', return_value=True), \
+                patch.object(menu, 'field', return_value=target):
+            menu.screen(menu.backups_menu)
+        self.assertEqual(command.call_args_list[-1].args, ('backup', 'restore', snapshot, '--apply', '--target', target))
 
-    def test_cancelled_configuration_and_updates_have_no_side_effects(self):
-        self.run_menu(menu.backups_menu, ['1', '', '5', '', '0'])
-        self.run_menu(menu.updates_menu, ['3', '', '3', 'plan-id', '', '0'])
-        self.run_menu(menu.jobs_menu, ['2', '', '5', '0'], [False])
-        self.assertEqual(self.calls(), [])
+    def test_update_applies_exact_reviewed_plan_without_typing_id(self):
+        plan = {'plan_id': 'c' * 64, 'download_bytes': 12, 'reboot_may_be_needed': False,
+                'packages': [{'name': 'example', 'old_version': '1', 'version': '2', 'channel': 'testing'}]}
+        with patch.object(menu, 'choose', side_effect=['plan', 'apply', menu.Back]), patch.object(menu, 'data', return_value=plan), \
+                patch.object(menu, 'show'), patch.object(menu, 'field', return_value='VM backup; literal'), \
+                patch.object(menu, 'confirm', return_value=True), patch.object(menu, 'command') as command:
+            menu.screen(menu.updates_menu)
+        command.assert_called_once_with('update', 'apply', '--plan', 'c' * 64, '--recovery-point', 'VM backup; literal', '--confirm', native=True)
 
-    def test_update_plan_reference_and_notification_token_file_remain_literal(self):
-        plan, reference = 'plan; $(id)', 'snapshot name; echo unchanged'
-        self.run_menu(menu.updates_menu, ['3', plan, reference, '4', '0'], [True])
-        token = '/private token/$(id)'
-        self.run_menu(menu.notifications_menu, ['2', 'slack', token, '0'])
-        self.assertEqual(self.calls(), [['update', 'apply', '--plan', plan, '--recovery-point', reference, '--confirm'],
-                                        ['update', 'status'], ['notify', 'configure', '--format', 'slack', '--token-file', token]])
+    def test_subprocess_keeps_shell_metacharacters_literal(self):
+        with patch.object(menu, 'dialog'), patch.object(menu.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, '', '')) as run:
+            menu.invoke('backup', 'restore', 'a' * 64, '--target', '/some path/$(id)')
+        self.assertEqual(run.call_args.args[0][-1], '/some path/$(id)')
+        self.assertNotIn('shell', run.call_args.kwargs)
 
-    def test_menu_requires_terminal_and_does_not_consume_piped_input(self):
+    def test_opening_lists_does_not_create_queue(self):
+        self.assertEqual(menu.rows('scheduled_tasks', 'WHERE deleted=0'), [])
+        self.assertFalse((jobs.state_dir() / 'jobs.sqlite3').exists())
+
+    def test_requires_terminal(self):
         with patch.object(cli, 'require_operator'), patch.object(cli.sys, 'stdin', io.StringIO('1\n')), \
-                patch.object(cli.sys, 'stdout', self.output), self.assertRaisesRegex(cli.OperatorError, 'interactive terminal'):
+                patch.object(cli.sys, 'stdout', io.StringIO()), self.assertRaisesRegex(cli.OperatorError, 'interactive terminal'):
             menu.main([])
-        self.assertEqual(self.calls(), [])
-
-    @unittest.skipIf(os.geteuid() == 0, 'PTY operator invocation requires an ordinary account')
-    def test_real_pty_navigation_blank_back_eof_and_interrupt(self):
-        # Exercise the same cancellation boundary that cli.main provides while
-        # staging before its menu dispatch is merged into the frozen tree.
-        code = ('import sys; import menu,cli\ntry:\n rc=menu.main([])\n'
-                'except (EOFError,KeyboardInterrupt):\n print("RETURNED_TO_SHELL"); rc=0\n'
-                'except cli.OperatorError as error:\n print(str(error)); rc=1\n'
-                'raise SystemExit(rc)\n')
-        for inputs, expected in (([b'\n'], b'Back to shell'),
-                                 ([b'not-a-choice\n', b'3\n', b'0\n', b'0\n'], b'Managed jobs'),
-                                 ([b'\x04'], b'RETURNED_TO_SHELL'),
-                                 ([b'\x03'], b'RETURNED_TO_SHELL')):
-            with self.subTest(inputs=inputs):
-                child, master = pty.fork()
-                if child == 0:
-                    environment = {**os.environ, 'PYTHONPATH': os.pathsep.join([str(STAGE), str(LIB)]),
-                                   'PYTHONDONTWRITEBYTECODE': '1'}
-                    os.execve(sys.executable, [sys.executable, '-c', code], environment)
-                data = bytearray()
-                status = None
-                deadline = time.monotonic() + 5
-                sent = 0
-                next_at = 0
-                try:
-                    while time.monotonic() < deadline:
-                        if select.select([master], [], [], .03)[0]:
-                            try:
-                                block = os.read(master, 8192)
-                            except OSError:
-                                block = b''
-                            if block:
-                                data.extend(block)
-                        if b'Choose [0]:' in data and sent < len(inputs) and time.monotonic() >= next_at:
-                            os.write(master, inputs[sent])
-                            sent += 1
-                            next_at = time.monotonic() + .1
-                        done, status_value = os.waitpid(child, os.WNOHANG)
-                        if done:
-                            status = status_value
-                            break
-                    self.assertIsNotNone(status, 'PTY menu did not return: ' + data.decode(errors='replace'))
-                    self.assertEqual(os.waitstatus_to_exitcode(status), 0, data.decode(errors='replace'))
-                    self.assertIn(expected, data)
-                    self.assertNotIn(b'Traceback', data)
-                finally:
-                    os.close(master)
-                    if status is None:
-                        os.kill(child, signal.SIGKILL)
-                        os.waitpid(child, 0)
-        self.assertEqual(self.calls(), [])
 
 
 if __name__ == '__main__':

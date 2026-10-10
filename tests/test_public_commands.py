@@ -49,17 +49,18 @@ class PublicCommandTests(unittest.TestCase):
     def test_public_help_discovers_each_new_command(self):
         result = self.command("help")
         self.assertEqual(result.returncode, 0, result.stderr)
-        for command in ("menu", "update", "backup", "notify"):
+        for command in ("menu", "update", "backup", "notify", "tasks", "schedule"):
             self.assertIn(command, result.stdout)
         self.assert_existing_config_preserved()
 
     def test_subcommand_help_and_menu_usage_route_to_real_modules(self):
         for command, expected in (
             ("update", "plan"), ("backup", "restore"), ("notify", "configure"),
+            ("tasks", "enable"), ("schedule", "enable"),
         ):
             with self.subTest(command=command):
                 result = self.command(command, "--help")
-                if command == "notify" and os.geteuid() == 0:
+                if command in {"notify", "tasks", "schedule"} and os.geteuid() == 0:
                     self.assertEqual(result.returncode, 1)
                     self.assertIn("regular operator account", result.stderr)
                 else:
@@ -73,6 +74,19 @@ class PublicCommandTests(unittest.TestCase):
         self.assertIn("Usage: rougarou menu", result.stderr)
         self.assertNotIn("Traceback", result.stderr)
         self.assert_existing_config_preserved()
+
+    @unittest.skipIf(os.geteuid() == 0, 'schedules require an ordinary operator')
+    def test_schedule_and_tasks_share_definitions_without_running_work(self):
+        for command, other in (("schedule", "tasks"), ("tasks", "schedule")):
+            result = self.command(command, "add", command + "-fixture", "--on", "daily",
+                                  "--workspace", str(self.home), "--command", "/bin/true")
+            self.assertEqual(result.returncode, 0, result.stderr)
+            original = self.command(command, "show", command + "-fixture")
+            alias = self.command(other, "show", command + "-fixture")
+            self.assertEqual(alias.returncode, 0, alias.stderr)
+            self.assertEqual(original.stdout, alias.stdout)
+            self.assertEqual(json.loads(alias.stdout)["enabled"], 0)
+        self.assertEqual(json.loads(self.command("jobs", "list", "--json").stdout), [])
 
     def test_update_recovery_json_is_readable_without_privilege_or_apt(self):
         before = sorted(str(path.relative_to(self.home)) for path in self.home.rglob("*"))

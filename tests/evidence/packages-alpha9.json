@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "rootfs_files_match": 47,
+  "codex_official_files_match": 44,
+  "package_hashes_match": 280,
+  "codex_flags_supported": true,
+  "herdr_official_binary_matches": true,
+  "herdr_dependency_sources_and_notices_match": 265,
+  "gemini_official_bundle_files_match": 451,
+  "gemini_dependency_sources_and_notices_match": 471,
+  "gemini_offline_package_metadata_matches": true,
+  "default_desktop_packages": false,
+  "credentials_or_machine_identity_in_custom_payload": false,
+  "release": "0.1.0-alpha.9",
+  "build_inputs_match": 102,
+  "package_lifecycle": "pass",
+  "upgrades": {
+    "baseline": "0.1.0~alpha8-1",
+    "candidate": "0.1.0~alpha9-1",
+    "unchanged_configuration": "pass",
+    "operator_modified_configuration": "pass",
+    "operator_homes_and_boot_configuration_preserved": true
+  },
+  "signed_media": "pass",
+  "source_tests": {
+    "total": 265,
+    "passed": 256,
+    "skipped": 9
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "release": "0.1.0-alpha.9",
+  "result": "PASS",
+  "artifact": {
+    "file": "rougarou-os-0.1.0-alpha.9-amd64.iso",
+    "sha256": "a12e573d50371af2622155b11f16973e6416a544195b32579ca2ccec7d9041a2",
+    "bytes": 1361313792
+  },
+  "checks": 9,
+  "tests": [
+    {
+      "name": "bios-release-iso-boot",
+      "passed": true,
+      "detail": "Original ISO menu, Rougarou welcome and native language choice visible over serial."
+    },
+    {
+      "name": "uefi-release-iso-boot",
+      "passed": true,
+      "detail": "Original ISO menu, Rougarou welcome and native language choice visible over serial."
+    },
+    {
+      "name": "bios-offline-install",
+      "passed": true,
+      "detail": "Installer powered off after 503 seconds with networking disabled."
+    },
+    {
+      "name": "uefi-offline-install",
+      "passed": true,
+      "detail": "Installer powered off after 530 seconds with networking disabled."
+    },
+    {
+      "name": "bios-system-offline-install",
+      "passed": true,
+      "detail": "Installer powered off after 252 seconds with networking disabled."
+    },
+    {
+      "name": "bios-installed-system",
+      "passed": true,
+      "detail": "Offline install booted from disk; OS, CLI, SSH, guest agent, operator boundaries and agent-driven shutdown passed."
+    },
+    {
+      "name": "uefi-installed-system",
+      "passed": true,
+      "detail": "Offline install booted from disk; OS, CLI, SSH, guest agent, operator boundaries and agent-driven shutdown passed."
+    },
+    {
+      "name": "bios-system-installed-system",
+      "passed": true,
+      "detail": "Offline install booted from disk; OS, CLI, SSH, guest agent, operator boundaries and agent-driven shutdown passed."
+    },
+    {
+      "name": "fresh-install-identities",
+      "passed": true,
+      "detail": "Compared all installed guests: machine IDs and SSH host public keys must differ."
+    }
+  ],
+  "install_seconds": {
+    "bios": 503,
+    "uefi": 530,
+    "bios-system": 252
+  },
+  "software_choices": {
+    "bios": {
+      "agent": "none",
+      "docker": "rootless",
+      "podman": "false",
+      "herdr": "false"
+    },
+    "uefi": {
+      "agent": "codex",
+      "docker": "rootless",
+      "podman": "true",
+      "herdr": "true"
+    },
+    "bios-system": {
+      "agent": "gemini",
+      "docker": "system",
+      "podman": "false",
+      "herdr": "false"
+    }
+  },
+  "build_inputs_match": 102,
+  "scope": "Exact final ISO; three fresh offline installs. BIOS and UEFI installed-system probes rerun on the same disks after updating the test from numbered-menu input to visual-menu controls. Prior failure logs retained privately. No image/runtime rebuild or equivalence carry-forward.",
+  "installed_checks": [
+    "full Vim",
+    "IPv6 disabled: kernel argument, no IPv6 addresses, socket creation refused",
+    "SSH and guest agent",
+    "operator access modes",
+    "rootless Docker and Podman; system Docker",
+    "managed jobs and worker",
+    "encrypted Restic backup and isolated restore",
+    "loopback-only webhook notification",
+    "visual menu Exit, Esc and Ctrl-C",
+    "distinct machine and SSH identities"
+  ],
+  "limits": [
+    "Secure Boot",
+    "arbitrary hardware",
+    "partition-layout variants",
+    "recovery boot",
+    "real provider requests in isolated image tests"
+  ]
+}

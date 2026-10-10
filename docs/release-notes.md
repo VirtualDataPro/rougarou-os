@@ -1,3 +1,36 @@
+# Rougarou OS 0.1.0-alpha.9
+
+Alpha.9 ships a signed amd64 installer with a visual SSH control center,
+recurring AI tasks, model selection and contextual Bash completion. The base
+package is `0.1.0~alpha9-1`. The cloud image remains at alpha.8.
+
+- `rougarou menu` provides selectable schedules, jobs, workers, update plans
+  and backup snapshots. Editors offer provider/model lists and saved settings.
+- `rougarou schedule` manages recurring tasks through systemd user timers and
+  the existing worker queue. `rougarou tasks` remains a compatible alias.
+  Tasks start paused, require a successful manual run before enabling, prevent
+  overlapping runs and retain history. Restored schedules remain disabled.
+- Tab completion suggests subcommands, options, saved tasks, job IDs, locally
+  known models, timezones and paths without making provider requests.
+- Exit, Esc and Ctrl-C restore the shell screen and terminal modes cleanly.
+- Full Vim is included. IPv6 is disabled with `ipv6.disable=1` in installer boot
+  entries and fresh installed GRUB defaults. Existing package upgrades preserve
+  operator boot configuration; see [network defaults and recovery](build.md#editor-and-network-defaults).
+- The offline repository includes the current signed Debian security updates
+  selected during the build. Pinned Codex, Gemini CLI and Herdr versions remain
+  unchanged; their packaging revisions increase to `rougarou10`.
+
+See [downloads](downloads.md), [validation](validation.md),
+[scheduled tasks](scheduled-tasks.md) and the [control center guide](menu.md).
+This is a prerelease for VM evaluation; publishing it does not promote a stable
+APT channel.
+
+The earlier alpha.8 testing packages have retained acceptance records for
+[scheduling](../tests/evidence/scheduled-tasks-alpha8-base3.json),
+[menu workflows](../tests/evidence/control-center-alpha8-base4.json),
+[completion](../tests/evidence/completion-alpha8-base5.json) and
+[terminal cleanup](../tests/evidence/menu-cleanup-schedule-alpha8-base6.json).
+
 # Rougarou OS 0.1.0-alpha.8
 
 The first public alpha of Rougarou OS: a headless Debian 13 system for terminal

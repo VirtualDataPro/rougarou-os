@@ -46,6 +46,38 @@ report. Release checksum signatures are produced with the same external signing
 identity and distributed with its public fingerprint. Check
 `docs/validation.md` before treating an artifact as install-tested.
 
+## Editor and network defaults
+
+The core package manifest now requests full `vim`. Both the offline ISO payload
+and cloud-image package roots use that manifest, as does the base package's
+dependency list. Builds already refresh APT metadata before resolving packages.
+This dependency change needs the full package-candidate build with Vim and its
+dependencies; the independent base-update path requires unchanged dependencies
+and is unsuitable for this update.
+
+New BIOS and UEFI installer boots, including serial, advanced and rescue entries,
+use `ipv6.disable=1`. Fresh installed systems and cloud images receive the same
+kernel parameter through the shared GRUB defaults. This disables IPv6 addresses
+and sockets, including `::1`; services must accept IPv4 connections. The Debian
+kernel and modules remain intact. See the
+[kernel IPv6 parameters](https://docs.kernel.org/networking/ipv6.html).
+
+Package upgrades preserve `/etc/default/grub.d/50-rougarou.cfg` and do not apply
+network changes to a running host. On an existing installation, explicitly add
+`ipv6.disable=1` to its `GRUB_CMDLINE_LINUX`, preserving other arguments, run
+`sudo update-grub`, and reboot during a maintenance window with console access.
+
+To re-enable IPv6, replace that argument with `ipv6.disable=0`, run
+`sudo update-grub`, and reboot. An explicit `ipv6.disable` argument takes priority
+over the new default. At the installer or recovery boot menu, remove the argument
+from the selected boot entry when IPv6 access is needed.
+
+Before publishing each image type, boot fresh BIOS/UEFI installs or cloud clones, confirm full Vim
+is installed, inspect `/proc/cmdline`, verify that IPv6 addresses are absent and
+IPv6 socket creation fails, then verify IPv4 SSH and rootless containers. The VM
+acceptance scripts include the Vim and IPv6 checks. Unit tests and syntax checks
+alone do not establish guest networking or provider compatibility.
+
 ## Reproducibility limits
 
 This is an auditable versioned build, not a claim of bit-for-bit reproducibility:

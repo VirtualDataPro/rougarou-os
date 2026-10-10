@@ -38,6 +38,6 @@ starship
 systemd-timesyncd
 tmux
 unattended-upgrades
-vim-tiny
+vim
 wget
 xz-utils

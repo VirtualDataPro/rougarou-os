@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "release": "0.1.0-alpha.9",
+  "result": "PASS",
+  "upgrade": {
+    "from_base": "0.1.0~alpha8-6",
+    "to_base": "0.1.0~alpha9-1",
+    "package_count": 14,
+    "removals": 0,
+    "channels": [
+      "testing",
+      "debian-security"
+    ],
+    "guided_signed_transaction": "complete",
+    "dpkg_audit": "clean",
+    "kernel_after_reboot": "6.12.111+deb13-amd64"
+  },
+  "recovery": {
+    "stopped_vm_disk_snapshot_created": true,
+    "machine_ssh_network_identity_verified_before_and_after": true,
+    "restore_performed": false,
+    "private_configuration_and_queue_backup_retained": true
+  },
+  "preservation": {
+    "prior_job_records_unchanged": 12,
+    "configuration_and_schedule_definition_bytes_unchanged": true,
+    "enabled_schedule_remains_enabled": true,
+    "original_grub_configuration_preserved": true
+  },
+  "network": {
+    "ipv6_disable_boot_argument": true,
+    "ipv6_addresses_absent": true,
+    "ipv6_socket_creation_refused": true,
+    "ipv4_ssh_after_reboot": true,
+    "explicit_lab_grub_dropin_applied": true
+  },
+  "services": {
+    "ssh": "active",
+    "guest_agent": "active",
+    "worker": "running with fresh heartbeat",
+    "reboot_pending": false
+  },
+  "native_acceptance": {
+    "menu_pty_tests_passed": 4,
+    "completion_tests_passed": 7,
+    "exits": [
+      "Exit",
+      "Esc",
+      "Ctrl-C"
+    ],
+    "schedule_cli_help": true,
+    "full_vim_installed": true,
+    "codex_authentication_retained": true,
+    "queued_read_only_codex_smoke": {
+      "state": "succeeded",
+      "exit_code": 0,
+      "expected_response_received": true,
+      "request_count": 1,
+      "file_or_tool_use_requested": false
+    }
+  },
+  "scope": "Existing SSH lab upgraded in place; real provider smoke ran after reboot. No credentials, prompts, host addresses, machine identities or job identifiers are published."
+}

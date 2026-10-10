@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-10",
+  "result": "pass",
+  "scope": "Existing SSH lab VM; testing package only",
+  "package": "rougarou-base_0.1.0~alpha8-4_all.deb",
+  "sha256": "20cc4a70bad0cc7cee616238e4ee1cc05bc7fc64bb9bd9bf1a41757168f4916c",
+  "source_checks": {
+    "command": "scripts/check.sh",
+    "tests": 256,
+    "passed": 248,
+    "skipped": 8,
+    "skip_reasons": [
+      "four native Restic tests unavailable on development host",
+      "one native root shell test",
+      "three dialog PTY tests unavailable on development host; passed on lab"
+    ]
+  },
+  "installed_package_checks": {
+    "menu_workflow_tests": 12,
+    "native_pty_tests": 3,
+    "terminal_sizes": [
+      "60x20",
+      "80x24",
+      "120x32"
+    ],
+    "manual": [
+      "Overview and saved schedule navigation",
+      "Prefilled schedule editor",
+      "Visible Codex cache model selection",
+      "Draft cancellation preserves all schedule definitions and revisions"
+    ],
+    "source_hashes_match": true,
+    "worker_healthy": true,
+    "dpkg_audit_clean": true,
+    "active_jobs": 0,
+    "enabled_schedules": 0,
+    "existing_grub_checksum_preserved": true
+  },
+  "recovery": {
+    "previous_base_package_retained": true,
+    "queue_backup_retained": true,
+    "rollback_script_syntax_checked": true,
+    "rollback_executed": false
+  },
+  "limits": [
+    "No new ISO or cloud image published",
+    "No stable promotion",
+    "No billable model execution performed during this menu acceptance",
+    "Update application and backup restore selection tested with isolated fixtures; no live system update or restore through the menu"
+  ]
+}

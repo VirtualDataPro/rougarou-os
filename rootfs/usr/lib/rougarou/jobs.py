@@ -106,7 +106,7 @@ def submit(db, kind, spec, workspace, timeout=3600, delay=0, parent=None):
         raise cli.OperatorError("Timeout must be 1–604800 seconds; delay 0–31536000 seconds.")
     job_id = uuid.uuid4().hex[:16]
     now = time.time()
-    with transaction(db):
+    with transaction(db) if not db.in_transaction else contextlib.nullcontext():
         db.execute("""INSERT INTO jobs
             (id,kind,spec,workspace,timeout,state,created,ready,parent)
             VALUES(?,?,?,?,?,'queued',?,?,?)""",
@@ -205,7 +205,12 @@ def command_for(job):
         return spec["argv"], environment, None
     # Reuse provider configuration and credential handling, but never inherit
     # the interactive launcher's approval or terminal flags.
-    argv, environment = cli.ai_command(spec["provider"], [], "", environment, batch=True)
+    provider = dict(spec["provider"])
+    if spec.get("model") and provider["kind"] in {"responses", "ollama"}:
+        provider["model"] = spec["model"]
+    argv, environment = cli.ai_command(provider, [], "", environment, batch=True)
+    if spec.get('model') and provider["kind"] == "codex":
+        argv.extend(['--model', spec['model']])
     argv.extend(["--sandbox", spec["sandbox"], "--color", "never", "--json",
                  "--skip-git-repo-check", "-"])
     return argv, environment, spec["prompt"]
@@ -398,6 +403,7 @@ def main(argv):
         p.add_argument("--delay", type=int, default=0, help="delay execution in seconds")
         if action == "submit":
             p.add_argument("--sandbox", choices=("read-only", "workspace-write"), default="workspace-write")
+            p.add_argument("--model", help="override the provider model for this job")
             p.add_argument("prompt", help="prompt text, or - to read stdin")
         else:
             p.add_argument("argv", nargs=argparse.REMAINDER, help="-- executable arguments")
@@ -430,6 +436,8 @@ def main(argv):
                 if provider["kind"] == "command":
                     raise cli.OperatorError("For a custom CLI, use rougarou jobs run -- followed by its unattended command.")
                 spec = {"prompt": prompt, "provider": provider, "sandbox": args.sandbox}
+                if args.model:
+                    spec["model"] = cli.clean_text(args.model, "Model", 256)
                 kind = "ai"
             else:
                 command = args.argv[1:] if args.argv[:1] == ["--"] else args.argv

@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Installed alpha7 CLI acceptance in an offline disposable ordinary-user guest.
+"""Installed CLI acceptance in an offline disposable ordinary-user guest.
 
 No provider calls, package refresh/apply, external webhooks, real operator config
 or service enablement. --skip-installed-host-checks is for a disposable container
 smoke only; release VM acceptance must omit that option.
 """
 import argparse
+import fcntl
 import hashlib
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -15,8 +16,10 @@ import pty
 import select
 import signal
 import sqlite3
+import struct
 import subprocess
 import tempfile
+import termios
 import threading
 import time
 
@@ -67,6 +70,7 @@ def installed_host_checks():
 def menu_cancel(env, data):
     child, master = pty.fork()
     if child == 0:
+        fcntl.ioctl(0, termios.TIOCSWINSZ, struct.pack('HHHH', 24, 80, 0, 0))
         os.execve(CLI, [CLI, 'menu'], dict(env, TERM='xterm-256color'))
     output = bytearray()
     status = None
@@ -80,7 +84,8 @@ def menu_cancel(env, data):
                 except OSError:
                     block = b''
                 output.extend(block)
-            if not sent and b'Choose [0]:' in output:
+            if not sent and b'Overview' in output:
+                time.sleep(.15)
                 os.write(master, data)
                 sent = True
             done, value = os.waitpid(child, os.WNOHANG)
@@ -198,9 +203,9 @@ def isolated_operator_roundtrip():
             assert (target / 'RECOVERY.json').stat().st_mode & 0o777 == 0o600
             for filename in ('backup.json', 'notifications.json'):
                 assert (settings / filename).stat().st_mode & 0o777 == 0o600
-            menu_cancel(env, b'0\n')
+            menu_cancel(env, b'\t\r')
             menu_cancel(env, b'\x03')
-            menu_cancel(env, b'\x04')
+            menu_cancel(env, b'\x1b')
             command('menu', env=env, allowed=(1,))  # Pipes are not a menu input mechanism.
             return {'encrypted_backup_roundtrip': True, 'restore_preview_then_isolated_apply': True,
                     'restored_pending_job_quarantined': True, 'source_queue_unchanged': True,

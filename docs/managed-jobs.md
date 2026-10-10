@@ -29,6 +29,14 @@ rougarou service status
 
 One worker processes jobs sequentially. `--delay SECONDS` defers a job; this is not a recurring scheduler. The default timeout is one hour. Every retry gets a new ID linked to its original run. Queued jobs survive service restarts and reboots. Running jobs interrupted by shutdown, worker crash or OOM are marked interrupted on shutdown or the next worker start; **they are never automatically replayed**. Inspect effects/logs before retrying. This is recovery of queue state, not transparent resumption of an AI conversation or exactly-once external side effects.
 
+## Recurring task management
+
+Use `rougarou tasks` or the Schedules entry in `rougarou menu` to create,
+test, enable and pause recurring work. Systemd user timers submit runs to this
+queue. Task definitions pin the selected provider, prevent overlapping runs and
+retain job history. See [scheduled tasks](scheduled-tasks.md) for setup, provider
+commands, timezones and recovery.
+
 ## Clear reviewed failures from the login summary
 
 After reviewing a failed, timed-out or interrupted job, run `rougarou jobs ack

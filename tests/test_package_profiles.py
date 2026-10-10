@@ -15,6 +15,8 @@ class PackageProfileTests(unittest.TestCase):
         core = profiles.read_core(ROOT / 'packages.txt')
         selected = profiles.read_profiles(ROOT / 'image/package-profiles.txt')
         self.assertIn('dbus-user-session', core)
+        self.assertIn('vim', core)
+        self.assertNotIn('vim-tiny', core)
         self.assertTrue({'codex', 'herdr', 'docker-rootless', 'docker-system', 'podman'} <= set(selected))
         self.assertFalse({'docker.io', 'docker-cli', 'podman', 'rootlesskit', 'uidmap', 'slirp4netns', 'fuse-overlayfs'} & set(core))
         union = profiles.debian_roots(core, selected)
