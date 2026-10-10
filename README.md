@@ -77,6 +77,19 @@ Guides: [providers](docs/providers.md), [shell defaults](docs/shell-defaults.md)
 [guided updates](docs/guided-updates.md), [backups](docs/backups.md),
 [notifications](docs/notifications.md), and [menu](docs/menu.md).
 
+## Community and contributions
+
+Ask questions and share ideas in
+[Discussions](https://github.com/VirtualDataPro/rougarou-os/discussions),
+report reproducible bugs through
+[Issues](https://github.com/VirtualDataPro/rougarou-os/issues/new/choose),
+and submit improvements through pull requests. Documentation fixes and
+redacted VM test reports are welcome alongside code changes.
+
+Read the [contributor guide](CONTRIBUTING.md) for scope, safe testing and PR
+validation. See [support](SUPPORT.md), [community conduct](CODE_OF_CONDUCT.md)
+and [security reporting](SECURITY.md) before posting.
+
 ## Build and verify
 
 The ISO build uses an isolated Debian container and ordinary files, without

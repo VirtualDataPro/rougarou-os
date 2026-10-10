@@ -1,0 +1,39 @@
+name: Feature proposal
+description: Propose an improvement with a clear operator problem and expected outcome.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: "Use Discussions to explore early ideas. Rougarou focuses on headless Debian server operation and operator-owned authority."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Operator problem
+      description: Describe who encounters the problem and their current workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Give a concrete example of how an operator would use it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and tradeoffs
+      description: Include existing commands or tools, dependencies and effects on recovery or operator authority.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: How to verify success
+      description: Describe observable results or acceptance criteria.
+    validations:
+      required: true
+  - type: input
+    id: discussion
+    attributes:
+      label: Related discussion
+      description: Link prior community discussion if available.

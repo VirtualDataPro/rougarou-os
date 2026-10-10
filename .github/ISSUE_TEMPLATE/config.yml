@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Community support and product ideas
+    url: https://github.com/VirtualDataPro/rougarou-os/discussions
+    about: Ask setup questions, share workflows and discuss ideas with the community.
+  - name: Security reporting guidance
+    url: https://github.com/VirtualDataPro/rougarou-os/blob/main/SECURITY.md
+    about: Read this before sharing a suspected vulnerability. Keep sensitive details private.

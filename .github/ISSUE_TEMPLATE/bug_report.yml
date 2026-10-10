@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a reproducible Rougarou OS defect.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "For setup questions, use Discussions. Remove secrets and private infrastructure details from all fields and attachments."
+  - type: input
+    id: version
+    attributes:
+      label: Rougarou version
+      description: Include release tag and package version if known.
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - Installer ISO
+        - Cloud image
+        - Source build
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Hypervisor or hardware, BIOS/UEFI, CPU, RAM, virtual disk, networking and selected agent if relevant. Omit private addresses.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include commands and inputs needed to reproduce in a disposable VM.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted logs
+      description: Include relevant errors and redacted rougarou doctor output when useful.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround or additional context
